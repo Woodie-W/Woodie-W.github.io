@@ -21,7 +21,7 @@ redirect_from:
 
 I'm currently an undergraduate student majoring in Computer Science and Technology at Northwestern Polytechnical University (NWPU), expected to graduate in 2027. 
 
-I have a broad range of academic interests. Driven by a childhood passion for mathematics, I participated in the Mathematics Olympiad during my years at Chengdu No. 7 High School. Although the outcome was modest (scoring 192 in the 2021 Mathematics League), this rigorous training laid a profound foundation for my analytical thinking and fast-learning capabilities, empowering my subsequent journey in scientific research and various contests. My systematic and rigorous problem-solving skills have enabled me to achieve excellent performance in competitions spanning mathematics, physics, competitive programming, and computer systems. In addition, I also took additional courses in advanced algebra, operations research, convex optimization, and other specialized mathematics courses.
+Driven by a childhood passion for mathematics, I participated in the Mathematics Olympiad during my years at Chengdu No. 7 High School. Although the outcome was modest (scoring 192 in the 2021 Mathematics League), this rigorous training laid a profound foundation for my analytical thinking and fast-learning capabilities, empowering my subsequent journey in scientific research and various contests. My systematic and rigorous problem-solving skills have enabled me to achieve excellent performance in competitions spanning mathematics, physics, competitive programming, and computer systems. In addition, I also took additional courses in advanced algebra, operations research, convex optimization, and other specialized mathematics courses.
 
 In recent years, I have actively begun exploring my research interests. I am extremely fortunate to study quantum machine learning under the guidance of [Prof. Qianli Zhou](https://jszy.nwpu.edu.cn/2025010088.html), where I have completed my first academic paper. 
 
@@ -29,13 +29,13 @@ Furthermore, I am honored to have gained research internship opportunities at to
 
 In my view, while Artificial Intelligence has achieved superhuman proficiency in specific tasks (e.g., pattern recognition, strategic gaming), their ability in handling complex tasks still falls short. The next frontier lies in generalizing these capabilities to the messy, complex real world. My wish is to bridge the gap between high-level AI capabilities and real-world applications to truly liberate productivity. Specifically, I am interested in:
 
-- **LLM-based Agents:** Developing autonomous agents capable of navigating complex workflows and performing robust reasoning in dynamic environments.
+- **LLM-based Agents:** Developing agents capable of complex workflows and environments, stronger reasoning skills and memory capabilities.
 - **Fundamental LLM Capabilities:** Enhancing the core reasoning efficiency and long-context memory of Large Language Models.
 - **Self-improving models:** Facilitating the self-iteration of models through improved training infrastructure, including automated high-quality data filtering, processing, synthesis and model evaluation.
 
 我是 西北工业大学 (NWPU) 计算机科学与技术专业的 23 级在读本科生。
 
-我有着广泛的学科兴趣。我从小对数学学科充满热情，我高中阶段于成都七中学习数学竞赛。虽然失利，这为我参加竞赛与科研提供了坚实的思维与学习能力基础。我严谨与系统性的思考能力让我在数学，物理，算法与计算机系统能力的竞赛获得佳绩。另外我也在辅修了高等代数，运筹学，凸优化等数学专业课。
+我从小对数学学科充满热情，我高中阶段于成都七中学习数学竞赛。虽然失利，这为我参加竞赛与科研提供了坚实的思维与学习能力基础。我严谨与系统性的思考能力让我在数学，物理，算法与计算机系统能力的竞赛获得佳绩。另外我也在辅修了高等代数，运筹学，凸优化等数学专业课。
 
 近年来，我逐渐开始探索感兴趣的研究方向。我有幸在[周千里教授](https://jszy.nwpu.edu.cn/2025010088.html)的指导下学习量子机器学习/，并且完成了第一篇论文。
 
@@ -43,7 +43,7 @@ In my view, while Artificial Intelligence has achieved superhuman proficiency in
 
 我认为，尽管人工智能在模式识别、博弈等特定任务上已超越人类表现，但其在处理复杂任务的能力仍显不足。未来的核心挑战在于将其的能力泛化至复杂的真实世界。我的愿望是将高水平的 AI 技术落地以解放生产力。具体包括：
 
-- **大模型智能体:** 构建能适应复杂工作流程与动态推理环境的智能体。
+- **大模型智能体:** 构建能适应复杂工作流程与环境的智能体，更强的推理研究与记忆能力。
 - **大模型基础能力:** 提升 LLM 的核心能力，如长上下文记忆与复杂逻辑推理。
 - **大模型辅助训练:** 通过自动化数据处理与评估分析体系，辅助模型训练，推动 AI 的自我训练迭代，减少人工成本。
 
