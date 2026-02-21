@@ -19,11 +19,17 @@ redirect_from:
 
 # 👨‍🎓 Biography / 个人简介
 
-I am currently an undergraduate student in Computer Science and Technology at **Northwestern Polytechnical University (NWPU)**, expected to graduate in 2027. My research interests broadly lie at the intersection of **Machine Learning, Quantum Machine Learning (QML), and Brain-inspired AI Agents**. Currently, I am fortunate to be a research intern at the Tsinghua Laboratory of Brain and Intelligence (THBI) and the Institute for AI Industry Research, Tsinghua University (THU AIR). Prior to my research journey, I was an active competitive programmer and won multiple Gold and Silver Medals in the ICPC (International Collegiate Programming Contest).
+I'm currently an undergraduate student majoring in Computer Science and Technology at **Northwestern Polytechnical University (NWPU)**, expected to graduate in 2027. 
+<br>
+I have a broad range of academic interests. Driven by a childhood passion for mathematics, I participated in the Mathematics Olympiad during my high school years at Chengdu No. 7 High School. Although the outcome was modest (scoring 192 in the 2021 National High School Mathematics League), this rigorous training laid a profound foundation for my analytical thinking and fast-learning capabilities, empowering my subsequent journey in scientific research and various contests. My systematic and rigorous problem-solving skills have enabled me to achieve excellent performance in competitions spanning mathematics, physics, competitive programming, and computer systems.
+<br>
+In recent years, I have actively begun exploring my research interests. I am extremely fortunate to study Quantum Machine Learning (QML) under the guidance of [Prof. Qianli Zhou](https://jszy.nwpu.edu.cn/2025010088.html), where I have completed my first academic paper. 
+<br>
+Furthermore, I am honored to have gained research internship opportunities at top-tier laboratories through competitive programs such as the CLS-McGovern-IDG Summer School in Neuroscience and Cognitive Sciences and the THU AIR Winter Camp. These experiences have allowed me to delve deeply into interdisciplinary AI research, including EEG decoding and Large Language Model (LLM) Agents.
 
-我目前是**西北工业大学 (NWPU)** 计算机科学与技术专业的本科生，预计将于 2027 年毕业。
-我有着广泛的学科兴趣。我从小对数学学科充满热情，我的高中阶段于成都七中学习数学竞赛。虽然失利（2021年联赛192），这为我参加竞赛与科研提供了坚实的思维与学习能力基础。我严谨与系统性的思考能力让我在数学，物理，算法与计算机系统能力的竞赛获得佳绩。
-近年来，我逐渐开始探索感兴趣的研究方向。我有幸在周千里教授的指导下学习量子机器学习，并且完成了第一篇论文。 
+我目前是**西北工业大学 (NWPU)** 计算机科学与技术专业的本科生，预计将于 2027 年毕业。<br>
+我有着广泛的学科兴趣。我从小对数学学科充满热情，我的高中阶段于成都七中学习数学竞赛。虽然失利（2021年联赛192），这为我参加竞赛与科研提供了坚实的思维与学习能力基础。我严谨与系统性的思考能力让我在数学，物理，算法与计算机系统能力的竞赛获得佳绩。<br>
+近年来，我逐渐开始探索感兴趣的研究方向。我有幸在[周千里教授](https://jszy.nwpu.edu.cn/2025010088.html)的指导下学习量子机器学习，并且完成了第一篇论文。<br>
 我有幸通过CLS-CIBR-IDG神经与认知科学暑期培训班，AIR冬令营等途径加入顶尖实验室实习，探索了人工智能交叉领域，如脑电图解码，大模型智能体。
 
 
@@ -69,12 +75,12 @@ I am currently an undergraduate student in Computer Science and Technology at **
 - **Multi-domain Intelligent Perception & Cognition Lab, NWPU**
   <br> *Research Assistant | Aug 2025 - Present*
   <br> Leading the research on quantum machine learning models. Designed and implemented an interpretable quantum multimodal fusion network, completing extensive ablation studies and writing the manuscript (submitted to IEEE TCYB).
-  <br> *<small>西北工业大学多域智能感知与认知实验室 | 科研助理；量子机器学习研究，设计并实现了可解释的量子多模态融合网络（独立一作论文审稿中）。</small>*
+  <br> *<small>西北工业大学多域智能感知与认知实验室 | 科研助理；量子机器学习研究，设计并实现了可解释的量子多模态融合网络（独立一作）。</small>*
 
 - **Tsinghua Laboratory of Brain and Intelligence (THU THBI)**
   <br> *Research Intern | Jul 2025 - Feb 2026*
   <br> Worked on the LEM model development. Conducted comprehensive benchmark tests and comparative experiments against state-of-the-art models (e.g., LaBraM) for EEG-based precision psychiatry.
-  <br> *<small>清华大学脑与智能实验室 (THU THBI) | 科研实习；参与 LEM 模型开发：EEG 精神病学模型的分析及针对前沿模型（如 LaBraM）的刷榜与对比实验。</small>*
+  <br> *<small>清华大学脑与智能实验室 (THU THBI) | 科研实习；参与 LEM 模型开发：EEG 精神病学模型的分析及针对前沿模型的测试与对比实验。</small>*
 
 <br>
 
@@ -106,12 +112,11 @@ I am currently an undergraduate student in Computer Science and Technology at **
 <br>
 
 **Mathematics & Physics / 数理基础学科**
-- **First Prize**, 6th NWPU College Mathematics Competition <br> *<small>第六届西北工业大学大学生数学竞赛 **一等奖**</small>* `2025`
-- **First Prize**, 5th NWPU College Mathematics Competition <br> *<small>第五届西北工业大学大学生数学竞赛 **一等奖**</small>* `2024`
-- **Third Prize (Individual)**, 2nd International Mechanics Contest (University Level) <br> *<small>第二届国际理论力学竞赛校赛 个人赛 **三等奖**</small>* `2025`
-- **Second Prize** (Team) & Third Prize** (Individual), 1st International Mechanics Contest (University Level) <br> *<small>第一届国际理论力学竞赛校赛 团队赛 **二等奖 | 季军**，个人赛 **三等奖**</small>* `2024`
-
-
+- 第六届西北工业大学大学生数学竞赛 **一等奖**</small>* `2025`
+- 第五届西北工业大学大学生数学竞赛 **一等奖**</small>* `2024`
+- 第一届西北工业大学大学生国际理论力学竞赛校赛 团队赛 **二等奖 | 季军**，个人赛 **三等奖**</small>* `2024`
+- 2021年全国高中数学联赛 **一等奖** （192）</small>* `2021`
+- **Second Runner-up** (Mechanics Test), 16th Pan-Pearl River Delta and Chinese Elite Schools Physics Olympiad<br> *<small>第十六届泛珠三角物理奥林匹克暨中华名校邀请赛 力学基础试 **第三名**</small>* `2020`
 <br>
 
 **Project Design / 作品设计赛**
