@@ -23,8 +23,8 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 author:
   name     : "Yu Wu (吴语)"
   avatar   : "/images/me.jpg"    # 【注意】我们下一步会上传这张名为 me.jpg 的照片
-  bio      : "Undergraduate CS Student"
-  employer : "Northwestern Polytechnical <br>University"
+  bio      : "Undergraduate CS Student | Northwestern Polytechnical University"
+  employer : "Shanxi, China"
   email    : "wuyu2837@mail.nwpu.edu.cn"
   links:
     - label: "Email"
