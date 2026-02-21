@@ -98,17 +98,7 @@ In my view, Artificial Intelligence has achieved superhuman proficiency in speci
 
 <br>
 
-<span class='anchor' id='-education'></span>
-# 📖 Educations / 教育背景
-
-- **Northwestern Polytechnical University (NWPU)** | *Computer Science and Technology* | Sep 2023 - Jun 2027 
-  <br> **GPA:** 3.905 / 4.1 (Rank: 6/193) | Comprehensive Evaluation 2/233 (2023-2024), 5/195 (2024-2025)
-  <br> **Awards:** National Scholarship for Undergraduate Students (2023-2024, 2024-2025)
-  <br> *<small>西北工业大学 (985) | 计算机科学与技术 | GPA 3.905/4.1, Top 3% (Comprehensive)，连续两年荣获国家奖学金。</small>*
-
-<br>
-
-<span class='anchor' id='-awards'></span>
+<span class='anchor' id='honors and awards'></span>
 # 🏆 Honors and Awards / 荣誉奖项
 
 **Honor / 荣誉**
@@ -143,7 +133,15 @@ In my view, Artificial Intelligence has achieved superhuman proficiency in speci
 **Project Design / 作品设计赛**
 - **Second Prize**, National College Student Software Innovation Contest (Northwest Region) <br> *<small>全国大学生软件创新大赛西北区 **二等奖**</small>* `2025`
 
+<br>
 
+<span class='anchor' id='-educations'></span>
+# 📖 Educations / 教育背景
+
+- **Northwestern Polytechnical University (NWPU)** | *Computer Science and Technology* | Sep 2023 - Jun 2027 
+  <br> **GPA:** 3.905 / 4.1 (Rank: 6/193) | Comprehensive Evaluation 2/233 (2023-2024), 5/195 (2024-2025)
+  <br> **Awards:** National Scholarship for Undergraduate Students (2023-2024, 2024-2025)
+  <br> *<small>西北工业大学 (985) | 计算机科学与技术 | GPA 3.905/4.1, Top 3% (Comprehensive)，连续两年荣获国家奖学金。</small>*
 
 
 
