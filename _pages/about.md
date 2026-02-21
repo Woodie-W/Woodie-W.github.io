@@ -21,7 +21,11 @@ redirect_from:
 
 I am currently an undergraduate student in Computer Science and Technology at **Northwestern Polytechnical University (NWPU)**, expected to graduate in 2027. My research interests broadly lie at the intersection of **Machine Learning, Quantum Machine Learning (QML), and Brain-inspired AI Agents**. Currently, I am fortunate to be a research intern at the Tsinghua Laboratory of Brain and Intelligence (THBI) and the Institute for AI Industry Research, Tsinghua University (THU AIR). Prior to my research journey, I was an active competitive programmer and won multiple Gold and Silver Medals in the ICPC (International Collegiate Programming Contest).
 
-我目前是**西北工业大学 (NWPU)** 计算机科学与技术专业的本科生，预计将于 2027 年毕业。我的研究兴趣集中在**机器学习、量子机器学习 (QML) 以及类脑人工智能体 (AI Agents)** 的交叉领域。目前，我有幸在清华大学脑与智能实验室 (THU THBI) 以及清华大学智能产业研究院 (THU AIR) 进行科研实习。在开启科研生涯之前，我曾活跃于算法竞赛领域，并在 ICPC 国际大学生程序设计竞赛中荣获多项金奖与银奖。
+我目前是**西北工业大学 (NWPU)** 计算机科学与技术专业的本科生，预计将于 2027 年毕业。
+我有着广泛的学科兴趣。我从小对数学学科充满热情，我的高中阶段于成都七中学习数学竞赛。虽然失利（2021年联赛192），这为我参加竞赛与科研提供了坚实的思维与学习能力基础。我严谨与系统性的思考能力让我在数学，物理，算法与计算机系统能力的竞赛获得佳绩。
+近年来，我逐渐开始探索感兴趣的研究方向。我有幸在周千里教授的指导下学习量子机器学习，并且完成了第一篇论文。 
+我有幸通过CLS-CIBR-IDG神经与认知科学暑期培训班，AIR冬令营等途径加入顶尖实验室实习，探索了人工智能交叉领域，如脑电图解码，大模型智能体。
+
 
 <br>
 
@@ -46,7 +50,7 @@ I am currently an undergraduate student in Computer Science and Technology at **
   <br> *<small>We propose an interpretable quantum multimodal fusion network based on evidence theory.</small>*
   <br> *<small>我们提出了一种基于证据理论的可解释量子多模态融合网络，优势体现于参数量、可并行性及可解释性，进行了完备的泛化性测试与消融实验。</small>*
 
-- **CRCC: Contrast-based Robust Cross-Subject and Cross-Site Representation Learning for EEG** Paper will release after reviewing
+- **CRCC: Contrast-based Robust Cross-Subject and Cross-Site Representation Learning for EEG** (Paper will release after reviewing)
   <br> Xiaobin Wong, Zhonghua Zhao, Haoran Guo, Zhengyi Liu, **Yu Wu**, Feng Yan, Zhiren Wang, Sen Song.
   <br> *Manuscript submitted for publication in the **International Conference on Machine Learning (ICML)** (2026).*
   <br> *<small>We builds a robust cross-subject and cross-site EEG model for precision psychiatry through contrastive and reinforcement learning.</small>*
@@ -105,13 +109,16 @@ I am currently an undergraduate student in Computer Science and Technology at **
 - **First Prize**, 6th NWPU College Mathematics Competition <br> *<small>第六届西北工业大学大学生数学竞赛 **一等奖**</small>* `2025`
 - **First Prize**, 5th NWPU College Mathematics Competition <br> *<small>第五届西北工业大学大学生数学竞赛 **一等奖**</small>* `2024`
 - **Third Prize (Individual)**, 2nd International Mechanics Contest (University Level) <br> *<small>第二届国际理论力学竞赛校赛 个人赛 **三等奖**</small>* `2025`
-- **Second Prize (Team) | 2nd Runner-up & Third Prize (Individual)**, 1st International Mechanics Contest (University Level) <br> *<small>第一届国际理论力学竞赛校赛 团队赛 **二等奖 | 季军**，个人赛 **三等奖**</small>* `2024`
+- **Second Prize** (Team) & Third Prize** (Individual), 1st International Mechanics Contest (University Level) <br> *<small>第一届国际理论力学竞赛校赛 团队赛 **二等奖 | 季军**，个人赛 **三等奖**</small>* `2024`
 
 
 <br>
 
 **Project Design / 作品设计赛**
 - **Second Prize**, National College Student Software Innovation Contest (Northwest Region) <br> *<small>全国大学生软件创新大赛西北区 **二等奖**</small>* `2025`
+
+
+
 
 
 
