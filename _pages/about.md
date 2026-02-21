@@ -28,7 +28,7 @@ I am currently an undergraduate student in Computer Science and Technology at **
 <span class='anchor' id='-news'></span>
 # 🔥 News / 最新动态
 
-- **[2026.01]** Joined the Institute for AI Industry Research, Tsinghua University (THU AIR) as a research intern, focusing on brain-inspired Deep Research Agents. / 参加清华air冬令营，致力于类脑认知DeepResearch智能体的研发。
+- **[2026.01]** Joined the Institute for AI Industry Research, Tsinghua University (THU AIR) as a research intern, focusing on brain-inspired Deep Research Agents. / 参加清华air冬令营，致力于类脑认知 DeepResearch 智能体的研发。
 - **[2026.01]** Submitted a first-author paper on Quantum Multimodal Fusion Networks to *IEEE Transactions on Cybernetics (TCYB)*. / 以独立一作身份向 *IEEE TCYB* 投递量子多模态融合网络文章 [[arXiv]](https://arxiv.org/abs/2601.07856)。
 - **[2025.08]** Won the second prize at the 9th National Student Computer System Capability Challenge (NSCSCC 2025) Individual Competition*. / 荣获2025年全国大学生计算机系统能力大赛CPU设计赛（龙芯杯）个人赛二等奖。
 - **[2025.07]** Participated in the Tsinghua-PKU CLS-McGovern-CIDR Summer School (Best Team Award) and joined THU THBI, manuscript submitted for *ICML(2026)* . / 清华-北大神经与认知科学暑期班获最佳团队，并进入清华大学脑与智能实验室实习，一篇 *ICML(2026)* 在投。
