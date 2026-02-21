@@ -115,7 +115,7 @@ In my view, Artificial Intelligence has achieved superhuman proficiency in speci
 
 <br>
 **Computer Systems / 计算机系统能力竞赛**
-- **Second Prize**, "Loongson Cup" National College Student Computer Systems Ability Competition (Individual Track) <br> *<small>“龙芯杯”全国大学生计算机系统能力培养大赛个人赛 **二等奖**</small>* `2025`
+- **Second Prize**, "Loongson Cup" National College Student Computer Systems Ability Competition (Individual Track) [[Code]](https://github.com/Woodie-W/nscscc2025_grs_048)<br> *<small>“龙芯杯”全国大学生计算机系统能力培养大赛个人赛 **二等奖**</small>* `2025`
 
 <br>
 **Mathematics & Physics / 数理基础学科竞赛**
