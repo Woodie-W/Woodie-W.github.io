@@ -27,7 +27,7 @@ In recent years, I have actively begun exploring my research interests. I am ext
 
 Furthermore, I am honored to have gained research internship opportunities at top-tier laboratories through competitive programs such as the CIBR-CLS-IDG Joint Summer School on Neuroscience and Cognitive Science and the THU AIR Winter Camp. These experiences have allowed me to delve deeply into interdisciplinary AI research, including EEG decoding and Large Language Model Agents.
 
-In my view, while Artificial Intelligence has achieved superhuman proficiency in specific tasks (e.g., pattern recognition, strategic gaming), their ability in handling complex tasks still falls short. The next frontier lies in generalizing these capabilities to the messy, complex real world. My wish is to bridge the gap between high-level AI capabilities and real-world applications to truly liberate productivity. Specifically, I am interested in:
+In my view, Artificial Intelligence has achieved superhuman proficiency in specific tasks (e.g., pattern recognition, strategic gaming), their ability in handling complex tasks still falls short. The next frontier lies in generalizing these capabilities to the messy, complex real world. My wish is to bridge the gap between high-level AI capabilities and real-world applications to truly liberate productivity. Specifically, I am interested in:
 
 - **LLM-based Agents:** Developing agents capable of complex workflows and environments, stronger reasoning skills and memory capabilities.
 - **Fundamental LLM Capabilities:** Enhancing the core reasoning efficiency and long-context memory of Large Language Models.
