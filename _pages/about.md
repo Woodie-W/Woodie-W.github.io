@@ -40,13 +40,13 @@ I am currently an undergraduate student in Computer Science and Technology at **
 <span class='anchor' id='-publications'></span>
 # 📝 Preprints & Publications / 论文发表
 
-- **Feature Entanglement-based Quantum Multimodal Fusion Neural Network**
+- **Feature Entanglement-based Quantum Multimodal Fusion Neural Network** [https://arxiv.org/abs/2601.07856]
   <br> **Yu Wu**, Qianli Zhou, et al.
   <br> *Manuscript submitted for publication in the **IEEE Transactions on Cybernetics (TCYB)** (2026).*
   <br> *<small>We propose an interpretable quantum multimodal fusion network based on evidence theory.</small>*
   <br> *<small>我们提出了一种基于证据理论的可解释量子多模态融合网络，优势体现于参数量、可并行性及可解释性，进行了完备的泛化性测试与消融实验。</small>*
 
-- **CRCC: Contrast-based Robust Cross-Subject and Cross-Site Representation Learning for EEG**
+- **CRCC: Contrast-based Robust Cross-Subject and Cross-Site Representation Learning for EEG** Paper will release after reviewing
   <br> Xiaobin Wong, Zhonghua Zhao, Haoran Guo, Zhengyi Liu, **Yu Wu**, Feng Yan, Zhiren Wang, Sen Song.
   <br> *Manuscript submitted for publication in the **International Conference on Machine Learning (ICML)** (2026).*
   <br> *<small>We builds a robust cross-subject and cross-site EEG model for precision psychiatry through contrastive and reinforcement learning.</small>*
