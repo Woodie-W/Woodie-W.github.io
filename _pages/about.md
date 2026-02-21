@@ -98,15 +98,14 @@ In my view, Artificial Intelligence has achieved superhuman proficiency in speci
 
 <br>
 
-<span class='anchor' id='honors and awards'></span>
+<span class='anchor' id='honors-and-awards'></span>
 # 🏆 Honors and Awards / 荣誉奖项
 
-**Honor / 荣誉**
+**Honors / 荣誉**
 - **2024-2025 National Scholarship for Undergraduate Students** <br> *<small>2024-2025学年度本专科生国家奖学金</small>* 
 - **2023-2024 National Scholarship for Undergraduate Students** <br> *<small>2023-2024学年度本专科生国家奖学金</small>* 
 
 <br>
-
 **Competitive Programming / 程序设计竞赛**
 - **Gold Medal**, 50th ICPC Invitational Contest (Xi'an, Nanchang) <br> *<small>第 50 届 ICPC 国际大学生程序设计竞赛邀请赛 (西安, 南昌站) **金奖**</small>* `2025`
 - **Gold Medal, Runner-up**, 13th Shaanxi Provincial Collegiate Programming Contest <br> *<small>第 13 届陕西省大学生程序设计竞赛 **金奖 | 亚军**</small>* `2025`
@@ -115,12 +114,10 @@ In my view, Artificial Intelligence has achieved superhuman proficiency in speci
 - **Silver Medal**, 49th ICPC Regional Contest (Kunming, Hangzhou) <br> *<small>第 49 届 ICPC 国际大学生程序设计竞赛区域赛 (昆明站, 杭州站) **银奖**</small>* `2024`
 
 <br>
-
 **Computer Systems / 计算机系统能力竞赛**
 - **Second Prize**, "Loongson Cup" National College Student Computer Systems Ability Competition (Individual Track) <br> *<small>“龙芯杯”全国大学生计算机系统能力培养大赛个人赛 **二等奖**</small>* `2025`
 
 <br>
-
 **Mathematics & Physics / 数理基础学科竞赛**
 - 第六届西北工业大学大学生数学竞赛 **一等奖** `2025`
 - 第五届西北工业大学大学生数学竞赛 **一等奖** `2024`
@@ -129,13 +126,12 @@ In my view, Artificial Intelligence has achieved superhuman proficiency in speci
 - **Second Runner-up** (Mechanics Test), 16th Pan-Pearl River Delta and Chinese Elite Schools Physics Olympiad<br> *<small>第十六届泛珠三角物理奥林匹克暨中华名校邀请赛 力学基础试 **第三名** </small>* `2020`
 
 <br>
-
 **Project Design / 作品设计赛**
 - **Second Prize**, National College Student Software Innovation Contest (Northwest Region) <br> *<small>全国大学生软件创新大赛西北区 **二等奖**</small>* `2025`
 
 <br>
 
-<span class='anchor' id='-educations'></span>
+<span class='anchor' id='educations'></span>
 # 📖 Educations / 教育背景
 
 - **Northwestern Polytechnical University (NWPU)** | *Computer Science and Technology* | Sep 2023 - Jun 2027 
