@@ -131,7 +131,7 @@ In my view, Artificial Intelligence has achieved superhuman proficiency in speci
 
 <br>
 
-<span class='anchor' id='educations'></span>
+<span class='anchor' id='-educations'></span>
 # 📖 Educations / 教育背景
 
 - **Northwestern Polytechnical University (NWPU)** | *Computer Science and Technology* | Sep 2023 - Jun 2027 
