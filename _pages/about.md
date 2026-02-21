@@ -91,8 +91,13 @@ I am currently an undergraduate student in Computer Science and Technology at **
 - **Gold Medal**, 50th ICPC Invitational Contest (Xi'an, Nanchang) <br> *<small>第 50 届 ICPC 国际大学生程序设计竞赛邀请赛 (西安, 南昌站) **金奖**</small>* `2025`
 - **Gold Medal | Runner-up**, 13th Shaanxi Provincial Collegiate Programming Contest <br> *<small>第 13 届陕西省大学生程序设计竞赛 **金奖 | 亚军**</small>* `2025`
 - **Silver Medal**, 50th ICPC Regional Contest (Wuhan 51st, Chengdu 34th) & Star Participant (Xi'an 17th) <br> *<small>第 50 届 ICPC 国际大学生程序设计竞赛区域赛 (武汉站 51st, 成都站 34th) **银奖**，西安站 **打星 17th**</small>* `2025`
-- **Silver Medal**, The 2024 ICPC Asia East Continent Final Contest (EC-Final) <br> *<small>2024 年 ICPC 亚洲区东部大陆总决赛 **银奖**</small>* `2024`
+- **Silver Medal**, The 2024 ICPC Asia East Continent Final Contest (EC-Final) <br> *<small>2024 年 ICPC 亚洲区域总决赛 **银奖**</small>* `2024`
 - **Silver Medal**, 49th ICPC Regional Contest (Kunming, Hangzhou) <br> *<small>第 49 届 ICPC 国际大学生程序设计竞赛区域赛 (昆明站, 杭州站) **银奖**</small>* `2024`
+
+<br>
+
+**Computer Systems / 计算机系统能力**
+- **Second Prize**, "Loongson Cup" National College Student Computer Systems Ability Competition (Individual Track) <br> *<small>“龙芯杯”全国大学生计算机系统能力培养大赛个人赛 **二等奖**</small>* `2025`
 
 <br>
 
@@ -102,12 +107,11 @@ I am currently an undergraduate student in Computer Science and Technology at **
 - **Third Prize (Individual)**, 2nd International Mechanics Contest (University Level) <br> *<small>第二届国际理论力学竞赛校赛 个人赛 **三等奖**</small>* `2025`
 - **Second Prize (Team) | 2nd Runner-up & Third Prize (Individual)**, 1st International Mechanics Contest (University Level) <br> *<small>第一届国际理论力学竞赛校赛 团队赛 **二等奖 | 季军**，个人赛 **三等奖**</small>* `2024`
 
-<br>
-
-**Computer Systems / 计算机系统能力**
-- **Second Prize**, "Loongson Cup" National College Student Computer Systems Ability Competition (Individual Track) <br> *<small>“龙芯杯”全国大学生计算机系统能力培养大赛个人赛 **二等奖**</small>* `2025`
 
 <br>
 
 **Project Design / 作品设计赛**
 - **Second Prize**, National College Student Software Innovation Contest (Northwest Region) <br> *<small>全国大学生软件创新大赛西北区 **二等奖**</small>* `2025`
+
+
+
