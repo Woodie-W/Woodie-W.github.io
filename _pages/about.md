@@ -98,7 +98,7 @@ In my view, Artificial Intelligence has achieved superhuman proficiency in speci
 
 <br>
 
-<span class='anchor' id='honors-and-awards'></span>
+<span class='anchor' id='-honors-and-awards'></span>
 # 🏆 Honors and Awards / 荣誉奖项
 
 **Honors / 荣誉**
