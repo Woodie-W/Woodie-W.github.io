@@ -6,9 +6,9 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-title                    : "Lorem ipsum"
-description              : "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ornare aliquet ipsum, ac tempus justo dapibus sit amet. "
-repository               : "RayeRen/acad-homepage.github.io"
+title                    : "Yu Wu (吴语) - Homepage"
+description              : "Personal academic homepage of Yu Wu."
+repository               : "Woodie-W/Woodie-W.github.io"
 google_scholar_stats_use_cdn : true
 
 # google analytics
@@ -21,16 +21,19 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 
 # Site Author
 author:
-  name             : "Lorem ipsum"
-  avatar           : "images/android-chrome-512x512.png"
-  bio              : "Lorem ipsum College"
-  location         : "Beijing, China"
-  employer         :
-  pubmed           : 
-  googlescholar    : "https://scholar.google.com/citations?user=YOUR_GOOGLE_SCHOLAR_ID"
-  email            : "Lorem@ipsum.com"
-  researchgate     :  # e.g., "https://www.researchgate.net/profile/yourprofile"
-  uri              :
+  name     : "Yu Wu (吴语)"
+  avatar   : "/images/me.jpg"    # 【注意】我们下一步会上传这张名为 me.jpg 的照片
+  bio      : "Undergraduate CS Student @NWPU | Exploring AI & Brain-inspired Computing"
+  location : "Xi'an, China"
+  employer : "Northwestern Polytechnical University"
+  email    : "wuyu2837@mail.nwpu.edu.cn"
+  links:
+    - label: "Email"
+      icon: "fas fa-fw fa-envelope-square"
+      url: "mailto:wuyu2837@mail.nwpu.edu.cn"
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/Woodie-W"
   bitbucket        :
   codepen          :
   dribbble         :
