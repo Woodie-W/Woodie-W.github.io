@@ -8,6 +8,7 @@
 # Site Settings
 title                    : "Yu Wu (吴语) - Homepage"
 repository               : "Woodie-W/Woodie-W.github.io"
+description              : ""
 google_scholar_stats_use_cdn : true
 
 # google analytics
