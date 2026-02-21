@@ -21,7 +21,7 @@ redirect_from:
 
 I'm currently an undergraduate student majoring in Computer Science and Technology at Northwestern Polytechnical University (NWPU).
 
-I participated in the Mathematics Olympiad during my years at Chengdu No. 7 High School. Although the outcome was modest, this training laid a profound foundation for my analytical thinking and fast-learning capabilities, empowering my subsequent journey in scientific research and various contests. I also took additional courses in Advanced Algebra, Operations Research, Convex Optimization, and other specialized mathematics courses.
+I participated in the Mathematics Olympiad during my years at Chengdu No. 7 High School, that laid a profound foundation for my analytical thinking and fast-learning capabilities, empowering my subsequent journey in scientific research and various contests. I also took additional courses in Advanced Algebra, Operations Research, Convex Optimization, and other specialized mathematics courses.
 
 In recent years, I have actively begun exploring my research interests. I am extremely fortunate to study quantum machine learning under the guidance of [Prof. Qianli Zhou](https://jszy.nwpu.edu.cn/2025010088.html), where I have completed my first academic paper. 
 
@@ -35,7 +35,7 @@ In my view, while Artificial Intelligence has achieved superhuman proficiency in
 
 我是 西北工业大学 (NWPU) 计算机科学与技术专业的 23 级在读本科生。
 
-我高中于成都七中学习数学竞赛。虽然失利，这为我参加竞赛与科研提供了坚实的思维与学习能力基础。另外我也辅修了高等代数，运筹学，凸优化等数学专业课程。
+我高中于成都七中学习数学竞赛，这为我参加竞赛与科研提供了坚实的思维与学习能力基础。另外我也辅修了高等代数，运筹学，凸优化等数学专业课程。
 
 近年来，我逐渐开始探索感兴趣的研究方向。我有幸在 [周千里教授](https://jszy.nwpu.edu.cn/2025010088.html) 的指导下学习量子机器学习，并且完成了第一篇论文。
 
