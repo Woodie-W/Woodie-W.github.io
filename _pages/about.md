@@ -19,17 +19,20 @@ redirect_from:
 
 # 👨‍🎓 Biography / 个人简介
 
-I'm currently an undergraduate student majoring in Computer Science and Technology at **Northwestern Polytechnical University (NWPU)**, expected to graduate in 2027. 
-<br>
-I have a broad range of academic interests. Driven by a childhood passion for mathematics, I participated in the Mathematics Olympiad during my high school years at Chengdu No. 7 High School. Although the outcome was modest (scoring 192 in the 2021 National High School Mathematics League), this rigorous training laid a profound foundation for my analytical thinking and fast-learning capabilities, empowering my subsequent journey in scientific research and various contests. My systematic and rigorous problem-solving skills have enabled me to achieve excellent performance in competitions spanning mathematics, physics, competitive programming, and computer systems.
-<br>
-In recent years, I have actively begun exploring my research interests. I am extremely fortunate to study Quantum Machine Learning (QML) under the guidance of [Prof. Qianli Zhou](https://jszy.nwpu.edu.cn/2025010088.html), where I have completed my first academic paper. 
-<br>
-Furthermore, I am honored to have gained research internship opportunities at top-tier laboratories through competitive programs such as the CLS-McGovern-IDG Summer School in Neuroscience and Cognitive Sciences and the THU AIR Winter Camp. These experiences have allowed me to delve deeply into interdisciplinary AI research, including EEG decoding and Large Language Model (LLM) Agents.
+I'm currently an undergraduate student majoring in Computer Science and Technology at Northwestern Polytechnical University (NWPU), expected to graduate in 2027. 
 
-我目前是**西北工业大学 (NWPU)** 计算机科学与技术专业的本科生，预计将于 2027 年毕业。<br>
-我有着广泛的学科兴趣。我从小对数学学科充满热情，我的高中阶段于成都七中学习数学竞赛。虽然失利（2021年联赛192），这为我参加竞赛与科研提供了坚实的思维与学习能力基础。我严谨与系统性的思考能力让我在数学，物理，算法与计算机系统能力的竞赛获得佳绩。<br>
-近年来，我逐渐开始探索感兴趣的研究方向。我有幸在[周千里教授](https://jszy.nwpu.edu.cn/2025010088.html)的指导下学习量子机器学习，并且完成了第一篇论文。<br>
+I have a broad range of academic interests. Driven by a childhood passion for mathematics, I participated in the Mathematics Olympiad during my years at Chengdu No. 7 High School. Although the outcome was modest (scoring 192 in the 2021 Mathematics League), this rigorous training laid a profound foundation for my analytical thinking and fast-learning capabilities, empowering my subsequent journey in scientific research and various contests. My systematic and rigorous problem-solving skills have enabled me to achieve excellent performance in competitions spanning mathematics, physics, competitive programming, and computer systems.
+
+In recent years, I have actively begun exploring my research interests. I am extremely fortunate to study quantum machine learning under the guidance of [Prof. Qianli Zhou](https://jszy.nwpu.edu.cn/2025010088.html), where I have completed my first academic paper. 
+
+Furthermore, I am honored to have gained research internship opportunities at top-tier laboratories through competitive programs such as the CIBR-CLS-IDG Joint Summer School on Neuroscience and Cognitive Science and the THU AIR Winter Camp. These experiences have allowed me to delve deeply into interdisciplinary AI research, including EEG decoding and Large Language Model Agents.
+
+我是 西北工业大学 (NWPU) 计算机科学与技术专业的 23 级在读本科生。
+
+我有着广泛的学科兴趣。我从小对数学学科充满热情，我高中阶段于成都七中学习数学竞赛。虽然失利，但这为我参加竞赛与科研提供了坚实的思维与学习能力基础。我严谨与系统性的思考能力让我在数学，物理，算法与计算机系统能力的竞赛获得佳绩。
+
+近年来，我逐渐开始探索感兴趣的研究方向。我有幸在[周千里教授](https://jszy.nwpu.edu.cn/2025010088.html)的指导下学习量子机器学习，并且完成了第一篇论文。
+
 我有幸通过CLS-CIBR-IDG神经与认知科学暑期培训班，AIR冬令营等途径加入顶尖实验室实习，探索了人工智能交叉领域，如脑电图解码，大模型智能体。
 
 
