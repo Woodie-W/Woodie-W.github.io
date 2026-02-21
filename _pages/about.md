@@ -113,7 +113,7 @@ In my view, while Artificial Intelligence has achieved superhuman proficiency in
 
 **Competitive Programming / 程序设计竞赛**
 - **Gold Medal**, 50th ICPC Invitational Contest (Xi'an, Nanchang) <br> *<small>第 50 届 ICPC 国际大学生程序设计竞赛邀请赛 (西安, 南昌站) **金奖**</small>* `2025`
-- **Gold Medal | Runner-up**, 13th Shaanxi Provincial Collegiate Programming Contest <br> *<small>第 13 届陕西省大学生程序设计竞赛 **金奖 | 亚军**</small>* `2025`
+- **Gold Medal, Runner-up**, 13th Shaanxi Provincial Collegiate Programming Contest <br> *<small>第 13 届陕西省大学生程序设计竞赛 **金奖 | 亚军**</small>* `2025`
 - **Silver Medal**, 50th ICPC Regional Contest (Wuhan 51st, Chengdu 34th) & Star Participant (Xi'an 17th) <br> *<small>第 50 届 ICPC 国际大学生程序设计竞赛区域赛 (武汉站 51st, 成都站 34th) **银奖**，西安站 **打星 17th**</small>* `2025`
 - **Silver Medal**, The 2024 ICPC Asia East Continent Final Contest (EC-Final) <br> *<small>2024 年 ICPC 亚洲区域总决赛 **银奖**</small>* `2024`
 - **Silver Medal**, 49th ICPC Regional Contest (Kunming, Hangzhou) <br> *<small>第 49 届 ICPC 国际大学生程序设计竞赛区域赛 (昆明站, 杭州站) **银奖**</small>* `2024`
@@ -126,11 +126,11 @@ In my view, while Artificial Intelligence has achieved superhuman proficiency in
 <br>
 
 **Mathematics & Physics / 数理基础学科**
-- 第六届西北工业大学大学生数学竞赛 **一等奖**</small>* `2025`
-- 第五届西北工业大学大学生数学竞赛 **一等奖**</small>* `2024`
-- 第一届西北工业大学大学生国际理论力学竞赛校赛 团队赛 **二等奖 | 季军**，个人赛 **三等奖**</small>* `2024`
-- 2021年全国高中数学联赛 **一等奖** （192）</small>* `2021`
-- **Second Runner-up** (Mechanics Test), 16th Pan-Pearl River Delta and Chinese Elite Schools Physics Olympiad<br> *<small>第十六届泛珠三角物理奥林匹克暨中华名校邀请赛 力学基础试 **第三名**</small>* `2020`
+- 第六届西北工业大学大学生数学竞赛 **一等奖** `2025`
+- 第五届西北工业大学大学生数学竞赛 **一等奖** `2024`
+- 第一届西北工业大学大学生国际理论力学竞赛校赛 团队赛 **二等奖 季军**，个人赛 **三等奖** `2024`
+- 2021年全国高中数学联赛 **一等奖** （192） `2021`
+- **Second Runner-up** (Mechanics Test), 16th Pan-Pearl River Delta and Chinese Elite Schools Physics Olympiad<br> *<small>第十六届泛珠三角物理奥林匹克暨中华名校邀请赛 力学基础试 **第三名** </small>* `2020`
 <br>
 
 **Project Design / 作品设计赛**
