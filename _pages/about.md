@@ -137,7 +137,7 @@ In my view, Artificial Intelligence has achieved superhuman proficiency in speci
 - **Northwestern Polytechnical University (NWPU)** | *Computer Science and Technology* | Sep 2023 - Jun 2027 
   <br> **GPA:** 3.905 / 4.1 (Rank: 6/193) | Comprehensive Evaluation 2/233 (2023-2024), 5/195 (2024-2025)
   <br> **Awards:** National Scholarship for Undergraduate Students (2023-2024, 2024-2025)
-  <br> *<small>西北工业大学 (985) | 计算机科学与技术 | GPA 3.905/4.1, Top 3% (Comprehensive)，连续两年荣获国家奖学金。</small>*
+  <br> *<small>西北工业大学 (985) | 计算机科学与技术 | GPA 3.908/4.1, Top 3% (Comprehensive)，连续两年荣获国家奖学金。</small>*
 
 
 
