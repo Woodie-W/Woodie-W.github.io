@@ -145,7 +145,7 @@ In my view, Artificial Intelligence has achieved superhuman proficiency in speci
 
 <br>
 **Project Design / 作品设计赛**
-- 全国大学生软件创新大赛西北区 **二等奖**</small>* `2025`
+- 全国大学生软件创新大赛西北区 **二等奖** `2025`
 
 <br>
 
