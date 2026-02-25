@@ -113,7 +113,7 @@ In my view, Artificial Intelligence has achieved superhuman proficiency in speci
 - **Silver Medal**, The 2024 ICPC Asia East Continent Final Contest (EC-Final) <br> *<small>2024 年 ICPC 亚洲区域总决赛 **银奖**</small>* `2024`
 
 <details markdown="1">
-<summary style="cursor: pointer; font-weight: bold; color: #007bff;">点击展开查看更多 / Show more ▾</summary>
+<summary style="cursor: pointer; font-weight: bold;">点击展开查看更多 / Show more ▾</summary>
 
 - **Silver Medal**, 49th ICPC Regional Contest (Kunming, Hangzhou) <br> *<small>第 49 届 ICPC 国际大学生程序设计竞赛区域赛 (昆明站, 杭州站) **银奖**</small>* `2024`
 
