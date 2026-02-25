@@ -55,7 +55,7 @@ In my view, Artificial Intelligence has achieved superhuman proficiency in speci
 - **[2026.01]** Joined the Institute for AI Industry Research, Tsinghua University (THU AIR) as a research intern, focusing on brain-inspired Deep Research Agents. / 参加清华air冬令营，参与类脑认知 DeepResearch 智能体的研发。
 - **[2026.01]** Submitted a first-author paper on Quantum Multimodal Fusion Networks to *IEEE Transactions on Cybernetics (TCYB)*. / 以独立一作身份向 *IEEE TCYB* 投递量子多模态融合网络文章 [[arXiv]](https://arxiv.org/abs/2601.07856)。
 - **[2025.08]** Won the second prize at the 9th National Student Computer System Capability Challenge (NSCSCC 2025) Individual Competition. / 荣获2025年全国大学生计算机系统能力大赛CPU设计赛（龙芯杯）个人赛二等奖  [[Code]](https://github.com/Woodie-W/nscscc2025_grs_048)。
-- **[2025.07]** Participated in the Tsinghua-PKU CLS-McGovern-CIDR Summer School (Best Team Award) and joined THU THBI, manuscript submitted for *ICML(2026)* . / 清华-北大神经与认知科学暑期班获最佳团队，并进入清华大学脑与智能实验室实习，一篇 *ICML(2026)* 在投 [[arXiv]](https://arxiv.org/abs/2602.19138)。
+- **[2025.07]** Participated in the Tsinghua-PKU CLS-McGovern-CIDR Summer School (Best Team Award) and joined THU THBI, manuscript submitted for *ICML(2026)* . / 清华-北大神经与认知科学暑期班获最佳团队，并进入清华大学脑与智能实验室实习，一篇 *ICML* 在投 [[arXiv]](https://arxiv.org/abs/2602.19138)。
 - **[2025.05]** Won the Gold Medal at the 50th ICPC Invitational Contest and the 13th Shaanxi Provincial Collegiate Programming Contest (Runner-up). / 荣获第 50 届 ICPC 邀请赛金奖及陕西省大学生程序设计竞赛金奖（亚军）。
 - **[2024.12]** Won the Silver Medal at the 49th ICPC Asia East Continent Final Contest. / 荣获第 49 届 ICPC 亚洲区域总决赛银奖。
 
