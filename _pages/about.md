@@ -116,6 +116,7 @@ In my view, Artificial Intelligence has achieved superhuman proficiency in speci
 <summary style="cursor: pointer; font-weight: bold;">Show more ▾</summary>
 - **Silver Medal**, 49th ICPC Regional Contest (Kunming, Hangzhou) <br> *<small>第 49 届 ICPC 国际大学生程序设计竞赛区域赛 (昆明站, 杭州站) **银奖**</small>* `2024`
 - **Gold Medal, Third runner-up**, 13th Shaanxi Provincial Collegiate Programming Contest <br> *<small>第 13 届陕西省大学生程序设计竞赛 **金奖 | 季军**</small>* `2024`
+- **Bronze Medal**, The 2023 ICPC Asia Hefei Regional Contest<br> *<small>第 48 届 ICPC 国际大学生程序设计竞赛区域赛合肥站 **铜奖**</small>* `2023`
 - 2025 年西北工业大学大学生实验技能竞赛 **一等奖** `2025`
 - 第十五届蓝桥杯全国软件和信息技术专业人才大赛陕西赛区C/C++程序设计大学生A组 **一等奖** `2024`
 - 2024 年西北工业大学大学生实验技能竞赛 **一等奖** `2024`
