@@ -29,7 +29,7 @@ Furthermore, I am honored to have gained research internship opportunities at to
 
 In my view, Artificial Intelligence has achieved superhuman proficiency in specific tasks (e.g., pattern recognition, strategic gaming), their ability in handling complex tasks still falls short. The next frontier lies in generalizing these capabilities to the messy, complex real world. My wish is to bridge the gap between high-level AI capabilities and real-world applications to truly liberate productivity. Specifically, I am interested in:
 
-- **LLM-based Agents:** Developing agents capable of complex workflows and environments, stronger reasoning skills and engineering capabilities.
+- **LLM-based Agents:** Developing agents for complex workflows and environments, stronger reasoning skills and engineering capabilities.
 - **Fundamental LLM Capabilities:** Enhancing the core reasoning efficiency and long-context memory of Large Language Models.
 - **LLM Training Auxiliary:** Facilitating the self-iteration of models through improved training infrastructure, including automated high-quality data processing, synthesis and model evaluation.
 
@@ -105,6 +105,7 @@ In my view, Artificial Intelligence has achieved superhuman proficiency in speci
 - **2024-2025 National Scholarship for Undergraduate Students** <br> *<small>2024-2025学年度本专科生国家奖学金</small>* 
 - **2023-2024 National Scholarship for Undergraduate Students** <br> *<small>2023-2024学年度本专科生国家奖学金</small>* 
 
+
 <br>
 **Competitive Programming / 程序设计竞赛**
 - **Gold Medal**, 50th ICPC Invitational Contest (Xi'an, Nanchang) <br> *<small>第 50 届 ICPC 国际大学生程序设计竞赛邀请赛 (西安, 南昌站) **金奖**</small>* `2025`
@@ -125,6 +126,7 @@ In my view, Artificial Intelligence has achieved superhuman proficiency in speci
 <br>
 **Computer Systems / 计算机系统能力竞赛**
 - **Second Prize**, "Loongson Cup" National College Student Computer Systems Ability Competition (Individual Track)<br> *<small>“龙芯杯”全国大学生计算机系统能力培养大赛个人赛 **二等奖**</small>* [[Code]](https://github.com/Woodie-W/nscscc2025_grs_048) `2025`
+
 
 <br>
 **Mathematics & Physics / 数理基础学科竞赛**
@@ -153,7 +155,7 @@ In my view, Artificial Intelligence has achieved superhuman proficiency in speci
 - **Northwestern Polytechnical University (NWPU)** | *Computer Science and Technology* | Sep 2023 - Jun 2027 
   <br> **GPA:** 3.908 / 4.1 (Rank: 6/193) | Comprehensive Evaluation 2/233 (2023-2024), 5/195 (2024-2025)
   <br> **Awards:** National Scholarship for Undergraduate Students (2023-2024, 2024-2025)
-  <br> *<small>西北工业大学 (985) | 计算机科学与技术 | GPA 3.908/4.1, Top 3% (Comprehensive)，连续两年荣获国家奖学金。</small>*
+  <br> *<small>西北工业大学 (985) | 计算机科学与技术 | GPA 3.908/4.1, Top 3% (Comprehensive)，连续两年荣获国家奖学金 </small>*
 
 
 
