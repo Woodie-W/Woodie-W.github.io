@@ -113,14 +113,19 @@ In my view, Artificial Intelligence has achieved superhuman proficiency in speci
 - **Silver Medal**, The 2024 ICPC Asia East Continent Final Contest (EC-Final) <br> *<small>2024 年 ICPC 亚洲区域总决赛 **银奖**</small>* `2024`
 
 <details markdown="1">
-<summary style="cursor: pointer; font-weight: bold;">点击展开查看更多 / Show more ▾</summary>
+<summary style="cursor: pointer; font-weight: bold;">Show more / 点击展开查看更多 ▾</summary>
 
 - **Silver Medal**, 49th ICPC Regional Contest (Kunming, Hangzhou) <br> *<small>第 49 届 ICPC 国际大学生程序设计竞赛区域赛 (昆明站, 杭州站) **银奖**</small>* `2024`
-
+- **Gold Medal, Third runner-up**, 13th Shaanxi Provincial Collegiate Programming Contest <br> *<small>第 13 届陕西省大学生程序设计竞赛 **金奖 | 季军**</small>* `2024`
+- 2025 年西北工业大学大学生实验技能竞赛 **一等奖** `2025`
+- 第十五届蓝桥杯全国软件和信息技术专业人才大赛陕西赛区C/C++程序设计大学生A组 **一等奖** `2024`
+- 2024 年西北工业大学大学生实验技能竞赛 **一等奖** `2024`
+- 2023 年西北工业大学 “ACM-ICPC” 校赛 **一等奖** `2023`
 </details>
 
 
 <br>
+
 **Computer Systems / 计算机系统能力竞赛**
 - **Second Prize**, "Loongson Cup" National College Student Computer Systems Ability Competition (Individual Track)<br> *<small>“龙芯杯”全国大学生计算机系统能力培养大赛个人赛 **二等奖**</small>* [[Code]](https://github.com/Woodie-W/nscscc2025_grs_048) `2025`
 
