@@ -29,9 +29,9 @@ Furthermore, I am honored to have gained research internship opportunities at to
 
 In my view, Artificial Intelligence has achieved superhuman proficiency in specific tasks (e.g., pattern recognition, strategic gaming), their ability in handling complex tasks still falls short. The next frontier lies in generalizing these capabilities to the messy, complex real world. My wish is to bridge the gap between high-level AI capabilities and real-world applications to truly liberate productivity. Specifically, I am interested in:
 
-- **LLM-based Agents:** Developing agents capable of complex workflows and environments, stronger reasoning skills and memory capabilities.
+- **LLM-based Agents:** Developing agents capable of complex workflows and environments, stronger reasoning skills and engineering capabilities.
 - **Fundamental LLM Capabilities:** Enhancing the core reasoning efficiency and long-context memory of Large Language Models.
-- **Self-improving models:** Facilitating the self-iteration of models through improved training infrastructure, including automated high-quality data filtering, processing, synthesis and model evaluation.
+- **LLM Training Auxiliary:** Facilitating the self-iteration of models through improved training infrastructure, including automated high-quality data processing, synthesis and model evaluation.
 
 我是 西北工业大学 (NWPU) 计算机科学与技术专业的 23 级在读本科生。
 
@@ -43,16 +43,16 @@ In my view, Artificial Intelligence has achieved superhuman proficiency in speci
 
 在我的认知中，尽管人工智能在模式识别、博弈等特定任务上已超越人类表现，但其在处理复杂任务的能力仍显不足，核心挑战在于将其的能力泛化至复杂的真实世界。我的愿望是将高水平的 AI 技术落地以解放生产力。具体包括：
 
-- **大模型智能体:** 构建能适应复杂工作流程与环境的智能体，更强的推理研究与记忆能力。
+- **大模型智能体:** 构建能适应复杂工作流程与环境的智能体，更强的推理研究与工程能力。
 - **大模型基础能力:** 提升 LLM 的核心能力，如长上下文记忆与复杂逻辑推理。
-- **大模型辅助训练:** 通过自动化数据处理与评估分析体系，辅助模型训练，推动 AI 的自我训练迭代，减少人工成本。
+- **大模型辅助训练:** 通过自动化数据处理与模型评估分析体系，辅助模型训练，推动 AI 的自我训练迭代，减少人工成本。
 
 <br>
 
 <span class='anchor' id='-news'></span>
 # 🔥 News / 最新动态
 
-- **[2026.01]** Joined the Institute for AI Industry Research, Tsinghua University (THU AIR) as a research intern, focusing on brain-inspired Deep Research Agents. / 参加清华air冬令营，致力于类脑认知 DeepResearch 智能体的研发。
+- **[2026.01]** Joined the Institute for AI Industry Research, Tsinghua University (THU AIR) as a research intern, focusing on brain-inspired Deep Research Agents. / 参加清华air冬令营，参与类脑认知 DeepResearch 智能体的研发。
 - **[2026.01]** Submitted a first-author paper on Quantum Multimodal Fusion Networks to *IEEE Transactions on Cybernetics (TCYB)*. / 以独立一作身份向 *IEEE TCYB* 投递量子多模态融合网络文章 [[arXiv]](https://arxiv.org/abs/2601.07856)。
 - **[2025.08]** Won the second prize at the 9th National Student Computer System Capability Challenge (NSCSCC 2025) Individual Competition. / 荣获2025年全国大学生计算机系统能力大赛CPU设计赛（龙芯杯）个人赛二等奖  [[Code]](https://github.com/Woodie-W/nscscc2025_grs_048)。
 - **[2025.07]** Participated in the Tsinghua-PKU CLS-McGovern-CIDR Summer School (Best Team Award) and joined THU THBI, manuscript submitted for *ICML(2026)* . / 清华-北大神经与认知科学暑期班获最佳团队，并进入清华大学脑与智能实验室实习，一篇 *ICML(2026)* 在投。
@@ -135,7 +135,7 @@ In my view, Artificial Intelligence has achieved superhuman proficiency in speci
 # 📖 Educations / 教育背景
 
 - **Northwestern Polytechnical University (NWPU)** | *Computer Science and Technology* | Sep 2023 - Jun 2027 
-  <br> **GPA:** 3.905 / 4.1 (Rank: 6/193) | Comprehensive Evaluation 2/233 (2023-2024), 5/195 (2024-2025)
+  <br> **GPA:** 3.908 / 4.1 (Rank: 6/193) | Comprehensive Evaluation 2/233 (2023-2024), 5/195 (2024-2025)
   <br> **Awards:** National Scholarship for Undergraduate Students (2023-2024, 2024-2025)
   <br> *<small>西北工业大学 (985) | 计算机科学与技术 | GPA 3.908/4.1, Top 3% (Comprehensive)，连续两年荣获国家奖学金。</small>*
 
