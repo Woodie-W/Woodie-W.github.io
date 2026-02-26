@@ -56,7 +56,7 @@ In my view, Artificial Intelligence has achieved superhuman proficiency in speci
 - **[2026.01]** Submitted a first-author paper on Quantum Multimodal Fusion Networks to *IEEE Transactions on Cybernetics (TCYB)*. / 以独立一作身份向 *IEEE TCYB* 投递量子多模态融合网络文章 [[arXiv]](https://arxiv.org/abs/2601.07856)。
 - **[2025.08]** Won the second prize at the 9th National Student Computer System Capability Challenge (NSCSCC 2025) Individual Competition. / 荣获2025年全国大学生计算机系统能力大赛CPU设计赛（龙芯杯）个人赛二等奖  [[Code]](https://github.com/Woodie-W/nscscc2025_grs_048)。
 - **[2025.07]** Participated in the Tsinghua-PKU CLS-McGovern-CIDR Summer School (Best Team Award) and joined THU THBI, manuscript submitted for *ICML(2026)* . / 清华-北大神经与认知科学暑期班获最佳团队，并进入清华大学脑与智能实验室实习，一篇 *ICML* 在投 [[arXiv]](https://arxiv.org/abs/2602.19138)。
-- **[2025.05]** Won the Gold Medal at the 50th ICPC Invitational Contest and the 13th Shaanxi Provincial Collegiate Programming Contest (Runner-up). / 荣获第 50 届 ICPC 邀请赛金奖及陕西省大学生程序设计竞赛金奖（亚军）。
+- **[2025.05]** Won two Gold Medal at the 2025 ICPC China Invitational Programming Contest and the 13th Shaanxi Provincial Collegiate Programming Contest (Runner-up). / 荣获两枚 2025 年 ICPC 全国邀请赛金奖及陕西省大学生程序设计竞赛金奖（亚军）。
 - **[2024.12]** Won the Silver Medal at the 49th ICPC Asia East Continent Final Contest. / 荣获第 49 届 ICPC 亚洲区域总决赛银奖。
 
 <br>
@@ -108,7 +108,7 @@ In my view, Artificial Intelligence has achieved superhuman proficiency in speci
 
 <br>
 **Competitive Programming / 程序设计竞赛**
-- **Gold Medal**, 50th ICPC Invitational Contest (Xi'an, Nanchang) <br> *<small>第 50 届 ICPC 国际大学生程序设计竞赛邀请赛 (西安, 南昌站) **金奖**</small>* `2025`
+- **Gold Medal**, The 2025 ICPC China National Invitational Programming Contest (Shanxi & Nanchang) <br> *<small>2025 年 ICPC 全国邀请赛 (陕西 & 南昌站) **金奖**</small>* `2025`
 - **Gold Medal, Runner-up**, 13th Shaanxi Provincial Collegiate Programming Contest <br> *<small>第 13 届陕西省大学生程序设计竞赛 **金奖 | 亚军**</small>* `2025`
 - **Silver Medal**, 50th ICPC Regional Contest (Wuhan 51st, Chengdu 34th) & Star Participant (Xi'an 17th) <br> *<small>第 50 届 ICPC 国际大学生程序设计竞赛区域赛 (武汉站 51st, 成都站 34th) **银奖**，西安站 **打星 17th**</small>* `2025`
 - **Silver Medal**, The 2024 ICPC Asia East Continent Final Contest (EC-Final) <br> *<small>2024 年 ICPC 亚洲区域总决赛 **银奖**</small>* `2024`
