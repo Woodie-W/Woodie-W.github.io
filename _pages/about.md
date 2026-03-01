@@ -103,8 +103,8 @@ In my view, Artificial Intelligence has achieved superhuman proficiency in speci
 
 **Honors / 荣誉**
 - **2024-2025 National Scholarship for Undergraduate Students** <br> *<small>2024-2025 学年度本专科生国家奖学金</small>*
+- **2023-2024 National Scholarship for Undergraduate Students** <br> *<small>2023-2024 学年度本专科生国家奖学金</small>*
 - 2024-2025 学年 一等奖学金及优秀大学生
-- **2023-2024 National Scholarship for Undergraduate Students** <br> *<small>2023-2024 学年度本专科生国家奖学金</small>* 
 - 2023-2024 学年 一等奖学金及优秀大学生
 
 <br>
