@@ -53,7 +53,7 @@ In my view, Artificial Intelligence has achieved superhuman proficiency in speci
 # 🔥 News / 最新动态
 
 - **[2026.01]** Joined the Institute for AI Industry Research, Tsinghua University (THU AIR) as a research intern, focusing on brain-inspired Deep Research Agents. / 参加清华air冬令营，参与类脑认知 DeepResearch 智能体的研发。
-- **[2026.01]** Submitted a first-author paper on Quantum Multimodal Fusion Networks to *IEEE Transactions on Cybernetics (TCYB)*. / 以独立一作身份向 *IEEE TCYB* 投递量子多模态融合网络文章 [[arXiv]](https://arxiv.org/abs/2601.07856)。
+- **[2026.01]** Submitted a first-author paper on Quantum Multimodal Fusion Networks to *IEEE TNNLS*. / 以独立一作身份向 *IEEE TNNLS* 投递量子多模态融合网络文章 [[arXiv]](https://arxiv.org/abs/2601.07856)。
 - **[2025.08]** Won the second prize at the 9th National Student Computer System Capability Challenge (NSCSCC 2025) Individual Competition. / 荣获2025年全国大学生计算机系统能力大赛CPU设计赛（龙芯杯）个人赛二等奖  [[Code]](https://github.com/Woodie-W/nscscc2025_grs_048)。
 - **[2025.07]** Participated in the Tsinghua-PKU CLS-McGovern-CIDR Summer School (Best Team Award) and joined THU THBI, manuscript submitted for *ICML(2026)* . / 清华-北大神经与认知科学暑期班获最佳团队，并进入清华大学脑与智能实验室实习，一篇 *ICML* 在投 [[arXiv]](https://arxiv.org/abs/2602.19138)。
 - **[2025.05]** Won two Gold Medal at the 2025 ICPC China Invitational Programming Contest and the 13th Shaanxi Provincial Collegiate Programming Contest (Runner-up). / 荣获两枚 2025 年 ICPC 全国邀请赛金奖 及 陕西省大学生程序设计竞赛金奖（亚军）。
@@ -66,7 +66,7 @@ In my view, Artificial Intelligence has achieved superhuman proficiency in speci
 
 - **Feature Entanglement-based Quantum Multimodal Fusion Neural Network** [[arXiv]](https://arxiv.org/abs/2601.07856)
   <br> **Yu Wu**, Qianli Zhou, et al.
-  <br> *Manuscript submitted for publication in the **IEEE Transactions on Cybernetics (TCYB)** (2026).*
+  <br> *Manuscript submitted for publication in the **IEEE TNNLS** (2026).*
   <br> *<small>We propose an interpretable quantum multimodal fusion network based on evidence theory.</small>*
   <br> *<small>我们提出了一种基于证据理论的可解释量子多模态融合网络，优势体现于参数量、可并行性及可解释性，进行了完备的泛化性测试与消融实验。</small>*
 
@@ -88,7 +88,7 @@ In my view, Artificial Intelligence has achieved superhuman proficiency in speci
 
 - **Multi-domain Intelligent Perception & Cognition Lab, NWPU**
   <br> *Research Assistant | Aug 2025 - Present*
-  <br> Leading the research on quantum machine learning models. Designed and implemented an interpretable quantum multimodal fusion network, completing extensive ablation studies and writing the manuscript (submitted to IEEE TCYB).
+  <br> Leading the research on quantum machine learning models. Designed and implemented an interpretable quantum multimodal fusion network, completing extensive ablation studies and writing the manuscript (submitted to IEEE TNNLS).
   <br> *<small>西北工业大学多域智能感知与认知实验室 | 科研助理；量子机器学习研究，设计并实现了可解释的量子多模态融合网络（独立一作）。</small>*
 
 - **Tsinghua Laboratory of Brain and Intelligence (THU THBI)**
