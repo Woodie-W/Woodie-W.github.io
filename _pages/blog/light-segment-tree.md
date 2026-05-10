@@ -1,14 +1,18 @@
 ---
 permalink: /blog/light-segment-tree/
 title: ""
-author_profile: true
+excerpt: ""
+author_profile: false
+sidebar:
+  - title: "Blog"
+    text: |
+      - [Back to Blog](/blog/)
+      - [Home](/)
 ---
 
 # Light Segment Tree
 
 *2026.05* &nbsp; `C++` `Segment Tree` `Lazy Propagation`
-
-[← Back to Blog](/blog/)
 
 写线段树的时候维护节点，指针，层级是一件很讨厌的事。开成标准 $2^n$ 大小，就可以直接计算算出层级位置，而不需要使用树状结构来维护，只需要一个类 ST 表数据结构即可。
 这是一份按层存储的线段树模板，使用 `st[i][j]` 和 `lazy[i][j]` 表示长度为 $2^i$ 的第 $j$ 个区间节点的区间和与懒惰传播数。区间采用左闭右开 `[l, r)` 的 0 base 写法。
