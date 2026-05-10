@@ -6,8 +6,10 @@ author_profile: true
 
 # Blog
 
-OI & Research。
+CMO & IO & CS & AI。
 
 ## Posts
 
-- [Light Segment Tree](/blog/Light-Segment-Tree/)
+{% for post in site.posts %}
+- [{{ post.title }}]({{ post.url | relative_url }})
+{% endfor %}
