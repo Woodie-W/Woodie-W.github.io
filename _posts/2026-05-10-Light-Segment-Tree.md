@@ -1,7 +1,9 @@
 ---
 title: "Light Segment Tree"
 date: 2026-05-10
-permalink: /blog/layered-segment-tree/
+layout: default
+author_profile: true
+permalink: /blog/light-segment-tree/
 tags:
   - C++
   - Segment Tree
