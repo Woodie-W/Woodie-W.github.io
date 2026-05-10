@@ -25,7 +25,7 @@ void work(){
 //	vector<vector<i64>> st(20, vector<i64>(N)); 改用动态建树
 	vector<vector<i64>> st, lazy;
 	
-	for(int x =){
+	for(int x = N; x; x = x >> 1){
 		st.push_back(vector<i64>(x, 0));
 		x = x >> 1;
 	}
