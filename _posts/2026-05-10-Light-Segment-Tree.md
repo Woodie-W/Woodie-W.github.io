@@ -20,15 +20,21 @@ const int N = 1 << 19;	// 524288 > 3e5
 
 void work(){
 	vector<i64> a(N);
-	vector<vector<i64>> st(20, vector<i64>(N));
-	vector<vector<i64>> lazy(20, vector<i64>(N));
-	// 左闭右开 0 base
-	// 规定st/lazy[i][j] 表示 [(1<<i * j, 1<<i * (j+1) ) 
+//	vector<vector<i64>> st(20, vector<i64>(N)); 改用动态建树
+	vector<vector<i64>> st, lazy;
+	
+	for(int x =){
+		st.push_back(vector<i64>(x, 0));
+		x = x >> 1;
+	}
+	lazy = st; 
 	
 #define x getx(l,r)
 #define y gety(l,r)
 #define mid (l+r)/2
 	
+	// 左闭右开 0 base
+	// 规定st/lazy[i][j] 表示 [(1<<i * j, 1<<i * (j+1) ) 	
 	auto getx = [&](int l, int r)-> int{return log2(r-l);};
 	auto gety = [&](int l, int r)-> int{return l / (r - l);};
 	
