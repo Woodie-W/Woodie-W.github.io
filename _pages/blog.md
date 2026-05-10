@@ -18,3 +18,5 @@ sidebar:
 
 - *2026.05*: &nbsp; [Light Segment Tree](/blog/light-segment-tree/)  
   A lightweight segment tree template with layer-based storage, supporting range add and range sum query.
+
+- *2026.05*: &nbsp; [Computational Geometry](/blog/computational-geometry/)
