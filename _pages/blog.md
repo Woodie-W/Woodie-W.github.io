@@ -1,7 +1,15 @@
 ---
 permalink: /blog/
 title: ""
-author_profile: true
+excerpt: ""
+author_profile: false
+sidebar:
+  - title: "Blog"
+    text: |
+      OI & Research Notes
+
+      - [All Posts](/blog/)
+      - [Home](/)
 ---
 
 <span class='anchor' id='blog'></span>
