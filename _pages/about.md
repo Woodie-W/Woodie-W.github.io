@@ -29,9 +29,8 @@ Furthermore, I am honored to have gained research internship opportunities at to
 
 In my view, Artificial Intelligence has achieved superhuman proficiency in specific tasks (e.g., pattern recognition, strategic gaming), their ability in handling complex tasks still falls short. The next frontier lies in generalizing these capabilities to the messy, complex real world. My wish is to bridge the gap between high-level AI capabilities and real-world applications to truly liberate productivity. Specifically, I am interested in:
 
-- **LLM-based Agents:** Developing agents for complex workflows and environments, stronger reasoning skills and engineering capabilities.
-- **Fundamental LLM Capabilities:** Enhancing the core reasoning efficiency and long-context memory of Large Language Models.
-- **LLM Training Auxiliary:** Facilitating the self-iteration of models through improved training infrastructure, including automated high-quality data processing, synthesis and model evaluation.
+- **LLM-based Agents:** Developing agents for complex workflows and environments, stronger reasoning skills and engineering capabilities. How to integrate simple models into complex logical scheduling to achieve more complex tasks. How to apply agents to specific fields.
+- **Fundamental LLM Capabilities:** Enhancing the core reasoning efficiency and long-context memory of Large Language Models, as well as fine-tuning of large models for specific agent tasks or calling interfaces.
 
 我是 西北工业大学 (NWPU) 计算机科学与技术专业的 23 级在读本科生。
 
@@ -39,13 +38,12 @@ In my view, Artificial Intelligence has achieved superhuman proficiency in speci
 
 近年来，我逐渐开始探索感兴趣的研究方向。我有幸在 [周千里教授](https://jszy.nwpu.edu.cn/2025010088.html) 的指导下学习量子机器学习，并且完成了第一篇论文。
 
-我有幸通过 CLS-CIBR-IDG 暑期培训班，AIR冬令营等途径加入顶尖实验室实习，探索了人工智能交叉领域，如脑电图解码，大模型智能体。
+我有幸通过 CLS-CIBR-IDG 暑期培训班，AIR冬令营等途径加入顶尖实验室实习，探索了人工智能相关领域，如脑电图解码，大模型智能体。
 
 在我的认知中，尽管人工智能在模式识别、博弈等特定任务上已超越人类表现，但其在处理复杂任务的能力仍显不足，并需将其的能力泛化至复杂的真实世界。我的愿望是将高水平的 AI 技术落地以解放生产力。具体包括：
 
-- **大模型智能体:** 构建能适应复杂工作流程与环境的智能体，更强的推理研究与工程能力。
-- **大模型基础能力:** 提升 LLM 的核心能力，如长上下文记忆与复杂逻辑推理。
-- **大模型辅助训练:** 通过自动化数据处理与模型评估分析体系，辅助模型训练，推动 AI 的自我训练迭代，减少人工成本。
+- **大模型智能体:** 构建能适应复杂工作流程与环境的智能体，增强上下文管理与工程能力。如何将简单模型嵌入到复杂的逻辑调度中，实现更复杂的任务。如何将智能体应用到具体领域。
+- **大模型基础能力:** 提升 LLM 的核心能力，更强的推理与工程能力，针对特定的智能体任务或调用接口的大模型微调。
 
 <br>
 
