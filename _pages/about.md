@@ -31,6 +31,7 @@ In my view, Artificial Intelligence has achieved superhuman proficiency in speci
 
 - **LLM-based Agents:** Developing agents for complex workflows and environments, stronger reasoning skills and engineering capabilities. How to integrate simple models into complex logical scheduling to achieve more complex tasks. How to apply agents to specific fields.
 - **Fundamental LLM Capabilities:** Enhancing the core reasoning efficiency and long-context memory of Large Language Models, as well as fine-tuning of large models for specific agent tasks or calling interfaces.
+- **Collaborative Evolution of LLM Hardware and Software:** LLM require high-performance hardware support, while the scheduling of agents also places higher demands on serial capabilities. How to improve the throughput and latency of LLM and agent.
 
 我是 西北工业大学 (NWPU) 计算机科学与技术专业的 23 级在读本科生。
 
@@ -44,6 +45,7 @@ In my view, Artificial Intelligence has achieved superhuman proficiency in speci
 
 - **大模型智能体:** 构建能适应复杂工作流程与环境的智能体，增强上下文管理与工程能力。如何将简单模型嵌入到复杂的逻辑调度中，实现更复杂的任务。如何将智能体应用到具体领域。
 - **大模型基础能力:** 提升 LLM 的核心能力，更强的推理与工程能力，针对特定的智能体任务或调用接口的大模型微调。
+- **大模型软硬件协同进化:** 大模型需要高性能硬件支持，而新兴智能体的调度也对串行能力提出了更高的要求。如何提高大模型吞吐与延时。
 
 <br>
 
