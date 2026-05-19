@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>QCMM: Evidential Quantum Multimodal Fusion - Woodie's Blog</title>
+  <link href="libs/bootstrap/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/android-chrome-192x192.png" />
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+  <script defer src="libs/bootstrap/bootstrap.bundle.min.js"></script>
+  <script defer src="script.js"></script>
+  <script defer id="mathjax" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</head>
+<body data-page="qcmm" data-nav="research">
+
+  <header class="site-header navbar navbar-expand-lg navbar-light bg-white">
+    <div class="inner container-xxl">
+      <a class="logo" href="index.html">
+        Woodie's Blog
+      </a>
+      <button class="navbar-toggler nav-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <nav class="collapse navbar-collapse primary-nav" id="mainNav">
+        <div class="navbar-nav ms-auto align-items-lg-center gap-2">
+          <a class="nav-link" href="index.html" data-nav-target="home">Home</a>
+          <a class="nav-link" href="light-segment-tree.html" data-nav-target="notes">OI Notes</a>
+          <a class="nav-link active" href="qmf-survey.html" data-nav-target="research">Research</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="layout container-xxl">
+    <div class="row g-4 flex-xl-nowrap">
+      <aside class="chapter-sidebar col-12 col-xl-3 col-xxl-3 order-2 order-xl-1">
+  <ul class="chapter-links">
+    <li><a data-chapter-link="home" href="index.html" class="">Home</a></li>
+    <li>
+      <span class="chapter-parent">OI Notes</span>
+      <ul class="sub-chapter-links">
+        <li><a data-chapter-link="light-segment-tree" href="light-segment-tree.html" class="">Light Segment Tree</a></li>
+        <li><a data-chapter-link="computational-geometry" href="computational-geometry.html" class="">Computational Geometry</a></li>
+      </ul>
+    </li>
+    <li>
+      <span class="chapter-parent">Research</span>
+      <ul class="sub-chapter-links">
+        <li><a data-chapter-link="qmf-survey" href="qmf-survey.html" class="">Quantum Multimodal Fusion Survey</a></li>
+        <li><a data-chapter-link="qcmm" href="qcmm.html" class=" current">QCMM: Our Work</a></li>
+      </ul>
+    </li>
+  </ul>
+</aside>
+
+      <main class="col-12 col-xl-7 col-xxl-7 order-1 order-xl-2 main-content">
+      <section id="overview" class="content-section">
+        <h1 class="section-title" style="font-size: 2rem;">QCMM: Evidential Quantum Multimodal Fusion Neural Network</h1>
+        <span class="post-date">2026.05</span>
+        <div class="tag-list" style="margin: 0.75rem 0;">
+          <span class="tag">Quantum Neural Network</span>
+          <span class="tag">Multimodal Fusion</span>
+          <span class="tag">Dempster-Shafer Theory</span>
+          <span class="tag">QCNN</span>
+        </div>
+        <p class="section-intro" style="margin-top: 1rem;">
+          We propose QCMM, a feature entanglement-based quantum multimodal fusion framework that maps Dempster-Shafer evidence theory to quantum circuits, achieving interpretable fusion with parameter efficiency.
+        </p>
+      </section>
+
+      <section id="motivation" class="content-section">
+        <h2>Motivation</h2>
+        <p>
+          Classical multimodal fusion faces a fundamental dilemma: <strong>feature-level fusion</strong> (deep neural networks) achieves high accuracy but is a "black-box" with parameter explosion, while <strong>decision-level fusion</strong> (e.g., Bayesian inference, DS theory) is interpretable but yields lower accuracy.
+        </p>
+        <p>
+          We observe a mathematical isomorphism between the power set structure of DS theory and the tensor product structure of the quantum Hilbert space. This insight allows us to physically implement evidence combination rules (conjunctive combination rule, CCR) through quantum entanglement, achieving both interpretability and high expressiveness.
+        </p>
+      </section>
+
+      <section id="architecture" class="content-section">
+        <h2>Architecture</h2>
+        <p>The QCMM framework is a hybrid quantum-classical architecture with three key stages:</p>
+
+        <h3>Stage 1: Unimodal Feature Alignment</h3>
+        <p>Classical single-layer MLPs (hidden size 64, input/output dim 8) extract and align features from each modality. PCA is used for offline dimensionality reduction to $d = 8$ dimensions. The MLPs implicitly learn semantic alignment &mdash; the downstream bit-wise quantum fusion forces corresponding features to mapped positions.</p>
+        <p>$$\mathbf{v}_m = \mathbf{W}_2^{(m)} \sigma(\mathbf{W}_1^{(m)} \mathbf{x}_m + \mathbf{b}_1^{(m)}) + \mathbf{b}_2^{(m)}$$</p>
+
+        <h3>Stage 2: Quantum Embedding and Evidence Fusion</h3>
+        <p>Aligned features are angle-encoded into quantum states:</p>
+        <p>$$|\psi_m\rangle = \bigotimes_{j=1}^{d} R_y(v_{m,j}) |0\rangle_j$$</p>
+        <p>A target register $|0\rangle^{\otimes d}_f$ is initialized. The core fusion uses <strong>bit-wise CC-$R_y(\theta)$ gates</strong>: for each feature index $j$, the two modality qubits simultaneously control a rotation on the target qubit. This physically implements the DS conjunctive combination rule &mdash; the target qubit rotates only when both modalities assert evidence (state $|1\rangle$).</p>
+        <p>$$U_f^{(j)}(\theta_j) = (I_{hl} - |11\rangle\langle 11|_{hl}) \otimes I_f + |11\rangle\langle 11|_{hl} \otimes R_y(\theta_j)_f$$</p>
+        <p>The trainable angle $\theta_j$ represents the learnable belief mass assigned to the combined evidence. Control registers are then traced out, producing a fused density matrix.</p>
+
+        <h3>Stage 3: QCNN Deep Feature Extraction</h3>
+        <p>A Quantum Convolutional Neural Network (QCNN) hierarchically extracts features from the fused state. Two stacked convolutional-pooling blocks reduce 8 qubits to 2 qubits. We investigate three kernel ansatzes:</p>
+        <ul>
+          <li><strong>$U_{SO4}$</strong>: $R_y$/$R_z$ rotations with CNOT &mdash; for real-valued amplitudes (6 params)</li>
+          <li><strong>$U_{SU4}$</strong>: Full $SU(4)$ two-qubit unitary &mdash; maximum expressibility (15 params)</li>
+          <li><strong>$U_{15}$</strong>: Hardware-efficient deep ansatz with high entangling capability (4 params)</li>
+        </ul>
+        <p>Pooling uses parameterized controlled rotations ($R_z$, $R_x$) to compress information from source to target qubits. Final projective measurement on 2 qubits yields classification probabilities via the Born rule.</p>
+      </section>
+
+      <section id="properties" class="content-section">
+        <h2>Theoretical Properties</h2>
+
+        <h3>Parameter Efficiency</h3>
+        <p>Total quantum parameters scale linearly: $P_q = d + L \times K$ where $d = 8$ is feature dimension, $L = 2$ is QCNN layers, and $K < 25$ is the constant per-block parameter count. <strong>QCMM uses only 8 fusion parameters</strong> compared to 42k for classical CrossFusion and 9.2M for FusAtNet.</p>
+
+        <h3>Decomposability and Parallelism</h3>
+        <p>The bit-wise topology decomposes the global 24-qubit system into 8 independent 3-qubit channels. Both forward evolution and backward gradients are confined within local subsystems, <strong>fundamentally preventing barren plateaus</strong>.</p>
+
+        <h3>Logical Interpretability</h3>
+        <p>Each CC-$R_y(\theta_j)$ gate implements one step of the DS conjunctive combination rule. The rotation angle encodes the learned belief mass: $m(\text{fused}_j) \propto \sin^2(\theta_j / 2)$. Larger $\theta_j$ means the model trusts this cross-modal correlation more. This transforms fusion from an opaque operation into transparent evidence reasoning.</p>
+      </section>
+
+      <section id="experiments" class="content-section">
+        <h2>Experimental Results</h2>
+        <p>We evaluate on Houston2013 (15-class urban HSI+LiDAR, 4-class subset) and Trento (6-class rural HSI+LiDAR, 4-class subsets), using PyTorch + PennyLane on RTX 3090.</p>
+
+        <h3>Quantum Fusion Comparison (Houston2013, $U_{SU4}$ kernel)</h3>
+        <table>
+          <tr><th>Method</th><th>Fusion Params</th><th>OA</th><th>AA</th><th>Kappa</th><th>F1</th></tr>
+          <tr><td>Circuit-Block</td><td>0</td><td>0.9559</td><td>0.9809</td><td>0.9709</td><td>0.9809</td></tr>
+          <tr><td>All-to-All</td><td>0</td><td>0.8679</td><td>0.9670</td><td>0.9496</td><td>0.9655</td></tr>
+          <tr><td><strong>QCMM (Ours)</strong></td><td><strong>8</strong></td><td><strong>0.9842</strong></td><td><strong>0.9859</strong></td><td><strong>0.9786</strong></td><td><strong>0.9859</strong></td></tr>
+        </table>
+
+        <h3>Classical Model Comparison</h3>
+        <table>
+          <tr><th>Method</th><th>Total Params</th><th>OA</th></tr>
+          <tr><td>EndNet</td><td>85k</td><td>0.9910</td></tr>
+          <tr><td>CrossFusion</td><td>99k</td><td>0.9700</td></tr>
+          <tr><td>FusAtNet</td><td>17,440k</td><td>0.9950</td></tr>
+          <tr><td><strong>QCMM (Ours)</strong></td><td><strong>2.2k</strong></td><td><strong>0.9842</strong></td></tr>
+        </table>
+        <p>QCMM achieves accuracy within 1% of the best classical model with <strong>~1/40 the parameters</strong> of CrossFusion and <strong>~1/7900 of FusAtNet</strong>.</p>
+
+        <h3>Generalization</h3>
+        <p>Across 7 different classification tasks on Houston2013 and Trento, QCMM maintains stable accuracy (OA 0.85&ndash;1.00) with minimal fluctuation, demonstrating strong generalization.</p>
+      </section>
+
+      <section id="ablation" class="content-section">
+        <h2>Ablation Study</h2>
+        <ul>
+          <li><strong>w/o MLP</strong>: Removing unimodal MLPs drops OA from 0.9842 to 0.7452 &mdash; confirms critical role of feature alignment.</li>
+          <li><strong>Fixed Fusion (CC-NOT, $\theta = \pi$)</strong>: Fixing fusion angles drops OA to 0.9661 &mdash; proves trainable parameters capture meaningful belief masses.</li>
+          <li><strong>HSI-only</strong>: OA 0.9785; <strong>LiDAR-only</strong>: OA 0.8139 &mdash; verifies effective exploitation of complementary information.</li>
+          <li><strong>Shallow QCNN</strong>: OA drops to 0.9740 &mdash; confirms hierarchical structure is essential.</li>
+        </ul>
+      </section>
+
+      <section id="conclusion" class="content-section">
+        <h2>Conclusion</h2>
+        <p>
+          QCMM demonstrates that quantum multimodal fusion can be both <strong>interpretable</strong> and <strong>efficient</strong>. By mapping DS evidence theory to quantum circuits via CC-$R_y$ gates, we achieve:
+        </p>
+        <ul>
+          <li>Logical interpretability through evidence-theoretic physical semantics</li>
+          <li>Linear parameter scaling with exponential feature space access</li>
+          <li>Immunity to barren plateaus via bit-wise decomposability</li>
+          <li>Competitive accuracy with classical models despite using orders of magnitude fewer parameters</li>
+        </ul>
+      </section>
+
+      <nav class="page-nav">
+        <a class="page-nav-btn" href="qmf-survey.html">&larr; Survey</a>
+        <a class="page-nav-btn" href="index.html">Home &rarr;</a>
+      </nav>
+      </main>
+
+      <aside class="col-12 col-xl-2 col-xxl-2 order-3 progress-sidebar" style="padding-left: 1.5rem; align-self: start; position: sticky; top: 96px;">
+        <h2 style="font-size: 0.85rem; letter-spacing: 0.16em; text-transform: uppercase; color: #9a9384;">On this page</h2>
+        <ul class="progress-list" style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.4rem;">
+          <li><a class="progress-link is-active" data-target="overview">Overview</a></li>
+          <li><a class="progress-link" data-target="motivation">Motivation</a></li>
+          <li><a class="progress-link" data-target="architecture">Architecture</a></li>
+          <li><a class="progress-link" data-target="properties">Properties</a></li>
+          <li><a class="progress-link" data-target="experiments">Experiments</a></li>
+          <li><a class="progress-link" data-target="ablation">Ablation</a></li>
+          <li><a class="progress-link" data-target="conclusion">Conclusion</a></li>
+        </ul>
+        <div class="progress-meter" style="margin-top: 1rem; height: 4px; background: var(--border); border-radius: 999px; overflow: hidden;">
+          <div class="progress-meter-fill" style="height: 100%; width: 0; background: var(--accent);"></div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2026 Woodie. Powered by Bootstrap 5.</p>
+  </footer>
+
+</body>
+</html>

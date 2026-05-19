@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Quantum Multimodal Fusion Survey - Woodie's Blog</title>
+  <link href="libs/bootstrap/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/android-chrome-192x192.png" />
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+  <script defer src="libs/bootstrap/bootstrap.bundle.min.js"></script>
+  <script defer src="script.js"></script>
+  <script defer id="mathjax" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</head>
+<body data-page="qmf-survey" data-nav="research">
+
+  <header class="site-header navbar navbar-expand-lg navbar-light bg-white">
+    <div class="inner container-xxl">
+      <a class="logo" href="index.html">
+        Woodie's Blog
+      </a>
+      <button class="navbar-toggler nav-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <nav class="collapse navbar-collapse primary-nav" id="mainNav">
+        <div class="navbar-nav ms-auto align-items-lg-center gap-2">
+          <a class="nav-link" href="index.html" data-nav-target="home">Home</a>
+          <a class="nav-link" href="light-segment-tree.html" data-nav-target="notes">OI Notes</a>
+          <a class="nav-link active" href="qmf-survey.html" data-nav-target="research">Research</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="layout container-xxl">
+    <div class="row g-4 flex-xl-nowrap">
+      <aside class="chapter-sidebar col-12 col-xl-3 col-xxl-3 order-2 order-xl-1">
+  <ul class="chapter-links">
+    <li><a data-chapter-link="home" href="index.html" class="">Home</a></li>
+    <li>
+      <span class="chapter-parent">OI Notes</span>
+      <ul class="sub-chapter-links">
+        <li><a data-chapter-link="light-segment-tree" href="light-segment-tree.html" class="">Light Segment Tree</a></li>
+        <li><a data-chapter-link="computational-geometry" href="computational-geometry.html" class="">Computational Geometry</a></li>
+      </ul>
+    </li>
+    <li>
+      <span class="chapter-parent">Research</span>
+      <ul class="sub-chapter-links">
+        <li><a data-chapter-link="qmf-survey" href="qmf-survey.html" class=" current">Quantum Multimodal Fusion Survey</a></li>
+        <li><a data-chapter-link="qcmm" href="qcmm.html" class="">QCMM: Our Work</a></li>
+      </ul>
+    </li>
+  </ul>
+</aside>
+
+      <main class="col-12 col-xl-7 col-xxl-7 order-1 order-xl-2 main-content">
+      <section id="overview" class="content-section">
+        <h1 class="section-title" style="font-size: 2rem;">Survey on Quantum Multimodal Fusion</h1>
+        <span class="post-date">2026.05</span>
+        <div class="tag-list" style="margin: 0.75rem 0;">
+          <span class="tag">Quantum</span>
+          <span class="tag">Multimodal Fusion</span>
+          <span class="tag">Survey</span>
+          <span class="tag">VQC</span>
+        </div>
+        <p class="section-intro" style="margin-top: 1rem;">
+          A literature survey of quantum approaches to multimodal learning and fusion. We review over 15 recent works and categorize them by their fusion strategy.
+        </p>
+      </section>
+
+      <section id="background" class="content-section">
+        <h2>Background</h2>
+        <p>
+          Multimodal fusion aims to integrate complementary features across heterogeneous data modalities (e.g., text, image, audio, LiDAR) to enhance perception and decision-making. Classical approaches are dominated by feature-level fusion (deep neural networks with high accuracy but poor interpretability) and decision-level fusion (interpretable but lower accuracy).
+        </p>
+        <p>
+          Quantum machine learning offers a fundamentally different paradigm. By encoding classical data into quantum states (Hilbert space), variational quantum circuits (VQC) can capture non-linear correlations with exponentially fewer parameters. Quantum entanglement provides a natural mechanism for modeling cross-modal dependencies. This has inspired a growing body of work on <strong>quantum multimodal fusion</strong>.
+        </p>
+      </section>
+
+      <section id="encoding" class="content-section">
+        <h2>Quantum Data Encoding</h2>
+        <p>Before fusion, classical features must be encoded into quantum states. Common encoding strategies include:</p>
+        <ul>
+          <li><strong>Amplitude Encoding (AE)</strong>: Embeds $d$ features into the probability amplitudes of $n = \log_2(d)$ qubits. Qubit-efficient but requires deep preparation circuits and creates pre-entangled states.</li>
+          <li><strong>Angle Encoding (Qubit Encoding)</strong>: Maps each feature to the rotation angle of a qubit via $R_y$ gates. Produces separable product states: $|\psi\rangle = \bigotimes_{j=1}^{d} R_y(x_j)|0\rangle_j$. Well-suited for parallel bit-wise fusion.</li>
+          <li><strong>Dense Qubit Encoding (DQE)</strong>: A compromise between AE and angle encoding, using $O(n/2)$ qubits with constant depth.</li>
+          <li><strong>Hybrid Direct / Hybrid Angle Encoding</strong>: Block-based approaches trading representation capacity for normalization stability.</li>
+        </ul>
+        <p>For multimodal fusion specifically, <strong>angle encoding</strong> is the dominant choice because it produces separable states, allowing the fusion circuit to be the sole source of cross-modal entanglement.</p>
+      </section>
+
+      <section id="fusion-taxonomy" class="content-section">
+        <h2>Taxonomy of Quantum Multimodal Fusion</h2>
+        <p>Based on our survey, quantum multimodal fusion methods can be categorized into three main paradigms:</p>
+
+        <h3>1. Explicit Quantum Fusion</h3>
+        <p>Methods with a clear, identifiable fusion step after encoding each modality separately. The fusion circuit creates targeted entanglement between modalities, often through controlled gates.</p>
+        <ul>
+          <li><strong>CCNOT-based Fusion</strong> (Evidential Vertical QFL): Uses Toffoli (CCNOT) gates where two qubits from different modalities control a target qubit. Information is transferred via controlled-NOT operations.</li>
+          <li><strong>CNOT Ring Fusion</strong> (mmQFL, QMNN): Applies a ring of CNOT gates across modalities. In mmQFL, each modality is first processed by its own PQC, then a quantum fusion layer (CNOT ring) combines them before measurement. In QMNN, multi-stride CNOT patterns (k=1,3,6) create entanglement between modality pairs.</li>
+          <li><strong>All-to-All Fusion</strong>: A fully connected entanglement pattern where every qubit from one modality interacts with every qubit from another. Maximum correlation capture but high circuit depth.</li>
+          <li><strong>Circuit-Block Fusion</strong>: A structured, periodic CNOT pattern offering a practical balance between entangling capability and trainability.</li>
+        </ul>
+
+        <h3>2. Implicit Quantum Fusion</h3>
+        <p>Methods that directly concatenate all modalities into a single long feature vector and encode it into quantum states. Fusion occurs implicitly within the VQC during training, with no separate fusion operation.</p>
+        <ul>
+          <li><strong>Amplitude Encoding Fusion</strong> (Expressive & Scalable Quantum Fusion): All modality features are directly amplitude-encoded into $\log_2(\sum |\text{features}|)$ qubits using index-controlled $R_y$ gates. Fusion is entangled with representation learning, making it hard to interpret.</li>
+        </ul>
+
+        <h3>3. Classical-Layer Fusion</h3>
+        <p>The vast majority of existing quantum multimodal models perform fusion at the classical level. Quantum circuits are used either for unimodal feature extraction or as a post-fusion processing step, but the fusion itself happens through classical operations (concatenation, attention, residual networks).</p>
+        <ul>
+          <li><strong>QMFND</strong>: Multilayer fully-connected layers fuse classical features before quantum encoding. Reference value limited.</li>
+          <li><strong>QMLSC</strong>: Uses residual networks for cross-modal fusion at the classical level, with quantum encoding only at the end.</li>
+          <li><strong>QFNN</strong>: Combines fuzzy logic with quantum neural networks; fusion is essentially classical.</li>
+          <li><strong>QViLa</strong>: Vision-language features are concatenated (1024-dim), FC-reduced to 4 qubits for a shallow quantum circuit. Quantum layer has minimal effect.</li>
+          <li><strong>QNMF</strong>: "Quantum-Classical-Quantum" pipeline &mdash; QCNN extracts image features, classical concatenation, then amplitude encoding. Fusion is classical.</li>
+          <li><strong>MQFL-FHE</strong>: Quantum layers process each modality separately; measurement results are fused classically.</li>
+          <li><strong>ITQT-MSA</strong>: Quantum-enhanced unimodal extraction only; cross-modal interaction uses classical Transformer attention.</li>
+        </ul>
+        <p>These methods, while incorporating quantum components, do not fundamentally advance quantum fusion mechanisms.</p>
+      </section>
+
+      <section id="applications" class="content-section">
+        <h2>Application Domains</h2>
+        <p>Quantum multimodal models have been applied to diverse tasks:</p>
+        <table>
+          <tr><th>Domain</th><th>Modalities</th><th>Representative Works</th></tr>
+          <tr><td>Sentiment Analysis</td><td>Text + Audio + Visual</td><td>QMNN, QMLSC, QFNN</td></tr>
+          <tr><td>Emotion Recognition</td><td>Text + Audio</td><td>SAMS, mmQFL</td></tr>
+          <tr><td>Fake News Detection</td><td>Text + Image</td><td>QMFND</td></tr>
+          <tr><td>Remote Sensing</td><td>HSI + LiDAR</td><td>$S^2$ENet, QCMM (ours)</td></tr>
+          <tr><td>Medical Diagnosis</td><td>DNA + MRI</td><td>QNMF, MQFL-FHE</td></tr>
+          <tr><td>Communication</td><td>GPS + Camera + LiDAR + RADAR</td><td>QTN</td></tr>
+          <tr><td>Financial Prediction</td><td>Time series (single)</td><td>QuantumLeap</td></tr>
+        </table>
+      </section>
+
+      <section id="challenges" class="content-section">
+        <h2>Key Challenges and Observations</h2>
+        <ul>
+          <li><strong>Barren Plateaus</strong>: Increasing qubit count leads to gradient vanishing. Most works use very few qubits (4&ndash;10), severely limiting expressiveness.</li>
+          <li><strong>Lack of Interpretability</strong>: Most quantum fusion circuits remain "black-box" &mdash; the physical meaning of entanglement for cross-modal interaction is unclear.</li>
+          <li><strong>Classical Dominance</strong>: The majority of works use quantum circuits only peripherally, with fusion handled classically. These cannot be considered true quantum multimodal fusion.</li>
+          <li><strong>Scalability</strong>: Current NISQ hardware limits qubit count, restricting these models to very low-dimensional features.</li>
+          <li><strong>Parameter Efficiency</strong>: A key claimed advantage of quantum models &mdash; exponential Hilbert space with polynomial parameters &mdash; is often underutilized.</li>
+        </ul>
+      </section>
+
+      <section id="summary" class="content-section">
+        <h2>Summary</h2>
+        <p>
+          The field of quantum multimodal fusion is rapidly growing but still nascent. Most existing works either perform fusion classically or use black-box quantum circuits without interpretability. There is a clear gap for methods that achieve <strong>interpretable quantum fusion</strong> with <strong>parameter efficiency</strong> and <strong>competitive accuracy</strong>. Our QCMM framework (see <a href="qcmm.html">next post</a>) addresses these challenges by mapping Dempster-Shafer evidence theory to quantum circuits.
+        </p>
+      </section>
+
+      <nav class="page-nav">
+        <a class="page-nav-btn" href="index.html">&larr; Back to Home</a>
+        <a class="page-nav-btn" href="qcmm.html">QCMM: Our Work &rarr;</a>
+      </nav>
+      </main>
+
+      <aside class="col-12 col-xl-2 col-xxl-2 order-3 progress-sidebar" style="padding-left: 1.5rem; align-self: start; position: sticky; top: 96px;">
+        <h2 style="font-size: 0.85rem; letter-spacing: 0.16em; text-transform: uppercase; color: #9a9384;">On this page</h2>
+        <ul class="progress-list" style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.4rem;">
+          <li><a class="progress-link is-active" data-target="overview">Overview</a></li>
+          <li><a class="progress-link" data-target="background">Background</a></li>
+          <li><a class="progress-link" data-target="encoding">Encoding</a></li>
+          <li><a class="progress-link" data-target="fusion-taxonomy">Fusion Taxonomy</a></li>
+          <li><a class="progress-link" data-target="applications">Applications</a></li>
+          <li><a class="progress-link" data-target="challenges">Challenges</a></li>
+          <li><a class="progress-link" data-target="summary">Summary</a></li>
+        </ul>
+        <div class="progress-meter" style="margin-top: 1rem; height: 4px; background: var(--border); border-radius: 999px; overflow: hidden;">
+          <div class="progress-meter-fill" style="height: 100%; width: 0; background: var(--accent);"></div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2026 Woodie. Powered by Bootstrap 5.</p>
+  </footer>
+
+</body>
+</html>
