@@ -103,10 +103,6 @@
         <h3>阶段 1：单模态特征对齐</h3>
         <p>经典单层 MLP（隐藏层大小 64，输入/输出维度 8）提取并对齐各模态特征。PCA 用于离线降维至 $d = 8$ 维。MLP 隐式学习语义对齐 &mdash; 下游逐位量子融合迫使对应特征映射到正确位置。</p>
         <p>$$\mathbf{v}_m = \mathbf{W}_2^{(m)} \sigma(\mathbf{W}_1^{(m)} \mathbf{x}_m + \mathbf{b}_1^{(m)}) + \mathbf{b}_2^{(m)}$$</p>
-        <figure style="margin: 1.5rem 0; text-align: center;">
-          <img src="images/qcmm-mlp.svg" alt="Unimodal MLP alignment" style="max-width: 320px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);" />
-          <figcaption style="font-size: 0.85rem; color: #666; margin-top: 0.5rem;">单模态 MLP 对齐：每个模态独立映射到 8 维对齐特征空间。</figcaption>
-        </figure>
 
         <h3>阶段 2：量子嵌入与证据融合</h3>
         <p>对齐后的特征通过 angle encoding 编码为量子态：</p>
@@ -114,10 +110,6 @@
         <p>初始化目标寄存器 $|0\rangle^{\otimes d}_f$。核心融合使用<strong>逐位 CC-$R_y(\theta)$ 门</strong>：对每个特征索引 $j$，两个模态量子比特同时控制目标量子比特的旋转。这物理实现了 DS 合取组合规则 &mdash; 目标量子比特仅在两个模态同时声明证据（状态 $|1\rangle$）时才旋转。</p>
         <p>$$U_f^{(j)}(\theta_j) = (I_{hl} - |11\rangle\langle 11|_{hl}) \otimes I_f + |11\rangle\langle 11|_{hl} \otimes R_y(\theta_j)_f$$</p>
         <p>可训练角度 $\theta_j$ 表示赋予组合证据的可学习信任质量。控制寄存器随后被求迹，产生融合后的密度矩阵。</p>
-        <figure style="margin: 1.5rem 0; text-align: center;">
-          <img src="images/qcmm-fusion.svg" alt="Bit-wise CC-Ry fusion topology" style="max-width: 380px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);" />
-          <figcaption style="font-size: 0.85rem; color: #666; margin-top: 0.5rem;">逐位 CC-$R_y$ 融合拓扑：8 个独立的三量子比特通道（蓝色 = 模态 H，橙色 = 模态 L）。</figcaption>
-        </figure>
 
         <h3>阶段 3：QCNN 深度特征提取</h3>
         <p>量子卷积神经网络（QCNN）从融合态中分层提取特征。两个堆叠的卷积-池化块将 8 个量子比特压缩为 2 个。我们研究了三种核参数化方案：</p>
