@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Deep Research 评测体系 - Woodie's Blog</title>
+  <link href="libs/bootstrap/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/android-chrome-192x192.png" />
+  <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+  <script defer src="libs/bootstrap/bootstrap.bundle.min.js"></script>
+  <script defer src="script.js"></script>
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['$', '$'], ['\(', '\)']],
+        displayMath: [['$$', '$$'], ['\[', '\]']],
+        processEscapes: true,
+        processEnvironments: true
+      },
+      options: { skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'] }
+    };
+  </script>
+  <script id="mathjax" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js" async></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
+</head>
+<body data-page="deep-research-benchmarks" data-nav="research">
+
+  <header class="site-header navbar navbar-expand-lg navbar-light bg-white">
+    <div class="inner container-xxl">
+      <a class="logo" href="index.html">
+        Woodie's Blog
+      </a>
+      <button class="navbar-toggler nav-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <nav class="collapse navbar-collapse primary-nav" id="mainNav">
+        <div class="navbar-nav ms-auto align-items-lg-center gap-2">
+          <a class="nav-link" href="index.html" data-nav-target="home">Home</a>
+          <a class="nav-link" href="light-segment-tree.html" data-nav-target="notes">OI Notes</a>
+          <a class="nav-link active" href="qmf-survey.html" data-nav-target="research">Research</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="layout container-xxl">
+    <div class="row g-4 flex-xl-nowrap">
+      <aside class="chapter-sidebar col-12 col-xl-3 col-xxl-3 order-2 order-xl-1">
+  <ul class="chapter-links">
+    <li><a data-chapter-link="home" href="index.html" class="">Home</a></li>
+    <li>
+      <span class="chapter-parent">OI Notes</span>
+      <ul class="sub-chapter-links">
+        <li><a data-chapter-link="light-segment-tree" href="light-segment-tree.html" class="">Light Segment Tree</a></li>
+        <li><a data-chapter-link="computational-geometry" href="computational-geometry.html" class="">Computational Geometry</a></li>
+      </ul>
+    </li>
+    <li>
+      <span class="chapter-parent">Research</span>
+      <ul class="sub-chapter-links">
+        <li><a data-chapter-link="qmf-survey" href="qmf-survey.html" class="">Quantum Multimodal Fusion Survey</a></li>
+        <li><a data-chapter-link="qcmm" href="qcmm.html" class="">QCMM: Our Work</a></li>
+        <li><a data-chapter-link="deep-research-survey" href="deep-research-survey.html" class="">Deep Research Agents</a></li>
+        <li><a data-chapter-link="deep-research-benchmarks" href="deep-research-benchmarks.html" class=" current">DR Benchmarks</a></li>
+        <li><a data-chapter-link="agent-frameworks" href="agent-frameworks.html" class="">Agent Frameworks</a></li>
+        <li><a data-chapter-link="human-agent-collaboration" href="human-agent-collaboration.html" class="">Human-Agent Collaboration</a></li>
+      </ul>
+    </li>
+  </ul>
+</aside>
+
+      <main class="col-12 col-xl-7 col-xxl-7 order-1 order-xl-2 main-content">
+      <section id="overview" class="content-section">
+        <h1 class="section-title" style="font-size: 2rem;">Deep Research 评测体系</h1>
+        <span class="post-date">2026.05</span>
+        <div class="tag-list" style="margin: 0.75rem 0;">
+          <span class="tag">Benchmark</span>
+          <span class="tag">Evaluation</span>
+          <span class="tag">Deep Research</span>
+        </div>
+        <p class="section-intro" style="margin-top: 1rem;">
+          对 Deep Research Agent 和通用 AI Agent 评测基准的整理与对比，涵盖自动化评测与人类偏好评测两大范式。
+        </p>
+      </section>
+
+      <section id="challenges" class="content-section">
+        <h2>评测的挑战</h2>
+        <p>
+          评测 Deep Research Agent 面临三个核心难题：(1) <strong>开放式生成</strong>——研究型报告没有标准答案，传统的事实检索评测（找固定答案）无法反映复杂的研究能力；(2) <strong>长文本评估</strong>——一份研究报告可能长达数万字，传统评估方法难以处理；(3) <strong>实时性要求</strong>——真正的 Deep Research 需要在互联网上实时搜索，静态数据集容易被污染。
+        </p>
+        <p>
+          目前的研究沿着两个方向推进：一是设计更精细的自动化评测框架，二是利用人类偏好进行众包评测。
+        </p>
+      </section>
+
+      <section id="benchmarks" class="content-section">
+        <h2>评测框架对比</h2>
+
+        <h3>DeepResearch Bench：报告质量 + 引用准确性</h3>
+        <p>
+          基于 9.6 万条真实用户查询日志分析，构建了 100 个博士级研究任务（中英各 50，覆盖 22 个领域）。提出两个互补的评估框架：<strong>RACE</strong>（评估报告文本质量，包括全面性、洞察力、指令遵循、可读性）和<strong>FACT</strong>（评估信息检索的真实性，包括引用准确率和有效引用数）。实验发现 Gemini-2.5-Pro Deep Research 在两者上均表现最佳，平均 111 个有效引用。
+        </p>
+
+        <h3>DeepResearch Bench II：基于专家评分规则</h3>
+        <p>
+          将评测粒度进一步细化到 9,430 个评分点（Rubrics），覆盖 132 个任务和 22 个领域。构建流程为"LLM 提取 → 自我评估 → 人工修正 → 专家审核"，投入超过 400 小时人类专家审核。评测三个维度：信息召回（是否找到关键事实）、分析（是否有深层见解）、表达（格式结构）。即使是最强的模型，某些维度上满足率也不到 50%。
+        </p>
+
+        <h3>LiveResearchBench：实时搜索评测</h3>
+        <p>
+          100 个专家设计的复杂问题，强调"以用户为中心"（明确目标受众和格式要求）、"实时搜索"和"任务明确无歧义"。提出 <strong>DeepEval</strong> 评估套件：粗粒度评估排版与事实逻辑连贯性，细粒度评估覆盖率、分析深度、引用关联性与准确性。核心发现：长篇幅 ≠ 高质量；多智能体系统在信息覆盖上更好，但单智能体在逻辑连贯性上更优。
+        </p>
+
+        <h3>GAIA：通用 AI 助手基准</h3>
+        <p>
+          466 个精心设计的问题，人类准确率 92%，配备插件的 GPT-4 仅约 15%。三个难度等级：Level 1 不需工具或少于 5 步；Level 2 需要 5-10 步工具组合；Level 3 需要长序列操作，AI 目前成功率接近 0%。GAIA 的理念是"对人类简单，对 AI 困难"，侧重推理、工具使用和多模态处理能力而非知识记忆。
+        </p>
+
+        <h3>Chatbot Arena：人类偏好众包</h3>
+        <p>
+          实时的动态众包评估平台，采用 Bradley-Terry 模型（类似 Elo 积分）进行排名。核心创新包括：高效的自适应采样（主动挑选实力相近的模型对决）、异常用户检测算法、以及从众包数据中提取难题基准。普通群众投票与专家评判一致率高达 72%-83%。
+        </p>
+
+        <h3>MT-Bench-101：多轮对话细粒度评测</h3>
+        <p>
+          1388 个多轮对话，4208 轮问答，覆盖 13 项具体任务和 30+ 话题。提出三层能力分类体系：感知力（记忆上下文）、适应力（动态调整回答）、交互力（主动提问引导）。采用"最低分原则"——取多轮对话中的最低分作为总分，避免一步错步步错。核心发现：RLHF/DPO 对齐对多轮对话帮助有限，因为训练数据多为单轮。
+        </p>
+      </section>
+
+      <section id="findings" class="content-section">
+        <h2>核心发现</h2>
+        <ul>
+          <li><strong>AI 目前只是"深度搜索器"，还不是"深度研究员"</strong>——擅长收集分类信息，但缺乏提出深刻见解和辩证分析的能力。</li>
+          <li><strong>引用幻觉依然严重</strong>——即使是最强的模型，每篇报告平均包含几十处引用错误。</li>
+          <li><strong>长篇幅 ≠ 高质量</strong>——多智能体系统输出更长，但逻辑不一定更严密。</li>
+          <li><strong>上下文记忆是主要瓶颈</strong>——搜索上千个网页时容易超出 Token 限制。</li>
+          <li><strong>评测与人类判断的一致性仍有差距</strong>——自动化评测框架（如 RACE）与人类专家一致性较高，但仍需持续校准。</li>
+        </ul>
+      </section>
+
+      <section id="references" class="content-section">
+        <h2>参考文献</h2>
+        <ol class="ref-list">
+          <li>Du et al., "DeepResearch Bench: A Comprehensive Benchmark for Deep Research Agents", <em>arXiv</em>, 2025.</li>
+          <li>Li et al., "DeepResearch Bench II: Diagnosing Deep Research Agents via Rubrics from Expert Report", <em>arXiv</em>, 2026.</li>
+          <li>Wang et al., "LiveResearchBench: A Live Benchmark for User-Centric Deep Research in the Wild", <em>arXiv</em>, 2025.</li>
+          <li>Java et al., "Characterizing Deep Research: A Benchmark and Formal Definition (LiveDRBench)", <em>arXiv</em>, 2025.</li>
+          <li>Mialon et al., "GAIA: A Benchmark for General AI Assistants", 2024.</li>
+          <li>Chiang et al., "Chatbot Arena: An Open Platform for Evaluating LLMs by Human Preference", <em>NeurIPS</em>.</li>
+          <li>Bai et al., "MT-Bench-101: A Fine-Grained Benchmark for Evaluating LLMs in Multi-Turn Dialogues", <em>ACL</em>, 2024.</li>
+        </ol>
+      </section>
+
+      <nav class="page-nav">
+        <a class="page-nav-btn" href="deep-research-survey.html">&larr; DR Survey</a>
+        <a class="page-nav-btn" href="agent-frameworks.html">Agent Frameworks &rarr;</a>
+      </nav>
+      </main>
+
+      <aside class="col-12 col-xl-2 col-xxl-2 order-3 progress-sidebar" style="padding-left: 1.5rem; align-self: start; position: sticky; top: 96px;">
+        <h2 style="font-size: 0.85rem; letter-spacing: 0.16em; text-transform: uppercase; color: #9a9384;">本页内容</h2>
+        <ul class="progress-list" style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.4rem;">
+          <li><a class="progress-link is-active" data-target="overview">概述</a></li>
+          <li><a class="progress-link" data-target="challenges">评测挑战</a></li>
+          <li><a class="progress-link" data-target="benchmarks">评测框架</a></li>
+          <li><a class="progress-link" data-target="findings">核心发现</a></li>
+          <li><a class="progress-link" data-target="references">参考文献</a></li>
+        </ul>
+        <div class="progress-meter" style="margin-top: 1rem; height: 4px; background: var(--border); border-radius: 999px; overflow: hidden;">
+          <div class="progress-meter-fill" style="height: 100%; width: 0; background: var(--accent);"></div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2026 Woodie. Powered by Bootstrap 5.</p>
+  </footer>
+
+</body>
+</html>
