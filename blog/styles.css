@@ -329,8 +329,9 @@ pre code {
   padding: 0;
   background: transparent;
   border: none;
-  font-size: 0.4rem;
+  font-size: 0.85rem;
   line-height: 1.7;
+  color: #f0f0f0;
 }
 
 code[class*="language-"] {
