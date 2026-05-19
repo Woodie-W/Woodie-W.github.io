@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home - Woodie's Blog</title>
+  <title>首页 - Woodie's Blog</title>
   <link href="libs/bootstrap/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/png" sizes="32x32" href="images/android-chrome-192x192.png" />
@@ -37,9 +37,9 @@
       </button>
       <nav class="collapse navbar-collapse primary-nav" id="mainNav">
         <div class="navbar-nav ms-auto align-items-lg-center gap-2">
-          <a class="nav-link active" href="index.html" data-nav-target="home">Home</a>
-          <a class="nav-link" href="light-segment-tree.html" data-nav-target="notes">OI Notes</a>
-          <a class="nav-link" href="qmf-survey.html" data-nav-target="research">Research</a>
+          <a class="nav-link active" href="index.html" data-nav-target="home">首页</a>
+          <a class="nav-link" href="light-segment-tree.html" data-nav-target="notes">OI 笔记</a>
+          <a class="nav-link" href="qmf-survey.html" data-nav-target="research">研究</a>
         </div>
       </nav>
     </div>
@@ -49,16 +49,16 @@
     <div class="row g-4 flex-xl-nowrap">
       <aside class="chapter-sidebar col-12 col-xl-3 col-xxl-3 order-2 order-xl-1">
   <ul class="chapter-links">
-    <li><a data-chapter-link="home" href="index.html" class=" current">Home</a></li>
+    <li><a data-chapter-link="home" href="index.html" class=" current">首页</a></li>
     <li>
-      <span class="chapter-parent">OI Notes</span>
+      <span class="chapter-parent">OI 笔记</span>
       <ul class="sub-chapter-links">
         <li><a data-chapter-link="light-segment-tree" href="light-segment-tree.html" class="">Light Segment Tree</a></li>
         <li><a data-chapter-link="computational-geometry" href="computational-geometry.html" class="">Computational Geometry</a></li>
       </ul>
     </li>
     <li>
-      <span class="chapter-parent">Research</span>
+      <span class="chapter-parent">研究</span>
       <ul class="sub-chapter-links">
         <li><a data-chapter-link="qmf-survey" href="qmf-survey.html" class="">Quantum Multimodal Fusion Survey</a></li>
         <li><a data-chapter-link="qcmm" href="qcmm.html" class="">QCMM: Our Work</a></li>
@@ -70,11 +70,11 @@
       <main class="col-12 col-xl-7 col-xxl-7 order-1 order-xl-2 main-content">
       <section id="welcome" class="content-section">
         <h1 class="section-title" style="font-size: 2.6rem;">Woodie's Blog</h1>
-        <p class="section-intro">OI & Research Notes &mdash; Algorithm templates, competitive programming notes, and research records.</p>
+        <p class="section-intro">OI 与研究笔记 &mdash; 算法模板、竞赛编程笔记与研究记录。</p>
       </section>
 
       <section id="posts" class="content-section" style="margin-top: 2.5rem;">
-        <h2>Recent Posts</h2>
+        <h2>最近文章</h2>
         <div class="post-card-grid">
 
           <div class="post-card">
@@ -85,7 +85,7 @@
               <span class="tag">Segment Tree</span>
               <span class="tag">Lazy Propagation</span>
             </div>
-            <p>A lightweight segment tree template with layer-based storage, supporting range add and range sum query. Uses $2^n$-sized flat arrays.</p>
+            <p>轻量线段树模板，采用分层存储，支持区间加和区间求和。使用 $2^n$ 大小平铺数组。</p>
           </div>
 
           <div class="post-card">
@@ -96,7 +96,7 @@
               <span class="tag">Geometry</span>
               <span class="tag">Template</span>
             </div>
-            <p>Computational geometry template covering cross product, dot product, point-line distance, convex hull, and line intersection.</p>
+            <p>计算几何模板，涵盖叉积、点积、点到直线距离、凸包与直线交点。</p>
           </div>
 
           <div class="post-card">
@@ -107,7 +107,7 @@
               <span class="tag">Multimodal Fusion</span>
               <span class="tag">Survey</span>
             </div>
-            <p>A comprehensive survey of quantum approaches to multimodal fusion, categorizing methods into explicit, implicit, and classical-layer fusion paradigms.</p>
+            <p>量子多模态融合综述，将现有方法分为显式融合、隐式融合与经典层融合三大范式。</p>
           </div>
 
           <div class="post-card">
@@ -118,7 +118,7 @@
               <span class="tag">DS Theory</span>
               <span class="tag">QCNN</span>
             </div>
-            <p>Our work on feature entanglement-based quantum multimodal fusion, mapping Dempster-Shafer theory to quantum circuits for interpretable multimodal classification.</p>
+            <p>基于特征纠缠的量子多模态融合框架，将 Dempster-Shafer 证据理论映射到量子电路上，实现可解释的多模态分类。</p>
           </div>
 
         </div>
@@ -126,10 +126,10 @@
       </main>
 
       <aside class="col-12 col-xl-2 col-xxl-2 order-3 progress-sidebar" style="padding-left: 1.5rem; align-self: start; position: sticky; top: 96px;">
-        <h2 style="font-size: 0.85rem; letter-spacing: 0.16em; text-transform: uppercase; color: #9a9384;">On this page</h2>
+        <h2 style="font-size: 0.85rem; letter-spacing: 0.16em; text-transform: uppercase; color: #9a9384;">本页内容</h2>
         <ul class="progress-list" style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.4rem;">
-          <li><a class="progress-link is-active" data-target="welcome">Welcome</a></li>
-          <li><a class="progress-link" data-target="posts">Recent Posts</a></li>
+          <li><a class="progress-link is-active" data-target="welcome">欢迎</a></li>
+          <li><a class="progress-link" data-target="posts">最近文章</a></li>
         </ul>
         <div class="progress-meter" style="margin-top: 1rem; height: 4px; background: var(--border); border-radius: 999px; overflow: hidden;">
           <div class="progress-meter-fill" style="height: 100%; width: 0; background: var(--accent);"></div>

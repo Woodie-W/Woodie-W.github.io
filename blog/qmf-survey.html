@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Quantum Multimodal Fusion Survey - Woodie's Blog</title>
+  <title>量子多模态融合综述 - Woodie's Blog</title>
   <link href="libs/bootstrap/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/png" sizes="32x32" href="images/android-chrome-192x192.png" />
@@ -37,9 +37,9 @@
       </button>
       <nav class="collapse navbar-collapse primary-nav" id="mainNav">
         <div class="navbar-nav ms-auto align-items-lg-center gap-2">
-          <a class="nav-link" href="index.html" data-nav-target="home">Home</a>
-          <a class="nav-link" href="light-segment-tree.html" data-nav-target="notes">OI Notes</a>
-          <a class="nav-link active" href="qmf-survey.html" data-nav-target="research">Research</a>
+          <a class="nav-link" href="index.html" data-nav-target="home">首页</a>
+          <a class="nav-link" href="light-segment-tree.html" data-nav-target="notes">OI 笔记</a>
+          <a class="nav-link active" href="qmf-survey.html" data-nav-target="research">研究</a>
         </div>
       </nav>
     </div>
@@ -49,16 +49,16 @@
     <div class="row g-4 flex-xl-nowrap">
       <aside class="chapter-sidebar col-12 col-xl-3 col-xxl-3 order-2 order-xl-1">
   <ul class="chapter-links">
-    <li><a data-chapter-link="home" href="index.html" class="">Home</a></li>
+    <li><a data-chapter-link="home" href="index.html" class="">首页</a></li>
     <li>
-      <span class="chapter-parent">OI Notes</span>
+      <span class="chapter-parent">OI 笔记</span>
       <ul class="sub-chapter-links">
         <li><a data-chapter-link="light-segment-tree" href="light-segment-tree.html" class="">Light Segment Tree</a></li>
         <li><a data-chapter-link="computational-geometry" href="computational-geometry.html" class="">Computational Geometry</a></li>
       </ul>
     </li>
     <li>
-      <span class="chapter-parent">Research</span>
+      <span class="chapter-parent">研究</span>
       <ul class="sub-chapter-links">
         <li><a data-chapter-link="qmf-survey" href="qmf-survey.html" class=" current">Quantum Multimodal Fusion Survey</a></li>
         <li><a data-chapter-link="qcmm" href="qcmm.html" class="">QCMM: Our Work</a></li>
@@ -69,7 +69,7 @@
 
       <main class="col-12 col-xl-7 col-xxl-7 order-1 order-xl-2 main-content">
       <section id="overview" class="content-section">
-        <h1 class="section-title" style="font-size: 2rem;">Survey on Quantum Multimodal Fusion</h1>
+        <h1 class="section-title" style="font-size: 2rem;">量子多模态融合综述 (Quantum Multimodal Fusion Survey)</h1>
         <span class="post-date">2026.05</span>
         <div class="tag-list" style="margin: 0.75rem 0;">
           <span class="tag">Quantum</span>
@@ -78,122 +78,122 @@
           <span class="tag">VQC</span>
         </div>
         <p class="section-intro" style="margin-top: 1rem;">
-          A literature survey of quantum approaches to multimodal learning and fusion. We review over 15 recent works and categorize them by their fusion strategy.
+          关于量子多模态学习与融合的文献综述。我们回顾了 15 篇以上近期工作，按融合策略进行分类。
         </p>
       </section>
 
       <section id="background" class="content-section">
-        <h2>Background</h2>
+        <h2>背景</h2>
         <p>
-          Multimodal fusion aims to integrate complementary features across heterogeneous data modalities (e.g., text, image, audio, LiDAR) to enhance perception and decision-making. Classical approaches are dominated by feature-level fusion (deep neural networks with high accuracy but poor interpretability) and decision-level fusion (interpretable but lower accuracy).
+          多模态融合旨在整合不同数据模态（如文本、图像、音频、LiDAR）的互补特征，以增强感知与决策能力。经典方法主要由特征级融合（深度神经网络，精度高但可解释性差）和决策级融合（可解释但精度较低）主导。
         </p>
         <p>
-          Quantum machine learning offers a fundamentally different paradigm. By encoding classical data into quantum states (Hilbert space), variational quantum circuits (VQC) can capture non-linear correlations with exponentially fewer parameters. Quantum entanglement provides a natural mechanism for modeling cross-modal dependencies. This has inspired a growing body of work on <strong>quantum multimodal fusion</strong>.
+          量子机器学习提供了根本不同的范式。通过将经典数据编码到量子态（Hilbert 空间）中，变分量子电路（VQC）能以指数级更少的参数捕获非线性相关性。量子纠缠为建模跨模态依赖提供了自然机制，这催生了大量关于<strong>量子多模态融合</strong>的研究。
         </p>
       </section>
 
       <section id="encoding" class="content-section">
-        <h2>Quantum Data Encoding</h2>
-        <p>Before fusion, classical features must be encoded into quantum states. Common encoding strategies include:</p>
+        <h2>量子数据编码</h2>
+        <p>在融合之前，需要将经典特征编码为量子态。常见编码策略包括：</p>
         <ul>
-          <li><strong>Amplitude Encoding (AE)</strong>: Embeds $d$ features into the probability amplitudes of $n = \log_2(d)$ qubits. Qubit-efficient but requires deep preparation circuits and creates pre-entangled states.</li>
-          <li><strong>Angle Encoding (Qubit Encoding)</strong>: Maps each feature to the rotation angle of a qubit via $R_y$ gates. Produces separable product states: $|\psi\rangle = \bigotimes_{j=1}^{d} R_y(x_j)|0\rangle_j$. Well-suited for parallel bit-wise fusion.</li>
-          <li><strong>Dense Qubit Encoding (DQE)</strong>: A compromise between AE and angle encoding, using $O(n/2)$ qubits with constant depth.</li>
-          <li><strong>Hybrid Direct / Hybrid Angle Encoding</strong>: Block-based approaches trading representation capacity for normalization stability.</li>
+          <li><strong>Amplitude Encoding (AE)</strong>：将 $d$ 个特征嵌入到 $n = \log_2(d)$ 个量子比特的概率振幅中。量子比特效率高，但需要较深的制备电路，且会创建预纠缠态。</li>
+          <li><strong>Angle Encoding (Qubit Encoding)</strong>：通过 $R_y$ 门将每个特征映射为量子比特的旋转角度。产生可分离积态：$|\psi\rangle = \bigotimes_{j=1}^{d} R_y(x_j)|0\rangle_j$。适合逐位并行融合。</li>
+          <li><strong>Dense Qubit Encoding (DQE)</strong>：AE 与 angle encoding 之间的折中方案，使用 $O(n/2)$ 个量子比特，常数深度。</li>
+          <li><strong>Hybrid Direct / Hybrid Angle Encoding</strong>：基于分块的方法，在表示能力与归一化稳定性之间做权衡。</li>
         </ul>
-        <p>For multimodal fusion specifically, <strong>angle encoding</strong> is the dominant choice because it produces separable states, allowing the fusion circuit to be the sole source of cross-modal entanglement.</p>
+        <p>对于多模态融合，<strong>angle encoding</strong> 是主流选择，因为它产生可分离态，使融合电路成为跨模态纠缠的唯一来源。</p>
       </section>
 
       <section id="fusion-taxonomy" class="content-section">
-        <h2>Taxonomy of Quantum Multimodal Fusion</h2>
-        <p>Based on our survey, quantum multimodal fusion methods can be categorized into three main paradigms:</p>
+        <h2>量子多模态融合分类</h2>
+        <p>根据我们的综述，量子多模态融合方法可分为三大范式：</p>
 
-        <h3>1. Explicit Quantum Fusion</h3>
-        <p>Methods with a clear, identifiable fusion step after encoding each modality separately. The fusion circuit creates targeted entanglement between modalities, often through controlled gates.</p>
+        <h3>1. 显式量子融合 (Explicit Quantum Fusion)</h3>
+        <p>在分别编码各模态后，具有清晰可辨的融合步骤的方法。融合电路通过受控门在模态间创建目标纠缠。</p>
         <figure style="margin: 1.5rem 0; text-align: center;">
           <img src="images/qmf-cross-modal-fusion.png" alt="Cross-modal fusion architectures" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);" />
-          <figcaption style="font-size: 0.85rem; color: #666; margin-top: 0.5rem;">Cross-modal fusion architectures: (a) spatial-wise and (b) channel-wise interaction patterns.</figcaption>
+          <figcaption style="font-size: 0.85rem; color: #666; margin-top: 0.5rem;">跨模态融合架构：(a) 空间维度交互和 (b) 通道维度交互。</figcaption>
         </figure>
         <ul>
-          <li><strong>CCNOT-based Fusion</strong> (Evidential Vertical QFL): Uses Toffoli (CCNOT) gates where two qubits from different modalities control a target qubit. Information is transferred via controlled-NOT operations.</li>
-          <li><strong>CNOT Ring Fusion</strong> (mmQFL, QMNN): Applies a ring of CNOT gates across modalities. In mmQFL, each modality is first processed by its own PQC, then a quantum fusion layer (CNOT ring) combines them before measurement. In QMNN, multi-stride CNOT patterns (k=1,3,6) create entanglement between modality pairs.</li>
-          <li><strong>All-to-All Fusion</strong>: A fully connected entanglement pattern where every qubit from one modality interacts with every qubit from another. Maximum correlation capture but high circuit depth.</li>
-          <li><strong>Circuit-Block Fusion</strong>: A structured, periodic CNOT pattern offering a practical balance between entangling capability and trainability.</li>
+          <li><strong>CCNOT-based Fusion</strong>（Evidential Vertical QFL）：使用 Toffoli (CCNOT) 门，两个来自不同模态的量子比特控制一个目标量子比特。通过受控非操作传递信息。</li>
+          <li><strong>CNOT Ring Fusion</strong>（mmQFL, QMNN）：在模态间应用环形 CNOT 门。mmQFL 中，每个模态先由各自的 PQC 处理，然后量子融合层（CNOT 环）在测量前组合它们。QMNN 中，多跨度 CNOT 模式（k=1,3,6）在模态对之间创建纠缠。</li>
+          <li><strong>All-to-All Fusion</strong>：全连接纠缠模式，一个模态的每个量子比特与另一个模态的每个量子比特交互。最大关联捕获但电路深度高。</li>
+          <li><strong>Circuit-Block Fusion</strong>：结构化的周期性 CNOT 模式，在纠缠能力与可训练性之间提供实用平衡。</li>
         </ul>
 
-        <h3>2. Implicit Quantum Fusion</h3>
-        <p>Methods that directly concatenate all modalities into a single long feature vector and encode it into quantum states. Fusion occurs implicitly within the VQC during training, with no separate fusion operation.</p>
+        <h3>2. 隐式量子融合 (Implicit Quantum Fusion)</h3>
+        <p>将所有模态直接拼接为单一长特征向量并编码为量子态的方法。融合在 VQC 训练过程中隐式完成，没有独立的融合操作。</p>
         <ul>
-          <li><strong>Amplitude Encoding Fusion</strong> (Expressive & Scalable Quantum Fusion): All modality features are directly amplitude-encoded into $\log_2(\sum |\text{features}|)$ qubits using index-controlled $R_y$ gates. Fusion is entangled with representation learning, making it hard to interpret.</li>
+          <li><strong>Amplitude Encoding Fusion</strong>（Expressive &amp; Scalable Quantum Fusion）：所有模态特征通过索引控制的 $R_y$ 门直接振幅编码到 $\log_2(\sum |\text{features}|)$ 个量子比特中。融合与表示学习纠缠在一起，难以解释。</li>
         </ul>
 
-        <h3>3. Classical-Layer Fusion</h3>
-        <p>The vast majority of existing quantum multimodal models perform fusion at the classical level. Quantum circuits are used either for unimodal feature extraction or as a post-fusion processing step, but the fusion itself happens through classical operations (concatenation, attention, residual networks).</p>
+        <h3>3. 经典层融合 (Classical-Layer Fusion)</h3>
+        <p>大多数现有量子多模态模型在经典层面执行融合。量子电路仅用于单模态特征提取或融合后处理，但融合本身通过经典操作（拼接、注意力、残差网络）完成。</p>
         <ul>
-          <li><strong>QMFND</strong>: Multilayer fully-connected layers fuse classical features before quantum encoding. Reference value limited.</li>
-          <li><strong>QMLSC</strong>: Uses residual networks for cross-modal fusion at the classical level, with quantum encoding only at the end.</li>
-          <li><strong>QFNN</strong>: Combines fuzzy logic with quantum neural networks; fusion is essentially classical.</li>
-          <li><strong>QViLa</strong>: Vision-language features are concatenated (1024-dim), FC-reduced to 4 qubits for a shallow quantum circuit. Quantum layer has minimal effect.</li>
-          <li><strong>QNMF</strong>: "Quantum-Classical-Quantum" pipeline &mdash; QCNN extracts image features, classical concatenation, then amplitude encoding. Fusion is classical.</li>
-          <li><strong>MQFL-FHE</strong>: Quantum layers process each modality separately; measurement results are fused classically.</li>
-          <li><strong>ITQT-MSA</strong>: Quantum-enhanced unimodal extraction only; cross-modal interaction uses classical Transformer attention.</li>
+          <li><strong>QMFND</strong>：多层全连接层在量子编码前融合经典特征。参考价值有限。</li>
+          <li><strong>QMLSC</strong>：使用残差网络在经典层面进行跨模态融合，量子编码仅在最后阶段。</li>
+          <li><strong>QFNN</strong>：将模糊逻辑与量子神经网络结合；融合本质上是经典的。</li>
+          <li><strong>QViLa</strong>：视觉-语言特征拼接（1024 维），FC 降维至 4 个量子比特用于浅量子电路。量子层作用很小。</li>
+          <li><strong>QNMF</strong>："量子-经典-量子"管线 &mdash; QCNN 提取图像特征，经典拼接，然后振幅编码。融合是经典的。</li>
+          <li><strong>MQFL-FHE</strong>：量子层分别处理各模态；测量结果在经典层面融合。</li>
+          <li><strong>ITQT-MSA</strong>：仅使用量子增强的单模态提取；跨模态交互使用经典 Transformer 注意力。</li>
         </ul>
-        <p>These methods, while incorporating quantum components, do not fundamentally advance quantum fusion mechanisms.</p>
+        <p>这些方法虽然包含量子组件，但并未从根本上推进量子融合机制。</p>
       </section>
 
       <section id="applications" class="content-section">
-        <h2>Application Domains</h2>
-        <p>Quantum multimodal models have been applied to diverse tasks:</p>
+        <h2>应用领域</h2>
+        <p>量子多模态模型已应用于多种任务：</p>
         <table>
-          <tr><th>Domain</th><th>Modalities</th><th>Representative Works</th></tr>
-          <tr><td>Sentiment Analysis</td><td>Text + Audio + Visual</td><td>QMNN, QMLSC, QFNN</td></tr>
-          <tr><td>Emotion Recognition</td><td>Text + Audio</td><td>SAMS, mmQFL</td></tr>
-          <tr><td>Fake News Detection</td><td>Text + Image</td><td>QMFND</td></tr>
-          <tr><td>Remote Sensing</td><td>HSI + LiDAR</td><td>$S^2$ENet, QCMM (ours)</td></tr>
-          <tr><td>Medical Diagnosis</td><td>DNA + MRI</td><td>QNMF, MQFL-FHE</td></tr>
-          <tr><td>Communication</td><td>GPS + Camera + LiDAR + RADAR</td><td>QTN</td></tr>
-          <tr><td>Financial Prediction</td><td>Time series (single)</td><td>QuantumLeap</td></tr>
+          <tr><th>领域</th><th>模态</th><th>代表工作</th></tr>
+          <tr><td>情感分析</td><td>文本 + 音频 + 视觉</td><td>QMNN, QMLSC, QFNN</td></tr>
+          <tr><td>情绪识别</td><td>文本 + 音频</td><td>SAMS, mmQFL</td></tr>
+          <tr><td>假新闻检测</td><td>文本 + 图像</td><td>QMFND</td></tr>
+          <tr><td>遥感</td><td>HSI + LiDAR</td><td>$S^2$ENet, QCMM (ours)</td></tr>
+          <tr><td>医学诊断</td><td>DNA + MRI</td><td>QNMF, MQFL-FHE</td></tr>
+          <tr><td>通信</td><td>GPS + 相机 + LiDAR + RADAR</td><td>QTN</td></tr>
+          <tr><td>金融预测</td><td>时间序列（单模态）</td><td>QuantumLeap</td></tr>
         </table>
         <figure style="margin: 1.5rem 0; text-align: center;">
           <img src="images/qmf-s2enet.png" alt="S²ENet architecture for remote sensing" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);" />
-          <figcaption style="font-size: 0.85rem; color: #666; margin-top: 0.5rem;">S²ENet: an exemplar deep fusion architecture for HSI+LiDAR remote sensing (non-quantum baseline).</figcaption>
+          <figcaption style="font-size: 0.85rem; color: #666; margin-top: 0.5rem;">S²ENet：HSI+LiDAR 遥感的深度融合架构示例（非量子基线）。</figcaption>
         </figure>
       </section>
 
       <section id="challenges" class="content-section">
-        <h2>Key Challenges and Observations</h2>
+        <h2>关键挑战与观察</h2>
         <ul>
-          <li><strong>Barren Plateaus</strong>: Increasing qubit count leads to gradient vanishing. Most works use very few qubits (4&ndash;10), severely limiting expressiveness.</li>
-          <li><strong>Lack of Interpretability</strong>: Most quantum fusion circuits remain "black-box" &mdash; the physical meaning of entanglement for cross-modal interaction is unclear.</li>
-          <li><strong>Classical Dominance</strong>: The majority of works use quantum circuits only peripherally, with fusion handled classically. These cannot be considered true quantum multimodal fusion.</li>
-          <li><strong>Scalability</strong>: Current NISQ hardware limits qubit count, restricting these models to very low-dimensional features.</li>
-          <li><strong>Parameter Efficiency</strong>: A key claimed advantage of quantum models &mdash; exponential Hilbert space with polynomial parameters &mdash; is often underutilized.</li>
+          <li><strong>贫瘠高原 (Barren Plateaus)</strong>：量子比特数增加导致梯度消失。大多数工作使用极少的量子比特（4&ndash;10 个），严重限制了表达能力。</li>
+          <li><strong>缺乏可解释性</strong>：大多数量子融合电路仍是"黑盒" &mdash; 纠缠对跨模态交互的物理意义不明确。</li>
+          <li><strong>经典主导</strong>：大多数工作仅在边缘使用量子电路，融合由经典方法处理。这些方法不能被视为真正的量子多模态融合。</li>
+          <li><strong>可扩展性</strong>：当前 NISQ 硬件限制了量子比特数，使这些模型仅能处理极低维特征。</li>
+          <li><strong>参数效率</strong>：量子模型的一个关键宣称优势 &mdash; 指数 Hilbert 空间仅需多项式参数 &mdash; 往往未被充分利用。</li>
         </ul>
       </section>
 
       <section id="summary" class="content-section">
-        <h2>Summary</h2>
+        <h2>总结</h2>
         <p>
-          The field of quantum multimodal fusion is rapidly growing but still nascent. Most existing works either perform fusion classically or use black-box quantum circuits without interpretability. There is a clear gap for methods that achieve <strong>interpretable quantum fusion</strong> with <strong>parameter efficiency</strong> and <strong>competitive accuracy</strong>. Our QCMM framework (see <a href="qcmm.html">next post</a>) addresses these challenges by mapping Dempster-Shafer evidence theory to quantum circuits.
+          量子多模态融合领域正在快速增长但仍处于起步阶段。大多数现有工作在经典层面执行融合，或使用缺乏可解释性的黑盒量子电路。在实现<strong>可解释量子融合</strong>、<strong>参数高效</strong>和<strong>有竞争力的精度</strong>方面存在明显空白。我们的 QCMM 框架（见<a href="qcmm.html">下一篇</a>）通过将 Dempster-Shafer 证据理论映射到量子电路来应对这些挑战。
         </p>
       </section>
 
       <nav class="page-nav">
-        <a class="page-nav-btn" href="index.html">&larr; Back to Home</a>
+        <a class="page-nav-btn" href="index.html">&larr; 返回首页</a>
         <a class="page-nav-btn" href="qcmm.html">QCMM: Our Work &rarr;</a>
       </nav>
       </main>
 
       <aside class="col-12 col-xl-2 col-xxl-2 order-3 progress-sidebar" style="padding-left: 1.5rem; align-self: start; position: sticky; top: 96px;">
-        <h2 style="font-size: 0.85rem; letter-spacing: 0.16em; text-transform: uppercase; color: #9a9384;">On this page</h2>
+        <h2 style="font-size: 0.85rem; letter-spacing: 0.16em; text-transform: uppercase; color: #9a9384;">本页内容</h2>
         <ul class="progress-list" style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.4rem;">
-          <li><a class="progress-link is-active" data-target="overview">Overview</a></li>
-          <li><a class="progress-link" data-target="background">Background</a></li>
-          <li><a class="progress-link" data-target="encoding">Encoding</a></li>
-          <li><a class="progress-link" data-target="fusion-taxonomy">Fusion Taxonomy</a></li>
-          <li><a class="progress-link" data-target="applications">Applications</a></li>
-          <li><a class="progress-link" data-target="challenges">Challenges</a></li>
-          <li><a class="progress-link" data-target="summary">Summary</a></li>
+          <li><a class="progress-link is-active" data-target="overview">概述</a></li>
+          <li><a class="progress-link" data-target="background">背景</a></li>
+          <li><a class="progress-link" data-target="encoding">编码</a></li>
+          <li><a class="progress-link" data-target="fusion-taxonomy">融合分类</a></li>
+          <li><a class="progress-link" data-target="applications">应用</a></li>
+          <li><a class="progress-link" data-target="challenges">挑战</a></li>
+          <li><a class="progress-link" data-target="summary">总结</a></li>
         </ul>
         <div class="progress-meter" style="margin-top: 1rem; height: 4px; background: var(--border); border-radius: 999px; overflow: hidden;">
           <div class="progress-meter-fill" style="height: 100%; width: 0; background: var(--accent);"></div>

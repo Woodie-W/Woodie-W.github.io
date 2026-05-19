@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -37,9 +37,9 @@
       </button>
       <nav class="collapse navbar-collapse primary-nav" id="mainNav">
         <div class="navbar-nav ms-auto align-items-lg-center gap-2">
-          <a class="nav-link" href="index.html" data-nav-target="home">Home</a>
-          <a class="nav-link active" href="light-segment-tree.html" data-nav-target="notes">OI Notes</a>
-          <a class="nav-link" href="qmf-survey.html" data-nav-target="research">Research</a>
+          <a class="nav-link" href="index.html" data-nav-target="home">首页</a>
+          <a class="nav-link active" href="light-segment-tree.html" data-nav-target="notes">OI 笔记</a>
+          <a class="nav-link" href="qmf-survey.html" data-nav-target="research">研究</a>
         </div>
       </nav>
     </div>
@@ -49,16 +49,16 @@
     <div class="row g-4 flex-xl-nowrap">
       <aside class="chapter-sidebar col-12 col-xl-3 col-xxl-3 order-2 order-xl-1">
   <ul class="chapter-links">
-    <li><a data-chapter-link="home" href="index.html" class="">Home</a></li>
+    <li><a data-chapter-link="home" href="index.html" class="">首页</a></li>
     <li>
-      <span class="chapter-parent">OI Notes</span>
+      <span class="chapter-parent">OI 笔记</span>
       <ul class="sub-chapter-links">
         <li><a data-chapter-link="light-segment-tree" href="light-segment-tree.html" class=" current">Light Segment Tree</a></li>
         <li><a data-chapter-link="computational-geometry" href="computational-geometry.html" class="">Computational Geometry</a></li>
       </ul>
     </li>
     <li>
-      <span class="chapter-parent">Research</span>
+      <span class="chapter-parent">研究</span>
       <ul class="sub-chapter-links">
         <li><a data-chapter-link="qmf-survey" href="qmf-survey.html" class="">Quantum Multimodal Fusion Survey</a></li>
         <li><a data-chapter-link="qcmm" href="qcmm.html" class="">QCMM: Our Work</a></li>
@@ -77,22 +77,22 @@
           <span class="tag">Lazy Propagation</span>
         </div>
         <p class="section-intro" style="margin-top: 1rem;">
-          A lightweight segment tree template with layer-based storage, supporting range add and range sum query.
+          轻量线段树模板，采用分层存储，支持区间加和区间求和。
         </p>
       </section>
 
       <section id="description" class="content-section">
-        <h2>Description</h2>
+        <h2>描述</h2>
         <p>
-          Writing segment trees with pointers, nodes, and levels is annoying. By sizing the tree to $2^n$, we can directly compute the level and position of each node without maintaining a tree structure. We only need a flat ST-table data structure.
+          用指针、节点和层级来写线段树很烦。将树的大小设为 $2^n$ 后，可以直接计算每个节点的层级和位置，无需维护树结构，只需一个平铺的 ST-table 数据结构。
         </p>
         <p>
-          This template uses <code>st[i][j]</code> and <code>lazy[i][j]</code> to represent the range sum and lazy propagation value of the $j$-th interval of length $2^i$. The interval uses half-open <code>[l, r)</code> 0-based indexing.
+          该模板使用 <code>st[i][j]</code> 和 <code>lazy[i][j]</code> 分别表示长度为 $2^i$ 的第 $j$ 个区间的区间和与懒标记值。区间使用左闭右开 <code>[l, r)</code> 0-based 索引。
         </p>
       </section>
 
       <section id="code" class="content-section">
-        <h2>Code</h2>
+        <h2>代码</h2>
         <div class="table-scroll">
 <pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
 using namespace std;
@@ -194,16 +194,16 @@ int main(){
       </section>
 
       <nav class="page-nav">
-        <a class="page-nav-btn" href="index.html">&larr; Back to Home</a>
+        <a class="page-nav-btn" href="index.html">&larr; 返回首页</a>
       </nav>
       </main>
 
       <aside class="col-12 col-xl-2 col-xxl-2 order-3 progress-sidebar" style="padding-left: 1.5rem; align-self: start; position: sticky; top: 96px;">
-        <h2 style="font-size: 0.85rem; letter-spacing: 0.16em; text-transform: uppercase; color: #9a9384;">On this page</h2>
+        <h2 style="font-size: 0.85rem; letter-spacing: 0.16em; text-transform: uppercase; color: #9a9384;">本页内容</h2>
         <ul class="progress-list" style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.4rem;">
-          <li><a class="progress-link is-active" data-target="overview">Overview</a></li>
-          <li><a class="progress-link" data-target="description">Description</a></li>
-          <li><a class="progress-link" data-target="code">Code</a></li>
+          <li><a class="progress-link is-active" data-target="overview">概述</a></li>
+          <li><a class="progress-link" data-target="description">描述</a></li>
+          <li><a class="progress-link" data-target="code">代码</a></li>
         </ul>
         <div class="progress-meter" style="margin-top: 1rem; height: 4px; background: var(--border); border-radius: 999px; overflow: hidden;">
           <div class="progress-meter-fill" style="height: 100%; width: 0; background: var(--accent);"></div>

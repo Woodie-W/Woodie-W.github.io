@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>QCMM: Evidential Quantum Multimodal Fusion - Woodie's Blog</title>
+  <title>QCMM: 基于证据理论的量子多模态融合 - Woodie's Blog</title>
   <link href="libs/bootstrap/bootstrap.min.css" rel="stylesheet" />
   <link rel="stylesheet" href="styles.css" />
   <link rel="icon" type="image/png" sizes="32x32" href="images/android-chrome-192x192.png" />
@@ -37,9 +37,9 @@
       </button>
       <nav class="collapse navbar-collapse primary-nav" id="mainNav">
         <div class="navbar-nav ms-auto align-items-lg-center gap-2">
-          <a class="nav-link" href="index.html" data-nav-target="home">Home</a>
-          <a class="nav-link" href="light-segment-tree.html" data-nav-target="notes">OI Notes</a>
-          <a class="nav-link active" href="qmf-survey.html" data-nav-target="research">Research</a>
+          <a class="nav-link" href="index.html" data-nav-target="home">首页</a>
+          <a class="nav-link" href="light-segment-tree.html" data-nav-target="notes">OI 笔记</a>
+          <a class="nav-link active" href="qmf-survey.html" data-nav-target="research">研究</a>
         </div>
       </nav>
     </div>
@@ -49,16 +49,16 @@
     <div class="row g-4 flex-xl-nowrap">
       <aside class="chapter-sidebar col-12 col-xl-3 col-xxl-3 order-2 order-xl-1">
   <ul class="chapter-links">
-    <li><a data-chapter-link="home" href="index.html" class="">Home</a></li>
+    <li><a data-chapter-link="home" href="index.html" class="">首页</a></li>
     <li>
-      <span class="chapter-parent">OI Notes</span>
+      <span class="chapter-parent">OI 笔记</span>
       <ul class="sub-chapter-links">
         <li><a data-chapter-link="light-segment-tree" href="light-segment-tree.html" class="">Light Segment Tree</a></li>
         <li><a data-chapter-link="computational-geometry" href="computational-geometry.html" class="">Computational Geometry</a></li>
       </ul>
     </li>
     <li>
-      <span class="chapter-parent">Research</span>
+      <span class="chapter-parent">研究</span>
       <ul class="sub-chapter-links">
         <li><a data-chapter-link="qmf-survey" href="qmf-survey.html" class="">Quantum Multimodal Fusion Survey</a></li>
         <li><a data-chapter-link="qcmm" href="qcmm.html" class=" current">QCMM: Our Work</a></li>
@@ -69,7 +69,7 @@
 
       <main class="col-12 col-xl-7 col-xxl-7 order-1 order-xl-2 main-content">
       <section id="overview" class="content-section">
-        <h1 class="section-title" style="font-size: 2rem;">QCMM: Evidential Quantum Multimodal Fusion Neural Network</h1>
+        <h1 class="section-title" style="font-size: 2rem;">QCMM: 基于证据理论的量子多模态融合神经网络</h1>
         <span class="post-date">2026.05</span>
         <div class="tag-list" style="margin: 0.75rem 0;">
           <span class="tag">Quantum Neural Network</span>
@@ -78,139 +78,139 @@
           <span class="tag">QCNN</span>
         </div>
         <p class="section-intro" style="margin-top: 1rem;">
-          We propose QCMM, a feature entanglement-based quantum multimodal fusion framework that maps Dempster-Shafer evidence theory to quantum circuits, achieving interpretable fusion with parameter efficiency.
+          我们提出 QCMM，一个基于特征纠缠的量子多模态融合框架，将 Dempster-Shafer 证据理论映射到量子电路上，实现可解释且参数高效的融合。
         </p>
       </section>
 
       <section id="motivation" class="content-section">
-        <h2>Motivation</h2>
+        <h2>动机</h2>
         <p>
-          Classical multimodal fusion faces a fundamental dilemma: <strong>feature-level fusion</strong> (deep neural networks) achieves high accuracy but is a "black-box" with parameter explosion, while <strong>decision-level fusion</strong> (e.g., Bayesian inference, DS theory) is interpretable but yields lower accuracy.
+          经典多模态融合面临根本性困境：<strong>特征级融合</strong>（深度神经网络）精度高但属于参数爆炸的"黑盒"，而<strong>决策级融合</strong>（如贝叶斯推理、DS 理论）可解释但精度较低。
         </p>
         <p>
-          We observe a mathematical isomorphism between the power set structure of DS theory and the tensor product structure of the quantum Hilbert space. This insight allows us to physically implement evidence combination rules (conjunctive combination rule, CCR) through quantum entanglement, achieving both interpretability and high expressiveness.
+          我们观察到 DS 理论的幂集结构与量子 Hilbert 空间的张量积结构之间存在数学同构。这一洞察使我们能够通过量子纠缠物理实现证据组合规则（合取组合规则，CCR），同时获得可解释性和高表达能力。
         </p>
       </section>
 
       <section id="architecture" class="content-section">
-        <h2>Architecture</h2>
-        <p>The QCMM framework is a hybrid quantum-classical architecture with three key stages:</p>
+        <h2>架构</h2>
+        <p>QCMM 框架是一个混合量子-经典架构，包含三个关键阶段：</p>
         <figure style="margin: 1.5rem 0; text-align: center;">
           <img src="images/struct.png" alt="QCMM overall architecture" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);" />
-          <figcaption style="font-size: 0.85rem; color: #666; margin-top: 0.5rem;">QCMM overall architecture: multimodal input → PCA → MLP alignment → quantum feature fusion → QCNN → measurement.</figcaption>
+          <figcaption style="font-size: 0.85rem; color: #666; margin-top: 0.5rem;">QCMM 整体架构：多模态输入 → PCA → MLP 对齐 → 量子特征融合 → QCNN → 测量。</figcaption>
         </figure>
 
-        <h3>Stage 1: Unimodal Feature Alignment</h3>
-        <p>Classical single-layer MLPs (hidden size 64, input/output dim 8) extract and align features from each modality. PCA is used for offline dimensionality reduction to $d = 8$ dimensions. The MLPs implicitly learn semantic alignment &mdash; the downstream bit-wise quantum fusion forces corresponding features to mapped positions.</p>
+        <h3>阶段 1：单模态特征对齐</h3>
+        <p>经典单层 MLP（隐藏层大小 64，输入/输出维度 8）提取并对齐各模态特征。PCA 用于离线降维至 $d = 8$ 维。MLP 隐式学习语义对齐 &mdash; 下游逐位量子融合迫使对应特征映射到正确位置。</p>
         <p>$$\mathbf{v}_m = \mathbf{W}_2^{(m)} \sigma(\mathbf{W}_1^{(m)} \mathbf{x}_m + \mathbf{b}_1^{(m)}) + \mathbf{b}_2^{(m)}$$</p>
         <figure style="margin: 1.5rem 0; text-align: center;">
           <img src="images/qcmm-mlp.svg" alt="Unimodal MLP alignment" style="max-width: 320px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);" />
-          <figcaption style="font-size: 0.85rem; color: #666; margin-top: 0.5rem;">Unimodal MLP alignment: each modality is independently mapped to an 8-dimensional aligned feature space.</figcaption>
+          <figcaption style="font-size: 0.85rem; color: #666; margin-top: 0.5rem;">单模态 MLP 对齐：每个模态独立映射到 8 维对齐特征空间。</figcaption>
         </figure>
 
-        <h3>Stage 2: Quantum Embedding and Evidence Fusion</h3>
-        <p>Aligned features are angle-encoded into quantum states:</p>
+        <h3>阶段 2：量子嵌入与证据融合</h3>
+        <p>对齐后的特征通过 angle encoding 编码为量子态：</p>
         <p>$$|\psi_m\rangle = \bigotimes_{j=1}^{d} R_y(v_{m,j}) |0\rangle_j$$</p>
-        <p>A target register $|0\rangle^{\otimes d}_f$ is initialized. The core fusion uses <strong>bit-wise CC-$R_y(\theta)$ gates</strong>: for each feature index $j$, the two modality qubits simultaneously control a rotation on the target qubit. This physically implements the DS conjunctive combination rule &mdash; the target qubit rotates only when both modalities assert evidence (state $|1\rangle$).</p>
+        <p>初始化目标寄存器 $|0\rangle^{\otimes d}_f$。核心融合使用<strong>逐位 CC-$R_y(\theta)$ 门</strong>：对每个特征索引 $j$，两个模态量子比特同时控制目标量子比特的旋转。这物理实现了 DS 合取组合规则 &mdash; 目标量子比特仅在两个模态同时声明证据（状态 $|1\rangle$）时才旋转。</p>
         <p>$$U_f^{(j)}(\theta_j) = (I_{hl} - |11\rangle\langle 11|_{hl}) \otimes I_f + |11\rangle\langle 11|_{hl} \otimes R_y(\theta_j)_f$$</p>
-        <p>The trainable angle $\theta_j$ represents the learnable belief mass assigned to the combined evidence. Control registers are then traced out, producing a fused density matrix.</p>
+        <p>可训练角度 $\theta_j$ 表示赋予组合证据的可学习信任质量。控制寄存器随后被求迹，产生融合后的密度矩阵。</p>
         <figure style="margin: 1.5rem 0; text-align: center;">
           <img src="images/qcmm-fusion.svg" alt="Bit-wise CC-Ry fusion topology" style="max-width: 380px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);" />
-          <figcaption style="font-size: 0.85rem; color: #666; margin-top: 0.5rem;">Bit-wise CC-$R_y$ fusion topology: 8 independent 3-qubit channels (blue = modality H, orange = modality L).</figcaption>
+          <figcaption style="font-size: 0.85rem; color: #666; margin-top: 0.5rem;">逐位 CC-$R_y$ 融合拓扑：8 个独立的三量子比特通道（蓝色 = 模态 H，橙色 = 模态 L）。</figcaption>
         </figure>
 
-        <h3>Stage 3: QCNN Deep Feature Extraction</h3>
-        <p>A Quantum Convolutional Neural Network (QCNN) hierarchically extracts features from the fused state. Two stacked convolutional-pooling blocks reduce 8 qubits to 2 qubits. We investigate three kernel ansatzes:</p>
+        <h3>阶段 3：QCNN 深度特征提取</h3>
+        <p>量子卷积神经网络（QCNN）从融合态中分层提取特征。两个堆叠的卷积-池化块将 8 个量子比特压缩为 2 个。我们研究了三种核参数化方案：</p>
         <ul>
-          <li><strong>$U_{SO4}$</strong>: $R_y$/$R_z$ rotations with CNOT &mdash; for real-valued amplitudes (6 params)</li>
-          <li><strong>$U_{SU4}$</strong>: Full $SU(4)$ two-qubit unitary &mdash; maximum expressibility (15 params)</li>
-          <li><strong>$U_{15}$</strong>: Hardware-efficient deep ansatz with high entangling capability (4 params)</li>
+          <li><strong>$U_{SO4}$</strong>：$R_y$/$R_z$ 旋转加 CNOT &mdash; 适用于实值振幅（6 个参数）</li>
+          <li><strong>$U_{SU4}$</strong>：完整 $SU(4)$ 双量子比特幺正 &mdash; 最大表达能力（15 个参数）</li>
+          <li><strong>$U_{15}$</strong>：硬件高效深度参数化方案，高纠缠能力（4 个参数）</li>
         </ul>
-        <p>Pooling uses parameterized controlled rotations ($R_z$, $R_x$) to compress information from source to target qubits. Final projective measurement on 2 qubits yields classification probabilities via the Born rule.</p>
+        <p>池化使用参数化受控旋转（$R_z$、$R_x$）将信息从源量子比特压缩到目标量子比特。最终对 2 个量子比特进行投影测量，通过 Born 规则得到分类概率。</p>
       </section>
 
       <section id="properties" class="content-section">
-        <h2>Theoretical Properties</h2>
+        <h2>理论性质</h2>
 
-        <h3>Parameter Efficiency</h3>
-        <p>Total quantum parameters scale linearly: $P_q = d + L \times K$ where $d = 8$ is feature dimension, $L = 2$ is QCNN layers, and $K < 25$ is the constant per-block parameter count. <strong>QCMM uses only 8 fusion parameters</strong> compared to 42k for classical CrossFusion and 9.2M for FusAtNet.</p>
+        <h3>参数效率</h3>
+        <p>量子参数总量线性增长：$P_q = d + L \times K$，其中 $d = 8$ 为特征维度，$L = 2$ 为 QCNN 层数，$K < 25$ 为每块常数参数量。<strong>QCMM 仅使用 8 个融合参数</strong>，而经典 CrossFusion 为 42k，FusAtNet 为 9.2M。</p>
 
-        <h3>Decomposability and Parallelism</h3>
-        <p>The bit-wise topology decomposes the global 24-qubit system into 8 independent 3-qubit channels. Both forward evolution and backward gradients are confined within local subsystems, <strong>fundamentally preventing barren plateaus</strong>.</p>
+        <h3>可分解性与并行性</h3>
+        <p>逐位拓扑将全局 24 量子比特系统分解为 8 个独立的三量子比特通道。前向演化和反向梯度都限定在局部子系统内，<strong>从根本上防止了贫瘠高原</strong>。</p>
 
-        <h3>Logical Interpretability</h3>
-        <p>Each CC-$R_y(\theta_j)$ gate implements one step of the DS conjunctive combination rule. The rotation angle encodes the learned belief mass: $m(\text{fused}_j) \propto \sin^2(\theta_j / 2)$. Larger $\theta_j$ means the model trusts this cross-modal correlation more. This transforms fusion from an opaque operation into transparent evidence reasoning.</p>
+        <h3>逻辑可解释性</h3>
+        <p>每个 CC-$R_y(\theta_j)$ 门实现 DS 合取组合规则的一步。旋转角度编码学习到的信任质量：$m(\text{fused}_j) \propto \sin^2(\theta_j / 2)$。$\theta_j$ 越大，模型越信任该跨模态关联。这将融合从不透明操作转化为透明的证据推理。</p>
       </section>
 
       <section id="experiments" class="content-section">
-        <h2>Experimental Results</h2>
-        <p>We evaluate on Houston2013 (15-class urban HSI+LiDAR, 4-class subset) and Trento (6-class rural HSI+LiDAR, 4-class subsets), using PyTorch + PennyLane on RTX 3090.</p>
+        <h2>实验结果</h2>
+        <p>我们在 Houston2013（15 类城区 HSI+LiDAR，4 类子集）和 Trento（6 类乡村 HSI+LiDAR，4 类子集）上进行评估，使用 PyTorch + PennyLane，GPU 为 RTX 3090。</p>
 
-        <h3>Quantum Fusion Comparison (Houston2013, $U_{SU4}$ kernel)</h3>
+        <h3>量子融合对比（Houston2013，$U_{SU4}$ 核）</h3>
         <table>
-          <tr><th>Method</th><th>Fusion Params</th><th>OA</th><th>AA</th><th>Kappa</th><th>F1</th></tr>
+          <tr><th>方法</th><th>融合参数量</th><th>OA</th><th>AA</th><th>Kappa</th><th>F1</th></tr>
           <tr><td>Circuit-Block</td><td>0</td><td>0.9559</td><td>0.9809</td><td>0.9709</td><td>0.9809</td></tr>
           <tr><td>All-to-All</td><td>0</td><td>0.8679</td><td>0.9670</td><td>0.9496</td><td>0.9655</td></tr>
           <tr><td><strong>QCMM (Ours)</strong></td><td><strong>8</strong></td><td><strong>0.9842</strong></td><td><strong>0.9859</strong></td><td><strong>0.9786</strong></td><td><strong>0.9859</strong></td></tr>
         </table>
 
-        <h3>Classical Model Comparison</h3>
+        <h3>经典模型对比</h3>
         <table>
-          <tr><th>Method</th><th>Total Params</th><th>OA</th></tr>
+          <tr><th>方法</th><th>总参数量</th><th>OA</th></tr>
           <tr><td>EndNet</td><td>85k</td><td>0.9910</td></tr>
           <tr><td>CrossFusion</td><td>99k</td><td>0.9700</td></tr>
           <tr><td>FusAtNet</td><td>17,440k</td><td>0.9950</td></tr>
           <tr><td><strong>QCMM (Ours)</strong></td><td><strong>2.2k</strong></td><td><strong>0.9842</strong></td></tr>
         </table>
-        <p>QCMM achieves accuracy within 1% of the best classical model with <strong>~1/40 the parameters</strong> of CrossFusion and <strong>~1/7900 of FusAtNet</strong>.</p>
+        <p>QCMM 以 <strong>约 CrossFusion 1/40 的参数</strong>和<strong>约 FusAtNet 1/7900 的参数</strong>达到了与最佳经典模型相差 1% 以内的精度。</p>
         <figure style="margin: 1.5rem 0; text-align: center;">
           <img src="images/comparison_result.png" alt="Model comparison across metrics" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);" />
-          <figcaption style="font-size: 0.85rem; color: #666; margin-top: 0.5rem;">Comparison of QCMM against classical baselines and quantum post-process models across OA, AA, Kappa, and F1.</figcaption>
+          <figcaption style="font-size: 0.85rem; color: #666; margin-top: 0.5rem;">QCMM 与经典基线及量子后处理模型在 OA、AA、Kappa 和 F1 指标上的对比。</figcaption>
         </figure>
 
-        <h3>Generalization</h3>
-        <p>Across 7 different classification tasks on Houston2013 and Trento, QCMM maintains stable accuracy (OA 0.85&ndash;1.00) with minimal fluctuation, demonstrating strong generalization.</p>
+        <h3>泛化性</h3>
+        <p>在 Houston2013 和 Trento 的 7 个不同分类任务中，QCMM 保持了稳定的精度（OA 0.85&ndash;1.00），波动极小，展现了强泛化能力。</p>
       </section>
 
       <section id="ablation" class="content-section">
-        <h2>Ablation Study</h2>
+        <h2>消融实验</h2>
         <ul>
-          <li><strong>w/o MLP</strong>: Removing unimodal MLPs drops OA from 0.9842 to 0.7452 &mdash; confirms critical role of feature alignment.</li>
-          <li><strong>Fixed Fusion (CC-NOT, $\theta = \pi$)</strong>: Fixing fusion angles drops OA to 0.9661 &mdash; proves trainable parameters capture meaningful belief masses.</li>
-          <li><strong>HSI-only</strong>: OA 0.9785; <strong>LiDAR-only</strong>: OA 0.8139 &mdash; verifies effective exploitation of complementary information.</li>
-          <li><strong>Shallow QCNN</strong>: OA drops to 0.9740 &mdash; confirms hierarchical structure is essential.</li>
+          <li><strong>去除 MLP</strong>：移除单模态 MLP 后 OA 从 0.9842 降至 0.7452 &mdash; 证实了特征对齐的关键作用。</li>
+          <li><strong>固定融合（CC-NOT，$\theta = \pi$）</strong>：固定融合角度后 OA 降至 0.9661 &mdash; 证明可训练参数捕获了有意义的信任质量。</li>
+          <li><strong>仅 HSI</strong>：OA 0.9785；<strong>仅 LiDAR</strong>：OA 0.8139 &mdash; 验证了对互补信息的有效利用。</li>
+          <li><strong>浅层 QCNN</strong>：OA 降至 0.9740 &mdash; 确认分层结构是必要的。</li>
         </ul>
       </section>
 
       <section id="conclusion" class="content-section">
-        <h2>Conclusion</h2>
+        <h2>结论</h2>
         <p>
-          QCMM demonstrates that quantum multimodal fusion can be both <strong>interpretable</strong> and <strong>efficient</strong>. By mapping DS evidence theory to quantum circuits via CC-$R_y$ gates, we achieve:
+          QCMM 证明了量子多模态融合可以同时实现<strong>可解释性</strong>和<strong>高效性</strong>。通过 CC-$R_y$门将 DS 证据理论映射到量子电路，我们实现了：
         </p>
         <ul>
-          <li>Logical interpretability through evidence-theoretic physical semantics</li>
-          <li>Linear parameter scaling with exponential feature space access</li>
-          <li>Immunity to barren plateaus via bit-wise decomposability</li>
-          <li>Competitive accuracy with classical models despite using orders of magnitude fewer parameters</li>
+          <li>基于证据理论物理语义的逻辑可解释性</li>
+          <li>线性参数缩放与指数级特征空间访问</li>
+          <li>通过逐位可分解性免疫贫瘠高原</li>
+          <li>尽管参数量少几个数量级，仍达到与经典模型相当的精度</li>
         </ul>
       </section>
 
       <nav class="page-nav">
-        <a class="page-nav-btn" href="qmf-survey.html">&larr; Survey</a>
-        <a class="page-nav-btn" href="index.html">Home &rarr;</a>
+        <a class="page-nav-btn" href="qmf-survey.html">&larr; 综述</a>
+        <a class="page-nav-btn" href="index.html">首页 &rarr;</a>
       </nav>
       </main>
 
       <aside class="col-12 col-xl-2 col-xxl-2 order-3 progress-sidebar" style="padding-left: 1.5rem; align-self: start; position: sticky; top: 96px;">
-        <h2 style="font-size: 0.85rem; letter-spacing: 0.16em; text-transform: uppercase; color: #9a9384;">On this page</h2>
+        <h2 style="font-size: 0.85rem; letter-spacing: 0.16em; text-transform: uppercase; color: #9a9384;">本页内容</h2>
         <ul class="progress-list" style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.4rem;">
-          <li><a class="progress-link is-active" data-target="overview">Overview</a></li>
-          <li><a class="progress-link" data-target="motivation">Motivation</a></li>
-          <li><a class="progress-link" data-target="architecture">Architecture</a></li>
-          <li><a class="progress-link" data-target="properties">Properties</a></li>
-          <li><a class="progress-link" data-target="experiments">Experiments</a></li>
-          <li><a class="progress-link" data-target="ablation">Ablation</a></li>
-          <li><a class="progress-link" data-target="conclusion">Conclusion</a></li>
+          <li><a class="progress-link is-active" data-target="overview">概述</a></li>
+          <li><a class="progress-link" data-target="motivation">动机</a></li>
+          <li><a class="progress-link" data-target="architecture">架构</a></li>
+          <li><a class="progress-link" data-target="properties">理论性质</a></li>
+          <li><a class="progress-link" data-target="experiments">实验结果</a></li>
+          <li><a class="progress-link" data-target="ablation">消融实验</a></li>
+          <li><a class="progress-link" data-target="conclusion">结论</a></li>
         </ul>
         <div class="progress-meter" style="margin-top: 1rem; height: 4px; background: var(--border); border-radius: 999px; overflow: hidden;">
           <div class="progress-meter-fill" style="height: 100%; width: 0; background: var(--accent);"></div>
