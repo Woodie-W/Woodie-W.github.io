@@ -135,148 +135,104 @@
           <li><code>allowed_next</code>：允许的下一阶段列表</li>
           <li><code>human_gate</code>：是否需要人工审批</li>
         </ul>
-        <h3>Gate 阶段与 auto / manual 模式</h3>
-        <p>跨 phase 的转移（idea → experiment，experiment → paper）必须经过 gate 阶段。Gate 阶段的行为由项目模式决定：</p>
-        <ul>
-          <li><code>auto</code> 模式：gate 自动通过，<code>request_user_decision(...)</code> 被拒绝。</li>
-          <li><code>manual</code> 模式：gate 返回 <code>waiting_user</code>，CLI 可发送 <code>--reply y/n</code> 恢复。</li>
-        </ul>
+        <h3>第二层如何请求转阶段——层间通信的关键机制</h3>
+        <p>这是整个系统层间协作的核心：</p>
+        <ol>
+          <li>第三层的 worker 完成当前工作后，调用"完成当前阶段"工具，建议下一个阶段。</li>
+          <li>第二层的 supervisor 收到 worker 完成事件后，决策是否结束当前阶段。</li>
+          <li>第二层调用"完成当前阶段"工具，向第一层交付阶段结果，并建议下一阶段。</li>
+          <li>第一层验证建议的下一阶段是否在允许列表中。验证通过才执行状态转移。</li>
+        </ol>
+        <p>这个机制保证了：LLM 只能"建议"下一阶段，不能"擅自"推进项目。阶段转移的终极控制权在第一层确定性代码手里。</p>
+        <h3>auto / manual 模式的状态转移</h3>
+        <p>项目运行时可以选两种模式，决定 gate 阶段的行为：</p>
+        <p><strong>auto 模式</strong>：gate 阶段自动通过，不需要人工审批。整个流程可以全自动运行。</p>
+        <p>auto 模式下的完整状态转移流程：</p>
+        <pre><code>idea.probe_batch → idea.probe_collect → idea.gate（自动通过）
+→ experiment.setup → experiment.loop（可多次循环）→ experiment.analyze → experiment.gate（自动通过）
+→ paper.plan → paper.figure → paper.write → paper.review（自动通过）→ done</code></pre>
+        <p><strong>manual 模式</strong>：gate 阶段返回等待用户，CLI 发送回复后恢复。适合需要人工把关的关键决策点。</p>
         <h3>项目级记忆：PROCESS.md</h3>
         <p>第一层维护 <code>PROCESS.md</code> 作为精简的长期项目记忆。每个阶段成功交付后，第一层向 <code>PROCESS.md</code> 追加一条摘要（约 5-10 行）。后续阶段直接读 <code>PROCESS.md</code>，不需要回放全部日志。</p>
         <p>这是三层分离的核心收益之一：<strong>prompt 大小不随项目周期增长</strong>。</p>
         <h3>暴露给下层的工具</h3>
         <p>第一层只暴露两个工具给第二层：</p>
         <ul>
-          <li><code>finish_stage(status, summary, output_path, next_stage)</code>：正常交付当前阶段结果。</li>
-          <li><code>request_user_decision(question, options)</code>：需要项目级人工判断时调用。</li>
+          <li>完成阶段工具：正常交付当前阶段结果。</li>
+          <li>请求用户决策工具：需要项目级人工判断时调用。</li>
         </ul>
         <p>第二层可以建议 <code>next_stage</code>，但第一层验证后才生效。这避免了 LLM"擅自"推进项目阶段。</p>
       </section>
 
       <section id="layer2" class="content-section">
-        <h2>第二层：运行时监督器（RuntimeSupervisor）</h2>
-        <p>第二层是一个<strong>LLM 辅助的控制层</strong>，但控制循环本身是确定性代码。它监督当前阶段的所有 worker，做调度决策。</p>
+        <h2>第二层：运行时监督器——LLM 辅助的控制层</h2>
+        <p>第二层的搭建逻辑：控制循环本身是确定性的，LLM 只做调度决策。它监督当前阶段的所有 worker，决定何时启动新 worker、何时恢复挂起的 worker、何时结束当前阶段。</p>
         <h3>Worker 记录与事件队列</h3>
-        <p>每个 worker 有完整的 <code>AgentRecord</code>：</p>
-        <pre><code>AgentRecord:
-  agent_id        ← 运行时唯一标识
-  task_id         ← 所属任务 ID
-  objective       ← 工作目标
-  status          ← running / waiting / background / completed / failed / cancelled
-  thread_id       ← LangGraph checkpoint 标识符
-  resume_mode     ← "interrupt"（waiting）或 "message"（background）
-  progress        ← step_count, action_count, last_activity_at
-  workspace_root  ← worker 工作目录</code></pre>
-        <p>第三层发送的 <code>RuntimeUpdate</code> 首先进入第二层的原始更新队列。第二层处理时：</p>
+        <p>每个 worker 有一条完整的运行记录，包含：运行时唯一标识、所属任务、工作目标、状态、会话标识符、挂起模式、进度计数、工作区目录。</p>
+        <p>第三层发送的状态更新首先进入第二层的原始更新队列。第二层处理时分两步：</p>
         <ol>
-          <li><code>_update_agent(...)</code>：更新 <code>AgentRecord</code> 和缓存结果。</li>
-          <li><code>_handle_update(...)</code>：判断是否有意义，决定是否创建 <code>SupervisorEvent</code> 入队。</li>
+          <li>更新函数：更新 worker 记录和缓存结果。</li>
+          <li>事件过滤函数：判断是否有意义，决定是否创建调度事件入队。</li>
         </ol>
-        <p>规则：普通 <code>running → running</code> 的进度更新只更新记录，不入 supervisor 队列。这避免了 supervisor 被每一步日志淹没。</p>
-        <h3>Supervisor Agent</h3>
-        <p>第二层的 supervisor 本身也是一个 DeepAgent 会话（复用第三层的运行机制），但它的工具是 runtime tools 而非 workspace tools：</p>
-        <ul>
-          <li><code>get_task()</code>：获取当前任务信息</li>
-          <li><code>list_workers()</code>：列出所有 worker</li>
-          <li><code>get_worker(agent_id)</code>：获取指定 worker 记录</li>
-          <li><code>start_worker(objective)</code>：启动新 worker（非阻塞发射）</li>
-          <li><code>resume_worker(agent_id, text)</code>：恢复指定 worker</li>
-          <li><code>cancel_worker(agent_id)</code>：取消指定 worker</li>
-          <li><code>schedule_worker_resume(agent_id, seconds, message)</code>：预定未来直接恢复 worker</li>
-        </ul>
-        <p>Supervisor 的输入是<strong>增量的</strong>：每次只接收一个 <code>SupervisorEvent</code>，而不是全部历史。如果需要更多上下文，supervisor 通过工具主动查询文件、worker 状态、阶段输出。</p>
-        <p>输出约定（一行文本）：</p>
-        <ul>
-          <li><code>TASK_COMPLETED: &lt;summary&gt;</code></li>
-          <li><code>TASK_FAILED: &lt;summary&gt;</code></li>
-          <li><code>TASK_CONTINUE: &lt;summary&gt;</code></li>
-        </ul>
+        <p>过滤规则：普通进度更新只更新记录，不入调度队列。这避免了 supervisor 被每一步日志淹没。</p>
+        <h3>调度 Agent</h3>
+        <p>第二层的调度 agent 本身也是一个持久会话（复用第三层的运行机制），但它的工具是运行时管理工具集：获取任务信息、列出所有 worker、获取指定 worker 记录、启动新 worker（非阻塞发射）、恢复指定 worker、取消指定 worker、预定未来直接恢复 worker。</p>
+        <p>调度 agent 的输入是<strong>增量的</strong>：每次只接收一个调度事件，而不是全部历史。如果需要更多上下文，通过工具主动查询文件、worker 状态、阶段输出。</p>
+        <p>输出约定（一行文本）：完成、失败、或继续。</p>
         <h3>设计约束</h3>
-        <p>Supervisor prompt 刻意约束行为：优先复用已有 worker，少 cancel，少创建并行 worker。调试模式下每个 supervisor 最多创建一个 worker。</p>
+        <p>调度 agent 的 prompt 里刻意加入了行为约束：优先复用已有 worker，少取消，少创建并行 worker。</p>
       </section>
 
-      <section id="layer3" class="content-section">
-        <h2>第三层：执行运行时（ExecutionRuntime）</h2>
-        <p>第三层是<strong>具体的执行层</strong>，管理持久 DeepAgent worker 会话。每个 worker 是一个有状态的 LangGraph 会话。</p>
-        <h3>会话模型</h3>
-        <p>关键设计：第三层不再是一次性函数，而是有状态的会话。</p>
-        <pre><code>AgentSession:
-  session_id    ← 运行时唯一标识
-  thread_id     ← LangGraph MemorySaver checkpoint 标识符
-  cwd           ← 工作目录
-  log_path      ← agent-debug.log 路径
-  model         ← 模型名称
-  max_steps     ← 最大步数
-  checkpointer   ← LangGraph MemorySaver（跨 resume 保持会话）
-  process_registry ← 登记的子进程（用于取消时终止）</code></pre>
-        <p>使用 LangGraph 的 <code>MemorySaver</code> 作为 checkpointer。只要进程活着，同一个 <code>thread_id</code> 可以无限次 resume，会话状态不丢失。</p>
-        <h3>三个核心 API</h3>
-        <pre><code># 启动新会话
-result = runtime.start(agent_id="w1", task="读入这篇论文并复现核心算法")
-
-# 恢复已有会话（如用户回答了 waiting 问题）
-result = runtime.resume(agent_id="w1", user_input="答案是 42")
-
-# 取消会话（协作式）
-runtime.cancel(agent_id="w1")</code></pre>
+            <section id="layer3" class="content-section">
+        <h2>第三层：执行运行时——持久 DeepAgent 会话</h2>
+        <p>第三层的搭建逻辑：每个 worker 是有状态的会话，不是一次性函数调用。使用 LangGraph 的持久化机制实现跨轮次会话保持。</p>
+        <h3>持久化会话设计</h3>
+        <p>关键设计：第三层不再是无状态的"调一次模型拿结果"，而是有状态的会话。每次模型调用后，LangGraph 自动 checkpoint 会话状态。只要进程活着，同一个线程 ID 可以无限次恢复，会话状态不丢失。</p>
         <h3>Worker 生命周期状态</h3>
         <table>
           <tr><th>状态</th><th>含义</th><th>恢复方式</th></tr>
-          <tr><td><code>running</code></td><td>正在执行</td><td>不需要恢复，正在运行</td></tr>
-          <tr><td><code>waiting</code></td><td>需要外部输入</td><td>LangGraph <code>interrupt()</code> → <code>Command(resume=...)</code></td></tr>
-          <tr><td><code>background</code></td><td>主动挂起，稍后恢复</td><td>同一 <code>thread_id</code> 的普通消息</td></tr>
-          <tr><td><code>completed</code></td><td>任务完成</td><td>不可恢复</td></tr>
-          <tr><td><code>failed</code></td><td>执行失败</td><td>不可恢复</td></tr>
-          <tr><td><code>cancelled</code></td><td>被上层取消</td><td>不可恢复</td></tr>
+          <tr><td>运行中</td><td>正在执行</td><td>不需要恢复</td></tr>
+          <tr><td>等待输入</td><td>需要外部输入才能继续</td><td>LangGraph 中断机制 → 恢复时传入答案</td></tr>
+          <tr><td>后台挂起</td><td>主动挂起，稍后恢复</td><td>同一线程 ID 发普通消息</td></tr>
+          <tr><td>已完成</td><td>任务完成</td><td>不可恢复</td></tr>
+          <tr><td>已失败</td><td>执行失败</td><td>不可恢复</td></tr>
+          <tr><td>已取消</td><td>被上层取消</td><td>不可恢复</td></tr>
         </table>
-        <h3>Worker Tools</h3>
-        <p>Worker 看到的标准工具（通过 <code>LoggingWorkspaceBackend</code>）：</p>
-        <ul>
-          <li>文件操作：<code>read_file</code>, <code>write_file</code>, <code>edit_file</code></li>
-          <li>搜索：<code>grep</code>, <code>glob</code>, <code>ls</code></li>
-          <li>任务管理：<code>write_todos</code>, <code>read_todos</code>, <code>task</code></li>
-          <li>命令执行：<code>execute</code></li>
-        </ul>
-        <p>自定义生命周期工具（仅 worker 可见，不暴露给 supervisor）：</p>
-        <ul>
-          <li><code>ask_input(question)</code>：请求上层提供信息，进入 <code>waiting</code></li>
-          <li><code>suspend_background(note)</code>：主动挂起，进入 <code>background</code></li>
-          <li><code>finish_cancelled(summary)</code>：取消时整理交付</li>
-        </ul>
+        <h3>Worker 工具</h3>
+        <p>每个 worker 处于一个受限的工作区，可以看到标准工具集：文件读写、搜索、任务管理、命令执行。</p>
+        <p>此外还有生命周期工具（仅 worker 自身可调用）：请求输入、主动挂起、取消时整理交付。</p>
       </section>
 
-      <section id="design-decisions" class="content-section">
+<section id="design-decisions" class="content-section">
         <h2>关键设计决策</h2>
 
         <h3>waiting vs background：两种挂起，两种恢复</h3>
         <p>这是整个系统最重要的设计决策之一。Worker 主动挂起时有两种语义完全不同的场景：</p>
         <table>
-          <tr><th></th><th><code>waiting</code></th><th><code>background</code></th></tr>
-          <tr><td>触发方式</td><td><code>ask_input(question)</code></td><td><code>suspend_background(note)</code></td></tr>
+          <tr><th></th><th>等待输入</th><th>后台挂起</th></tr>
+          <tr><td>触发方式</td><td>请求外部输入</td><td>主动挂起，稍后检查</td></tr>
           <tr><td>含义</td><td>现在就需要答案才能继续</td><td>工作已委托出去，稍后检查</td></tr>
-          <tr><td>LangGraph 机制</td><td><code>interrupt()</code></td><td>普通工具返回</td></tr>
-          <tr><td>恢复方式</td><td><code>Command(resume=answer)</code></td><td>同一 <code>thread_id</code> 发普通消息</td></tr>
-          <tr><td>第二层 <code>resume_mode</code></td><td><code>interrupt</code></td><td><code>message</code></td></tr>
+          <tr><td>恢复方式</td><td>LangGraph 中断机制 → 恢复时传入答案</td><td>同一线程 ID 发普通消息</td></tr>
         </table>
-        <p><code>schedule_worker_resume(agent_id, seconds, message)</code> 允许 supervisor 现在做决定、写好未来要发的消息，到时间后第二层直接 resume worker，不再先问 supervisor。</p>
+        <p>预定恢复工具 允许 supervisor 现在做决定、写好未来要发的消息，到时间后第二层直接 resume worker，不再先问 supervisor。</p>
 
         <h3>事件驱动的监督</h3>
         <p>第三层的每一次状态变化都通过 <code>RuntimeUpdate</code> 向上传递，但第二层不会把所有更新都送给 supervisor agent。</p>
-        <pre><code>第三层 RuntimeUpdate
-  → 第二层 _update_agent()   更新 AgentRecord
-  → 第二层 _handle_update()  有意义的变化才创建 SupervisorEvent
-  → Supervisor 队列         supervisor 空闲时每次只处理一个事件</code></pre>
+        <pre><code>第三层 状态更新
+  → 第二层 更新 worker 记录
+  → 第二层 过滤并创建调度事件
+  → Supervisor 队列  supervisor 空闲时每次只处理一个事件</code></pre>
         <p>普通 <code>running → running</code> 的进度更新只更新记录，不入 supervisor 队列。Supervisor 不会被每一步日志淹没。</p>
 
-        <h3>取消机制：优雅交接</h3>
+        <h3>协作式取消</h3>
         <p>取消从第二层流入第三层，是<strong>协作式</strong>的：</p>
         <ol>
-          <li>第二层调用 <code>ExecutionRuntime.cancel(agent_id)</code></li>
-          <li>第三层尝试让 worker 自己调用 <code>finish_cancelled(summary)</code> 整理交付</li>
-          <li>Worker 保留有用产物（<code>agent-run.md</code>、<code>agent-debug.log</code>、workspace 文件）</li>
-          <li>如果整理超时，运行时返回兜底 cancelled 结果</li>
-          <li>如果当前有 <code>execute</code> 子进程，终止登记的进程组</li>
-          <li>Session 从 executor 状态中删除，后续无法 resume</li>
+          <li>第二层调用取消接口</li>
+          <li>第三层尝试让 worker 自己调用取消完成工具整理交付</li>
+          <li>Worker 保留有用产物（交付记录、调试日志、工作区文件）</li>
+          <li>如果整理超时，运行时返回兜底结果</li>
+          <li>如果有正在运行的子进程，终止进程组</li>
+          <li>会话从运行时状态中删除，后续无法恢复</li>
         </ol>
         <p>Python 线程不能被强制杀掉（不安全），所以取消是协作式的：先请求 worker 整理交付，超时后才做清理。</p>
 
