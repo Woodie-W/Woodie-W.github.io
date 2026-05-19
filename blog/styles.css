@@ -255,6 +255,19 @@ h3, h4, h5, h6 { margin: 0 0 1.1rem; }
   color: var(--accent);
 }
 
+/* Category card variants */
+.post-card--notes { border-left: 3px solid #4a90d9; }
+.post-card--notes:hover { border-color: #4a90d9; box-shadow: 0 4px 16px rgba(74, 144, 217, 0.10); }
+.post-card--notes .tag { background: #edf3fb; color: #3a7bc8; }
+
+.post-card--qml { border-left: 3px solid #9b6dd7; }
+.post-card--qml:hover { border-color: #9b6dd7; box-shadow: 0 4px 16px rgba(155, 109, 215, 0.10); }
+.post-card--qml .tag { background: #f4edfb; color: #7c4fba; }
+
+.post-card--dr-agent { border-left: 3px solid #d9864a; }
+.post-card--dr-agent:hover { border-color: #d9864a; box-shadow: 0 4px 16px rgba(217, 134, 74, 0.10); }
+.post-card--dr-agent .tag { background: #fdf3ed; color: #c07332; }
+
 .post-card p {
   color: var(--muted);
   font-size: 0.925rem;
