@@ -1,0 +1,39 @@
+/* 自定义样式，匹配学术文档风格 */
+.md-content {
+  max-width: 960px;
+}
+
+/* 代码块字体 */
+code {
+  font-family: 'JetBrains Mono', 'Fira Code', 'Consolas', monospace;
+}
+
+/* 标题样式微调 */
+.md-typeset h1 {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.md-typeset h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* 文章日期标签 */
+.post-date {
+  color: var(--md-default-fg-color--light);
+  font-size: 0.875rem;
+}
+
+.post-tags {
+  display: inline-flex;
+  gap: 0.25rem;
+}
+
+.post-tags span {
+  background-color: var(--md-primary-fg-color--transparent);
+  color: var(--md-primary-fg-color);
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.8rem;
+}
