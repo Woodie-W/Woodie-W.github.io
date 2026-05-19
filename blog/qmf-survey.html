@@ -110,10 +110,6 @@
 
         <h3>1. 显式量子融合 (Explicit Quantum Fusion)</h3>
         <p>在分别编码各模态后，具有清晰可辨的融合步骤的方法。融合电路通过受控门在模态间创建目标纠缠。</p>
-        <figure style="margin: 1.5rem 0; text-align: center;">
-          <img src="images/qmf-cross-modal-fusion.png" alt="Cross-modal fusion architectures" style="max-width: 100%; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.08);" />
-          <figcaption style="font-size: 0.85rem; color: #666; margin-top: 0.5rem;">跨模态融合架构：(a) 空间维度交互和 (b) 通道维度交互。</figcaption>
-        </figure>
         <ul>
           <li><strong>CCNOT-based Fusion</strong>（Evidential Vertical QFL）：使用 Toffoli (CCNOT) 门，两个来自不同模态的量子比特控制一个目标量子比特。通过受控非操作传递信息。</li>
           <li><strong>CNOT Ring Fusion</strong>（mmQFL, QMNN）：在模态间应用环形 CNOT 门。mmQFL 中，每个模态先由各自的 PQC 处理，然后量子融合层（CNOT 环）在测量前组合它们。QMNN 中，多跨度 CNOT 模式（k=1,3,6）在模态对之间创建纠缠。</li>
@@ -154,8 +150,9 @@
           <tr><td>通信</td><td>GPS + 相机 + LiDAR + RADAR</td><td>QTN</td></tr>
           <tr><td>金融预测</td><td>时间序列（单模态）</td><td>QuantumLeap</td></tr>
         </table>
-      </section> class="content-section">
-        <h2>关键挑战与观察</h2>
+      </section>
+
+      <section id="challenges" class="content-section">
         <ul>
           <li><strong>贫瘠高原 (Barren Plateaus)</strong>：量子比特数增加导致梯度消失。大多数工作使用极少的量子比特（4&ndash;10 个），严重限制了表达能力。</li>
           <li><strong>缺乏可解释性</strong>：大多数量子融合电路仍是"黑盒" &mdash; 纠缠对跨模态交互的物理意义不明确。</li>
@@ -170,6 +167,31 @@
         <p>
           量子多模态融合领域正在快速增长但仍处于起步阶段。大多数现有工作在经典层面执行融合，或使用缺乏可解释性的黑盒量子电路。在实现<strong>可解释量子融合</strong>、<strong>参数高效</strong>和<strong>有竞争力的精度</strong>方面存在明显空白。我们的 QCMM 框架（见<a href="qcmm.html">下一篇</a>）通过将 Dempster-Shafer 证据理论映射到量子电路来应对这些挑战。
         </p>
+      </section>
+
+      <section id="references" class="content-section">
+        <h2>参考文献</h2>
+        <ul style="font-size: 0.9rem; line-height: 1.7;">
+          <li>[1] Evidential Vertical Quantum Feature Learning (Evidential Vertical QFL), <em>IEEE TGRS</em>, 2024.</li>
+          <li>[2] mmQFL: Multimodal Quantum Feature Learning, <em>Information Fusion</em>, 2024.</li>
+          <li>[3] QMNN: Quantum Multimodal Neural Network, 2024.</li>
+          <li>[4] Expressive &amp; Scalable Quantum Fusion, 2025.</li>
+          <li>[5] QMFND: Quantum Multimodal Fake News Detection, 2024.</li>
+          <li>[6] QMLSC: Quantum Multimodal Learning for Sentiment Classification, 2024.</li>
+          <li>[7] QFNN: Quantum Fuzzy Neural Network, 2023.</li>
+          <li>[8] QViLa: Quantum Vision-Language Model, 2024.</li>
+          <li>[9] QNMF: Quantum Neural Multimodal Fusion, 2024.</li>
+          <li>[10] MQFL-FHE: Multimodal Quantum Feature Learning with FHE, 2025.</li>
+          <li>[11] ITQT-MSA: Image-Text Quantum Transformer with Multi-Scale Attention, 2025.</li>
+          <li>[12] SAMS: Sentiment Analysis using Multimodal Sentiment, 2024.</li>
+          <li>[13] QTN: Quantum Transformer Network for communications, 2024.</li>
+          <li>[14] QuantumLeap: Quantum Leap for Financial Time Series, 2025.</li>
+          <li>[15] $S^2$ENet: Semantic-Enhanced Multimodal Fusion Network for Remote Sensing, <em>IEEE TGRS</em>, 2024.</li>
+          <li>[16] EndNet: End-to-End Multimodal Fusion, <em>IEEE TGRS</em>, 2021.</li>
+          <li>[17] CrossFusion: Cross-Modal Feature Fusion, <em>ISPRS</em>, 2022.</li>
+          <li>[18] FusAtNet: Fusion Attention Network, <em>IEEE TGRS</em>, 2023.</li>
+          <li>[19] <strong>QCMM (Ours)</strong>: Wu et al., "Feature Entanglement-based Quantum Multimodal Fusion Neural Network", <em>arXiv:2601.07856</em>, 2026. &mdash; <a href="qcmm.html">详见下一篇</a></li>
+        </ul>
       </section>
 
       <nav class="page-nav">
@@ -188,6 +210,7 @@
           <li><a class="progress-link" data-target="applications">应用</a></li>
           <li><a class="progress-link" data-target="challenges">挑战</a></li>
           <li><a class="progress-link" data-target="summary">总结</a></li>
+          <li><a class="progress-link" data-target="references">参考文献</a></li>
         </ul>
         <div class="progress-meter" style="margin-top: 1rem; height: 4px; background: var(--border); border-radius: 999px; overflow: hidden;">
           <div class="progress-meter-fill" style="height: 100%; width: 0; background: var(--accent);"></div>
