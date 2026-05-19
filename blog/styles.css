@@ -293,8 +293,14 @@ pre, code {
 pre {
   padding: 1rem;
   overflow-x: auto;
-  background: var(--surface-muted);
-  border: 1px solid var(--border);
+  background: #2d2d2d !important;
+  border: 1px solid #3a3a3a;
+  margin: 1rem 0;
+}
+
+pre[class*="language-"] {
+  margin: 1rem 0;
+  padding: 1.2rem 1.4rem;
 }
 
 code {
@@ -306,6 +312,12 @@ pre code {
   padding: 0;
   background: transparent;
   border: none;
+  font-size: 0.9rem;
+  line-height: 1.7;
+}
+
+code[class*="language-"] {
+  text-shadow: none;
 }
 
 blockquote {
