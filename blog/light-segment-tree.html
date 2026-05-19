@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Light Segment Tree - Woodie's Blog</title>
+  <link href="libs/bootstrap/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/android-chrome-192x192.png" />
+  <script defer src="libs/bootstrap/bootstrap.bundle.min.js"></script>
+  <script defer src="script.js"></script>
+  <script defer id="mathjax" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body data-page="light-segment-tree" data-nav="notes">
+
+  <header class="site-header navbar navbar-expand-lg navbar-light bg-white">
+    <div class="inner container-xxl">
+      <a class="logo" href="index.html">
+        <img src="images/android-chrome-512x512.png" alt="">
+        Woodie's Blog
+      </a>
+      <button class="navbar-toggler nav-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <nav class="collapse navbar-collapse primary-nav" id="mainNav">
+        <div class="navbar-nav ms-auto align-items-lg-center gap-2">
+          <a class="nav-link" href="index.html" data-nav-target="home">Home</a>
+          <a class="nav-link active" href="light-segment-tree.html" data-nav-target="notes">OI Notes</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="layout container-xxl">
+    <div class="row g-4 flex-xl-nowrap">
+      <aside class="chapter-sidebar col-12 col-xl-3 col-xxl-3 order-2 order-xl-1">
+  <ul class="chapter-links">
+    <li><a data-chapter-link="home" href="index.html" class="">Home</a></li>
+    <li>
+      <span class="chapter-parent">OI Notes</span>
+      <ul class="sub-chapter-links">
+        <li><a data-chapter-link="light-segment-tree" href="light-segment-tree.html" class=" current">Light Segment Tree</a></li>
+        <li><a data-chapter-link="computational-geometry" href="computational-geometry.html" class="">Computational Geometry</a></li>
+      </ul>
+    </li>
+  </ul>
+</aside>
+
+      <main class="col-12 col-xl-6 col-xxl-6 order-1 order-xl-2 main-content">
+      <section id="overview" class="content-section">
+        <h1 class="section-title" style="font-size: 2rem;">Light Segment Tree</h1>
+        <span class="post-date">2026.05</span>
+        <div class="tag-list" style="margin: 0.75rem 0;">
+          <span class="tag">C++</span>
+          <span class="tag">Segment Tree</span>
+          <span class="tag">Lazy Propagation</span>
+        </div>
+        <p class="section-intro" style="margin-top: 1rem;">
+          A lightweight segment tree template with layer-based storage, supporting range add and range sum query.
+        </p>
+      </section>
+
+      <section id="description" class="content-section">
+        <h2>Description</h2>
+        <p>
+          Writing segment trees with pointers, nodes, and levels is annoying. By sizing the tree to $2^n$, we can directly compute the level and position of each node without maintaining a tree structure. We only need a flat ST-table data structure.
+        </p>
+        <p>
+          This template uses <code>st[i][j]</code> and <code>lazy[i][j]</code> to represent the range sum and lazy propagation value of the $j$-th interval of length $2^i$. The interval uses half-open <code>[l, r)</code> 0-based indexing.
+        </p>
+      </section>
+
+      <section id="code" class="content-section">
+        <h2>Code</h2>
+        <div class="table-scroll">
+<pre><code class="language-cpp">#include&lt;bits/stdc++.h&gt;
+using namespace std;
+using i64 = long long;
+const int N = 1 &lt;&lt; 19;	// 524288 &gt; 3e5
+
+
+void work(){
+	vector&lt;i64&gt; a(N);
+//	vector&lt;vector&lt;i64&gt;&gt; st(20, vector&lt;i64&gt;(N)); 改用动态建树
+	vector&lt;vector&lt;i64&gt;&gt; st, lazy;
+
+	for(int x = N; x; x = x &gt;&gt; 1){
+		st.push_back(vector&lt;i64&gt;(x, 0));
+		x = x &gt;&gt; 1;
+	}
+	lazy = st;
+
+#define x getx(l,r)
+#define y gety(l,r)
+#define mid (l+r)/2
+
+	// 左闭右开 0 base
+	// 规定st/lazy[i][j] 表示 [(1&lt;&lt;i * j, 1&lt;&lt;i * (j+1) )
+	auto getx = [&amp;](int l, int r)-&gt; int{return log2(r-l);};
+	auto gety = [&amp;](int l, int r)-&gt; int{return l / (r - l);};
+
+	// 用左右儿子更新当前节点
+	auto pushup = [&amp;](int l, int r) -&gt; void {
+		st[x][y] = st[getx(l, mid)][gety(l, mid)] + st[getx(mid, r)][gety(mid, r)];
+	};
+
+	// 给当前节点打懒标记
+	auto apply = [&amp;](int l, int r, i64 val) -&gt; void {
+		st[x][y] += val * (r - l);
+		lazy[x][y] += val;
+	};
+
+	// 下传懒标记
+	auto pushdown = [&amp;](int l, int r) -&gt; void {
+		if (lazy[x][y] == 0 || r - l == 1) return;
+		i64 val = lazy[x][y];
+		apply(l, mid, val);
+		apply(mid, r, val);
+		lazy[x][y] = 0;
+	};
+
+	// 建树
+	auto build = [&amp;](auto self, int l, int r) -&gt; void {
+		if (r-l == 1) {
+			st[0][l] = a[l];
+			return;
+		}
+		self(self, l, mid);
+		self(self, mid, r);
+		pushup(l, r);
+	};
+
+	// 区间加：[ql, qr) += val
+	auto update = [&amp;](auto self, int l, int r, int ql, int qr, i64 val) -&gt; void {
+		if (qr &lt;= l || r &lt;= ql) return;
+
+		if (ql &lt;= l &amp;&amp; r &lt;= qr) {
+			apply(l, r, val);
+			return;
+		}
+		pushdown(l, r);
+		self(self, l, mid, ql, qr, val);
+		self(self, mid, r, ql, qr, val);
+		pushup(l, r);
+	};
+
+	// 区间查询：[ql, qr) 的和
+	auto query = [&amp;](auto self, int l, int r, int ql, int qr) -&gt; i64 {
+		if (qr &lt;= l || r &lt;= ql) return 0;
+		if (ql &lt;= l &amp;&amp; r &lt;= qr) return st[x][y];
+		pushdown(l, r);
+		return self(self, l, mid, ql, qr) + self(self, mid, r, ql, qr);
+	};
+
+#undef x
+#undef y
+#undef mid
+
+}
+
+int main(){
+	ios::sync_with_stdio(false);
+	freopen("test.txt", "r", stdin);
+	cin.tie(0);
+	int T = 1;
+	while(T--){
+		work();
+	}
+	return 0;
+}
+</code></pre>
+        </div>
+      </section>
+
+      <nav class="page-nav">
+        <a class="page-nav-btn" href="index.html">&larr; Back to Home</a>
+      </nav>
+      </main>
+
+      <aside class="col-12 col-xl-3 col-xxl-3 order-3 progress-sidebar" style="padding-left: 1.5rem; align-self: start; position: sticky; top: 96px;">
+        <h2 style="font-size: 0.9rem; letter-spacing: 0.16em; text-transform: uppercase; color: #9a9384;">On this page</h2>
+        <ul class="progress-list" style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.4rem;">
+          <li><a class="progress-link is-active" data-target="overview">Overview</a></li>
+          <li><a class="progress-link" data-target="description">Description</a></li>
+          <li><a class="progress-link" data-target="code">Code</a></li>
+        </ul>
+        <div class="progress-meter" style="margin-top: 1rem; height: 4px; background: var(--border); border-radius: 999px; overflow: hidden;">
+          <div class="progress-meter-fill" style="height: 100%; width: 0; background: var(--accent);"></div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2026 Woodie. Powered by Bootstrap 5.</p>
+  </footer>
+
+</body>
+</html>

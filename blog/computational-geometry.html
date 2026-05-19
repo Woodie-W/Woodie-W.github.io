@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Computational Geometry - Woodie's Blog</title>
+  <link href="libs/bootstrap/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" type="image/png" sizes="32x32" href="images/android-chrome-192x192.png" />
+  <script defer src="libs/bootstrap/bootstrap.bundle.min.js"></script>
+  <script defer src="script.js"></script>
+  <script defer id="mathjax" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+</head>
+<body data-page="computational-geometry" data-nav="notes">
+
+  <header class="site-header navbar navbar-expand-lg navbar-light bg-white">
+    <div class="inner container-xxl">
+      <a class="logo" href="index.html">
+        <img src="images/android-chrome-512x512.png" alt="">
+        Woodie's Blog
+      </a>
+      <button class="navbar-toggler nav-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <nav class="collapse navbar-collapse primary-nav" id="mainNav">
+        <div class="navbar-nav ms-auto align-items-lg-center gap-2">
+          <a class="nav-link" href="index.html" data-nav-target="home">Home</a>
+          <a class="nav-link active" href="light-segment-tree.html" data-nav-target="notes">OI Notes</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="layout container-xxl">
+    <div class="row g-4 flex-xl-nowrap">
+      <aside class="chapter-sidebar col-12 col-xl-3 col-xxl-3 order-2 order-xl-1">
+  <ul class="chapter-links">
+    <li><a data-chapter-link="home" href="index.html" class="">Home</a></li>
+    <li>
+      <span class="chapter-parent">OI Notes</span>
+      <ul class="sub-chapter-links">
+        <li><a data-chapter-link="light-segment-tree" href="light-segment-tree.html" class="">Light Segment Tree</a></li>
+        <li><a data-chapter-link="computational-geometry" href="computational-geometry.html" class=" current">Computational Geometry</a></li>
+      </ul>
+    </li>
+  </ul>
+</aside>
+
+      <main class="col-12 col-xl-6 col-xxl-6 order-1 order-xl-2 main-content">
+      <section id="overview" class="content-section">
+        <h1 class="section-title" style="font-size: 2rem;">Computational Geometry</h1>
+        <span class="post-date">2026.05</span>
+        <div class="tag-list" style="margin: 0.75rem 0;">
+          <span class="tag">C++</span>
+          <span class="tag">Geometry</span>
+          <span class="tag">Template</span>
+        </div>
+        <p class="section-intro" style="margin-top: 1rem;">
+          Computational geometry template covering cross product, dot product, point-line distance, foot of perpendicular, convex hull, and line intersection.
+        </p>
+      </section>
+
+      <section id="code" class="content-section">
+        <h2>Code</h2>
+        <div class="table-scroll">
+<pre><code class="language-cpp">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+#include &lt;utility&gt;
+#include &lt;cmath&gt;
+#include &lt;complex&gt;
+#include &lt;iomanip&gt;
+#define sz(x) (x).size()
+using namespace std;
+using i64 = long long;
+using ld = long double;
+using Pl = complex&lt;ld&gt;;
+using par = pair&lt;ld, ld&gt;;
+const ld eps = 1e-10L;
+
+// atan2  (-Pi, Pi]
+#ifndef M_PI
+#define M_PI ((ld)3.14159265358979323846)
+#endif
+
+#ifndef M_PI_2
+#define M_PI_2 ((ld)1.57079632679489661923)
+#endif
+Pl fc(const par &amp;a){return {a.first, a.second};}
+par fp(const Pl &amp;a){return {a.real(), a.imag()};}
+par operator-(const par&amp;a, const par&amp;b){return make_pair(a.first - b.first, a.second - b.second);}
+par operator+(const par&amp;a, const par&amp;b){return make_pair(a.first + b.first, a.second + b.second);}
+par operator*(const par&amp;a, const par&amp;b){
+	Pl A = fc(a), B = fc(b); 	A *= B;
+	return make_pair(A.real(), A.imag());
+}
+par operator/(const par&amp;a, const par&amp;b){
+	Pl A = fc(a), B = fc(b); 	A /= B;
+	return make_pair(A.real(), A.imag());
+}
+ld abs(par a){return sqrt(a.first*a.first + a.second*a.second);}
+ld abs(par a, par b){ par c = a - b; return sqrt(c.first*c.first + c.second*c.second);}
+ld cross(Pl a, Pl b){ return imag(a * conj(b)); } // 向量叉乘
+ld cross(par a, par b){ return a.first*b.second - a.second*b.first;}
+
+ld dot(Pl a, Pl b){ return real(conj(a) * b); } // 向量点乘
+ld dot(par a, par b){ return a.first*b.first + a.second*b.second;}
+
+ld h_len(Pl p, Pl a, Pl b){	return fabs(cross(a-p, b-p))/abs(a-b);} //点线距
+ld h_len(par p, par a, par b){ return fabs(cross(a-p, b-p))/abs(a-b);}
+bool isInLine(Pl a, Pl b, Pl c){		// 判断共线, (a-b)/(a-c)和共轭相同
+	return abs(a * conj(b) - conj(c) + b * (conj(c) - conj(a)) + c * (conj(a) - conj(b))) &lt;= eps;
+}
+bool isVertical(Pl a, Pl b, Pl c, Pl d){		// ab 垂直 cd
+	return abs( (a-b)/(c-d) + conj((a-b)/(c-d))) &lt;= eps;
+}
+Pl foot(Pl p, Pl a, Pl b){			//垂足
+	return ((a * conj(p - b) - b * conj(p - a)) / conj(a - b) + p) / (ld)2;
+}
+par foot(par p, par a, par b){
+	Pl P = fc(p), A = fc(a), B = fc(b); return fp(foot(P, A, B));
+}
+
+vector&lt;par&gt; convex(vector&lt;par&gt; M) {
+	int n = M.size(); vector&lt;int&gt; stk;
+	sort(M.begin(), M.end());
+	for (int i = 0; i &lt; n; ++i){
+		while (stk.size() &gt;= 2 and cross(M[stk.back()] - M[stk[sz(stk) - 2]], M[i] - M[stk.back()]) &lt;= 0)
+			stk.pop_back();
+		stk.push_back(i);
+	}
+	unsigned lower_size = sz(stk);
+	for (int i = n - 1; i &gt;= 0; --i){
+		while (stk.size() &gt; lower_size and cross(M[stk.back()] - M[stk[sz(stk) - 2]], M[i] - M[stk.back()]) &lt;= 0)
+			stk.pop_back();
+		stk.push_back(i);
+	}
+	stk.pop_back(); vector&lt;par&gt; ans;
+	for (int i : stk) ans.push_back(M[i]);
+	return ans;
+}
+
+Pl crossing(Pl a, Pl b, Pl c, Pl d) {
+	ld x1 = real(a), y1 = imag(a), x2 = real(b), y2 = imag(b);
+	ld x3 = real(c), y3 = imag(c), x4 = real(d), y4 = imag(d);
+	ld denom = (x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4);
+	if (denom == 0) 	return Pl(NAN, NAN);
+	ld x = ((x1 * y2 - y1 * x2) * (x3 - x4) - (x1 - x2) * (x3 * y4 - y3 * x4)) / denom;
+	ld y = ((x1 * y2 - y1 * x2) * (y3 - y4) - (y1 - y2) * (x3 * y4 - y3 * x4)) / denom;
+	return Pl(x, y);
+}
+
+int n, num, cnt;
+ld x, y;
+
+void work(){
+
+}
+
+int main() {
+//	freopen("test.txt", "r", stdin);
+	ios::sync_with_stdio(0); cin.tie(0);
+	cout &lt;&lt; fixed &lt;&lt; setprecision(5);
+	int T = 1;
+//	cin &gt;&gt; T;
+	while (T--)
+		work();
+	return 0;
+}
+</code></pre>
+        </div>
+      </section>
+
+      <nav class="page-nav">
+        <a class="page-nav-btn" href="light-segment-tree.html">&larr; Light Segment Tree</a>
+        <a class="page-nav-btn" href="index.html">Home &rarr;</a>
+      </nav>
+      </main>
+
+      <aside class="col-12 col-xl-3 col-xxl-3 order-3 progress-sidebar" style="padding-left: 1.5rem; align-self: start; position: sticky; top: 96px;">
+        <h2 style="font-size: 0.9rem; letter-spacing: 0.16em; text-transform: uppercase; color: #9a9384;">On this page</h2>
+        <ul class="progress-list" style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 0.4rem;">
+          <li><a class="progress-link is-active" data-target="overview">Overview</a></li>
+          <li><a class="progress-link" data-target="code">Code</a></li>
+        </ul>
+        <div class="progress-meter" style="margin-top: 1rem; height: 4px; background: var(--border); border-radius: 999px; overflow: hidden;">
+          <div class="progress-meter-fill" style="height: 100%; width: 0; background: var(--accent);"></div>
+        </div>
+      </aside>
+
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>&copy; 2026 Woodie. Powered by Bootstrap 5.</p>
+  </footer>
+
+</body>
+</html>
