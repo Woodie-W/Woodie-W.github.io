@@ -312,7 +312,7 @@ pre code {
   padding: 0;
   background: transparent;
   border: none;
-  font-size: 0.825rem;
+  font-size: 0.6rem;
   line-height: 1.7;
 }
 
@@ -350,6 +350,23 @@ blockquote {
 .page-nav-btn:hover {
   border-color: var(--accent);
   color: var(--accent);
+}
+
+/* ===== References ===== */
+.ref-list {
+  font-size: 0.9rem;
+  line-height: 1.7;
+  padding-left: 1.5rem;
+}
+
+.ref-list li {
+  margin-bottom: 0.6rem;
+  padding-left: 0.5rem;
+}
+
+.ref-list li::marker {
+  font-weight: 600;
+  color: var(--text);
 }
 
 /* ===== Footer ===== */
