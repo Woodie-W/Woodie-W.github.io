@@ -25,7 +25,7 @@
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/plugins/autoloader/prism-autoloader.min.js"></script>
 </head>
-<body data-page="agent-frameworks" data-nav="research">
+<body data-page="agent-frameworks" data-nav="dr-agent">
 
   <header class="site-header navbar navbar-expand-lg navbar-light bg-white">
     <div class="inner container-xxl">
@@ -39,7 +39,8 @@
         <div class="navbar-nav ms-auto align-items-lg-center gap-2">
           <a class="nav-link" href="index.html" data-nav-target="home">Home</a>
           <a class="nav-link" href="light-segment-tree.html" data-nav-target="notes">OI Notes</a>
-          <a class="nav-link active" href="qmf-survey.html" data-nav-target="research">Research</a>
+          <a class="nav-link" href="qmf-survey.html" data-nav-target="qml">Quantum ML</a>
+          <a class="nav-link active" href="deep-research-survey.html" data-nav-target="dr-agent">Deep Research Agent</a>
         </div>
       </nav>
     </div>
@@ -58,14 +59,18 @@
       </ul>
     </li>
     <li>
-      <span class="chapter-parent">Research</span>
+      <span class="chapter-parent">Quantum ML</span>
       <ul class="sub-chapter-links">
-        <li><a data-chapter-link="qmf-survey" href="qmf-survey.html" class="">Quantum Multimodal Fusion Survey</a></li>
+        <li><a data-chapter-link="qmf-survey" href="qmf-survey.html" class="">QMF Survey</a></li>
         <li><a data-chapter-link="qcmm" href="qcmm.html" class="">QCMM: Our Work</a></li>
-        <li><a data-chapter-link="deep-research-survey" href="deep-research-survey.html" class="">Deep Research Agents</a></li>
+      </ul>
+    </li>
+    <li>
+      <span class="chapter-parent">Deep Research Agent</span>
+      <ul class="sub-chapter-links">
+        <li><a data-chapter-link="deep-research-survey" href="deep-research-survey.html" class="">DR Agents Survey</a></li>
         <li><a data-chapter-link="deep-research-benchmarks" href="deep-research-benchmarks.html" class="">DR Benchmarks</a></li>
         <li><a data-chapter-link="agent-frameworks" href="agent-frameworks.html" class=" current">Agent Frameworks</a></li>
-        <li><a data-chapter-link="human-agent-collaboration" href="human-agent-collaboration.html" class="">Human-Agent Collaboration</a></li>
       </ul>
     </li>
   </ul>
@@ -81,68 +86,49 @@
           <span class="tag">Framework</span>
         </div>
         <p class="section-intro" style="margin-top: 1rem;">
-          从单 Agent 到多 Agent 协作，涵盖 DyLAN 动态团队优化、TOOLMAKER 工具生成与 DataFlow-Agent 数据编排。
+          从单 Agent 到多 Agent 协作，涵盖 DyLAN 动态团队优化、TOOLMAKER 工具生成与 DataFlow-Agent 数据编排的架构设计。
         </p>
       </section>
 
       <section id="motivation" class="content-section">
-        <h2>为什么需要多智能体协作</h2>
+        <h2>核心问题</h2>
         <p>
-          现有的 LLM Agent 系统（如 AutoGPT、CAMEL）通常使用固定数量的智能体和静态通信结构。但现实世界中的复杂任务往往需要不同专业能力的组合，且任务需求可能动态变化——就像人类团队会根据项目需要调整成员一样。
-        </p>
-        <p>
-          另一个值得关注的方向是 Agent 的<strong>工具自主创造能力</strong>：与其让人类预设工具集，不如让 Agent 自己根据任务需求生成所需的工具。同时，在数据准备领域，LLM 驱动的 Agent 也开始接管原本依赖手工脚本的复杂工作流。
+          现有 LLM Agent 系统（如 AutoGPT、CAMEL）通常使用固定数量的智能体和静态通信结构。但现实世界中的复杂任务往往需要不同专业能力的动态组合，且任务需求可能随进展变化。此外，Agent 的<strong>工具自主创造能力</strong>和<strong>数据准备自动化</strong>也值得关注——与其让人类预设工具集和编写数据脚本，不如让 Agent 根据任务需求自主生成。
         </p>
       </section>
 
       <section id="dylan" class="content-section">
         <h2>DyLAN：动态 LLM 智能体网络</h2>
-        <p>
-          DyLAN（Dynamic LLM-Powered Agent Network）将多智能体协作过程形式化为<strong>时间前馈网络（T-FFN）</strong>：每一层代表一个时间步，节点代表参与的智能体，边代表通信。它分两个阶段运行：
-        </p>
-        <ul>
-          <li><strong>团队优化（Team Optimization）</strong>：无监督选择算法，基于"智能体重要性得分"从候选池中挑选对特定任务贡献最大的 Agent。</li>
-          <li><strong>任务解决（Task Solving）</strong>：选定的精英团队通过动态通信结构协作，并内置"团队重组"机制——通过 LLM Ranker 剔除低效率成员。</li>
-        </ul>
-        <p>
-          DyLAN 在 HumanEval（代码生成）、WebShop（购物决策）、MMLU（通用推理）和 MATH（算术推理）上验证了其有效性。其核心思想是：效率与有效性的平衡——移除不相关或表现不佳的 Agent，减少计算开销的同时提升最终质量。
-        </p>
+        <p><strong>动机：</strong>多智能体协作中，不相关或表现不佳的 Agent 不仅浪费计算资源，还可能通过注入噪声干扰最终结果。需要一种机制来动态调整团队组成。</p>
+        <p><strong>形式化——T-FFN：</strong>将多智能体协作过程形式化为<strong>时间前馈网络（T-FFN）</strong>：每一层代表一个时间步，节点代表参与的智能体，边代表通信。这种形式化使得团队协作过程可以被精确地表示和分析。</p>
+
         <svg viewBox="0 0 680 200" xmlns="http://www.w3.org/2000/svg" style="display:block;margin:1.5rem auto;max-width:100%;">
           <rect x="0" y="0" width="680" height="200" rx="12" fill="#faf8f5" stroke="#e5e2dc"/>
           <text x="340" y="25" text-anchor="middle" font-size="13" fill="#6b6560" font-weight="600">DyLAN: T-FFN Architecture</text>
-          <!-- Layer labels -->
           <text x="30" y="70" font-size="11" fill="#9a9384">Step 1</text>
           <text x="30" y="135" font-size="11" fill="#9a9384">Step 2</text>
-          <!-- Step 1 nodes -->
           <rect x="80" y="50" width="100" height="32" rx="8" fill="#f0ead6" stroke="#d4c9a8"/>
           <text x="130" y="71" text-anchor="middle" font-size="11" fill="#3d3529">Agent A</text>
           <rect x="250" y="50" width="100" height="32" rx="8" fill="#f0ead6" stroke="#d4c9a8"/>
           <text x="300" y="71" text-anchor="middle" font-size="11" fill="#3d3529">Agent B</text>
           <rect x="420" y="50" width="100" height="32" rx="8" fill="#f0ead6" stroke="#d4c9a8"/>
           <text x="470" y="71" text-anchor="middle" font-size="11" fill="#3d3529">Agent C</text>
-          <!-- Step 2 nodes (B is removed) -->
           <rect x="80" y="115" width="100" height="32" rx="8" fill="#d4e8d0" stroke="#a8c9a0"/>
           <text x="130" y="136" text-anchor="middle" font-size="11" fill="#2d4a28">Agent A</text>
           <rect x="250" y="115" width="100" height="32" rx="8" fill="#f0ead6" stroke="#d4c9a8" stroke-dasharray="4 3"/>
           <text x="300" y="136" text-anchor="middle" font-size="10" fill="#b0a898">Agent B (pruned)</text>
           <rect x="420" y="115" width="100" height="32" rx="8" fill="#d4e8d0" stroke="#a8c9a0"/>
           <text x="470" y="136" text-anchor="middle" font-size="11" fill="#2d4a28">Agent C</text>
-          <!-- Arrows step 1 -->
           <line x1="180" y1="66" x2="250" y2="66" stroke="#9a9384" stroke-width="1.5" marker-end="url(#arrow)"/>
           <line x1="350" y1="66" x2="420" y2="66" stroke="#9a9384" stroke-width="1.5" marker-end="url(#arrow)"/>
-          <!-- Arrows step 1 -> 2 -->
           <line x1="130" y1="82" x2="130" y2="115" stroke="#6b6560" stroke-width="1.5" marker-end="url(#arrow)"/>
           <line x1="470" y1="82" x2="470" y2="115" stroke="#6b6560" stroke-width="1.5" marker-end="url(#arrow)"/>
-          <!-- Arrow step 2 -->
           <line x1="180" y1="131" x2="250" y2="131" stroke="#c0c0c0" stroke-width="1" stroke-dasharray="4 3"/>
           <line x1="350" y1="131" x2="420" y2="131" stroke="#c0c0c0" stroke-width="1" stroke-dasharray="4 3"/>
-          <!-- Output -->
           <rect x="570" y="110" width="90" height="32" rx="8" fill="#efdbdb" stroke="#d4a8a8"/>
           <text x="615" y="131" text-anchor="middle" font-size="11" fill="#6b2d2d">Output</text>
           <line x1="520" y1="131" x2="570" y2="131" stroke="#6b6560" stroke-width="1.5" marker-end="url(#arrow)"/>
-          <!-- Arrow marker -->
           <defs><marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#9a9384"/></marker></defs>
-          <!-- Legend -->
           <rect x="80" y="168" width="12" height="12" rx="3" fill="#f0ead6" stroke="#d4c9a8"/>
           <text x="97" y="179" font-size="10" fill="#6b6560">候选 Agent</text>
           <rect x="180" y="168" width="12" height="12" rx="3" fill="#d4e8d0" stroke="#a8c9a0"/>
@@ -150,26 +136,45 @@
           <rect x="280" y="168" width="12" height="12" rx="3" fill="#f0ead6" stroke="#d4c9a8" stroke-dasharray="3 2"/>
           <text x="297" y="179" font-size="10" fill="#6b6560">被淘汰 Agent</text>
         </svg>
+
+        <p><strong>两阶段架构：</strong></p>
+        <ul>
+          <li><strong>阶段 1：团队优化（Team Optimization）</strong>——无监督选择算法，基于"智能体重要性得分"从候选池中挑选贡献最大的 Agent。具体做法：在数据集小子集上让所有候选 Agent 各自解题，根据输出质量计算重要性得分，选取 Top-K 组成精英团队。这一过程不需要标注数据。</li>
+          <li><strong>阶段 2：任务解决（Task Solving）</strong>——选定团队通过动态通信结构协作，内置"团队重组"机制：通过 LLM Ranker 评估每个 Agent 的中间贡献，剔除低效率成员，防止噪声累积。</li>
+        </ul>
+        <p>核心思想是效率与有效性的平衡——移除不相关或表现不佳的 Agent，减少计算开销的同时提升最终质量。在某些 MMLU 子任务上，团队优化阶段可将准确率提升 25%。</p>
       </section>
 
       <section id="toolmaker" class="content-section">
         <h2>TOOLMAKER：Agent 创建工具</h2>
-        <p>
-          TOOLMAKER 探索了一个更激进的方向：让 LLM Agent <strong>自主生成工具</strong>，而不是依赖人类预设的工具集。当 Agent 遇到现有工具无法处理的子任务时，它可以编写新的工具函数（通常是 Python 函数），并将其添加到自己的工具库中以供后续使用。
-        </p>
-        <p>
-          这种"工具自举"（Tool Bootstrapping）能力使 Agent 的工具集可以随任务复杂度动态扩展，突破了传统框架中工具集固定的限制。它代表了 Agent 元能力（meta-capability）的一种重要探索。
-        </p>
+        <p><strong>动机：</strong>Agent 的工具集通常由人类开发者预先实现。但在生命科学、医学等需要大量高度专业化工具的领域，人工实现成本极高。TOOLMAKER 探索让 Agent <strong>自主从论文代码中生成工具</strong>。</p>
+        <p><strong>工作流程：</strong></p>
+        <ul>
+          <li><strong>输入：</strong>一个 GitHub 仓库 URL + 简短的任务描述。</li>
+          <li><strong>安装阶段：</strong>自动克隆仓库、安装依赖、分析代码结构。</li>
+          <li><strong>代码生成阶段：</strong>基于任务描述和仓库代码，生成执行任务所需的 Python 函数。</li>
+          <li><strong>闭环调试：</strong>运行生成的代码，如果失败则分析错误信息并自动修正，循环直到通过或达到最大重试次数。</li>
+        </ul>
+        <p><strong>评测设计：</strong>引入包含 15 个复杂计算任务的基准，覆盖多个科学领域，配备超过 100 个单元测试来评估正确性和鲁棒性。这种"工具自举"（Tool Bootstrapping）能力使 Agent 的工具集可以随任务复杂度动态扩展。</p>
       </section>
 
       <section id="dataflow" class="content-section">
         <h2>DataFlow-Agent：LLM 驱动的数据编排</h2>
-        <p>
-          DataFlow 是一个类似 PyTorch 风格的数据准备框架，提供近 200 个可复用算子（Generate、Evaluate、Filter、Refine 四类）和 90+ 个 Prompt 模板，支持构建 DAG 工作流。其核心创新在于 <strong>DataFlow-Agent</strong>——一个构建在框架之上的智能编排层。
-        </p>
-        <p>
-          用户只需用自然语言描述数据需求，Agent 会自动完成三步：算子合成（检索或生成所需算子）→ 流水线规划（组装 DAG 工作流）→ 迭代验证（自我测试和调试）。该框架已在文本、数学推理、代码、Text-to-SQL、Agentic RAG、知识抽取等 6 个领域验证了有效性，其中仅用 1 万条合成数据就超越了用 100 万条开源数据训练的模型。
-        </p>
+        <p><strong>动机：</strong>当前 LLM 数据准备依赖临时脚本，缺乏标准化抽象，难以复现。现有工具（NVIDIA NeMo Curator、Data-Juicer）侧重数据提取和过滤，对<strong>模型介入生成</strong>和<strong>语义精细化</strong>支持不足。</p>
+        <p><strong>DataFlow 框架：</strong>PyTorch 风格的数据准备框架，核心抽象包括：</p>
+        <ul>
+          <li><strong>全局存储（Global Storage）</strong>——统一的表格化数据表示，解耦数据管理与算子逻辑。</li>
+          <li><strong>近 200 个可复用算子</strong>——分为 Generate、Evaluate、Filter、Refine 四类。</li>
+          <li><strong>90+ 个 Prompt 模板</strong>——将 Prompt 构建与算子逻辑解耦。</li>
+          <li><strong>Pipeline（流水线）</strong>——显式定义的 DAG 工作流，支持编译和断点续跑。</li>
+        </ul>
+        <p><strong>DataFlow-Agent（智能编排层）：</strong>用户只需用自然语言描述数据需求，Agent 自动完成三步：</p>
+        <ul>
+          <li><strong>算子合成</strong>——从算子库中检索或生成所需算子。</li>
+          <li><strong>流水线规划</strong>——将算子组装为 DAG 工作流。</li>
+          <li><strong>迭代验证</strong>——自我测试和调试，确保输出质量。</li>
+        </ul>
+        <p>在 6 个领域（文本、数学推理、代码、Text-to-SQL、Agentic RAG、知识抽取）验证了有效性。一个关键发现：仅用 1 万条合成数据就能超越用 100 万条开源数据训练的模型，验证了"高质量小数据 > 低质量大数据"的假设。</p>
       </section>
 
       <section id="references" class="content-section">
@@ -178,14 +183,12 @@
           <li>Liu et al., "A Dynamic LLM-Powered Agent Network for Task-Oriented Agent Collaboration (DyLAN)", <em>COLM</em>, 2024.</li>
           <li>Wolflein et al., "LLM Agents Making Agent Tools (TOOLMAKER)", <em>arXiv</em>.</li>
           <li>Liang et al., "DataFlow: An LLM-Driven Framework for Unified Data Preparation and Workflow Automation", <em>arXiv</em>, 2025.</li>
-          <li>Dossa et al., "A Human-Like Agent Based on a Hybrid of Reinforcement and Imitation Learning", <em>IJCNN</em>, 2019.</li>
-          <li>Wang et al., "Humanoid Agents: Platform for Simulating Human-like Generative Agents", <em>EMNLP Demo</em>, 2023.</li>
         </ol>
       </section>
 
       <nav class="page-nav">
         <a class="page-nav-btn" href="deep-research-benchmarks.html">&larr; DR Benchmarks</a>
-        <a class="page-nav-btn" href="human-agent-collaboration.html">Human-Agent &rarr;</a>
+        <a class="page-nav-btn" href="index.html">Home &rarr;</a>
       </nav>
       </main>
 
