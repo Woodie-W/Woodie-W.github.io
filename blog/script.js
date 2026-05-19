@@ -80,5 +80,20 @@ document.addEventListener('DOMContentLoaded', () => {
     };
     updateActiveSection();
     window.addEventListener('scroll', updateActiveSection, { passive: true });
+
+    // Smooth scroll on click
+    progressLinks.forEach(({ link, target }) => {
+      link.addEventListener('click', (e) => {
+        e.preventDefault();
+        const targetId = link.dataset.target;
+        const targetEl = document.getElementById(targetId);
+        if (targetEl) {
+          window.scrollTo({
+            top: targetEl.offsetTop - headerOffset + 1,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
   }
 });
