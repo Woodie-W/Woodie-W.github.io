@@ -49,6 +49,10 @@ In my view, Artificial Intelligence has achieved superhuman proficiency in speci
 
 <br>
 
+自动化系统是计算机科学的极致浪漫
+
+<br>
+
 <span class='anchor' id='-news'></span>
 # 🔥 News / 最新动态
 
