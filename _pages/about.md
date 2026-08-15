@@ -68,15 +68,22 @@ In my view, Artificial Intelligence has achieved superhuman proficiency in speci
 <span class='anchor' id='-publications'></span>
 # 📝 Preprints & Publications / 论文发表
 
+
 - **Feature Entanglement-based Quantum Multimodal Fusion Neural Network** [[arXiv]](https://arxiv.org/abs/2601.07856)
   <br> **Yu Wu**, Qianli Zhou, et al.
-  <br> *Manuscript submitted for publication in the **IEEE TNNLS** (2026).*
+  <br> *Manuscript submitted for publication in the **TPAMI** (2026).*
+  <br> *<small>We propose a quantum PCA-based prototype classifier, effectively broadening quantum circuit classification capabilities, along with an incremental learning framework based on it.</small>*
+  <br> *<small>我们提出基于量子PCA的原型分类器，有效拓宽量子电路分类能力，并提出基于此的增量学习框架。</small>*
+
+
+- **Feature Entanglement-based Quantum Multimodal Fusion Neural Network** [[arXiv]](https://arxiv.org/abs/2601.07856)
+  <br> **Yu Wu**, Qianli Zhou, et al.
+  <br> *Manuscript submitted for publication in the **Pattern Recognition** (2026).*
   <br> *<small>We propose an interpretable quantum multimodal fusion network based on evidence theory.</small>*
-  <br> *<small>我们提出了一种基于证据理论的可解释量子多模态融合网络，优势体现于参数量、可并行性及可解释性，进行了完备的泛化性测试与消融实验。</small>*
+  <br> *<small>我们提出了一种基于证据理论的可解释量子多模态融合网络，优势体现于参数量、可并行性及可解释性。</small>*
 
 - **CRCC: Contrast-based Robust Cross-Subject and Cross-Site Representation Learning for EEG** [[arXiv]](https://arxiv.org/abs/2602.19138)
   <br> Xiaobin Wong, Zhonghua Zhao, Haoran Guo, Zhengyi Liu, **Yu Wu**, Feng Yan, Zhiren Wang, Sen Song.
-  <br> *Manuscript submitted for publication in the **International Conference on Machine Learning (ICML)** (2026).*
   <br> *<small>We builds a robust cross-subject and cross-site EEG model for precision psychiatry through contrastive and reinforcement learning.</small>*
   <br> *<small>基于对比学习与强化学习开发的跨被试、跨站点 EEG 精准精神病学模型，负责模型分类效果的可视化分析, zero-shot, 对比实验等测试。</small>*
 
@@ -92,8 +99,8 @@ In my view, Artificial Intelligence has achieved superhuman proficiency in speci
 
 - **Multi-domain Intelligent Perception & Cognition Lab, NWPU**
   <br> *Research Assistant | Aug 2025 - Present*
-  <br> Leading the research on quantum machine learning models. Designed and implemented an interpretable quantum multimodal fusion network, completing extensive ablation studies and writing the manuscript (submitted to IEEE TNNLS).
-  <br> *<small>西北工业大学多域智能感知与认知实验室 | 科研助理；量子机器学习研究，设计并实现了可解释的量子多模态融合网络（独立一作）。</small>*
+  <br> Research on quantum machine learning models. Designed and implemented an interpretable quantum multimodal fusion network, quantum prototype classifier and its incremental learning framework.
+  <br> *<small>西北工业大学多域智能感知与认知实验室 | 科研助理；量子机器学习研究，设计并实现了可解释的量子多模态融合网络，量子原型分类器及其增量学习框架。</small>*
 
 - **Tsinghua Laboratory of Brain and Intelligence (THU THBI)**
   <br> *Research Intern | Jul 2025 - Feb 2026*
