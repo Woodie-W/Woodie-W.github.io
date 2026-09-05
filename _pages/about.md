@@ -21,31 +21,31 @@ redirect_from:
 
 I'm currently an undergraduate student majoring in Computer Science and Technology at Northwestern Polytechnical University (NWPU).
 
-I participated in the Mathematics Olympiad during my years at Chengdu No. 7 High School, that laid a profound foundation for my analytical thinking and fast-learning capabilities, empowering my subsequent journey in scientific research and various contests. I also took additional courses in Advanced Algebra, Operations Research, Convex Optimization, and other specialized mathematics courses.
+I participated in the Mathematics Olympiad during my years at Chengdu No. 7 High School, that laid a profound foundation for my analytical thinking and fast-learning capabilities, empowering my subsequent journey in scientific research and various contests. I also took Interested mathematics courses like Advanced Algebra, ODE, Operations Research.
 
 In recent years, I have actively begun exploring my research interests. I am extremely fortunate to study quantum machine learning under the guidance of [Prof. Qianli Zhou](https://jszy.nwpu.edu.cn/2025010088.html), where I have completed my first academic paper. 
 
 Furthermore, I am honored to have gained research internship opportunities at top-tier laboratories through competitive programs such as the CIBR-CLS-IDG Joint Summer School on Neuroscience and Cognitive Science and the THU AIR Winter Camp. These experiences have allowed me to delve deeply into interdisciplinary AI research, including EEG decoding and Large Language Model Agents.
 
-In my view, Artificial Intelligence has achieved superhuman proficiency in specific tasks (e.g., pattern recognition, strategic gaming), their ability in handling complex tasks still falls short. The next frontier lies in generalizing these capabilities to the messy, complex real world. My wish is to bridge the gap between high-level AI capabilities and real-world applications to truly liberate productivity. Specifically, I am interested in:
+In my view, Artificial Intelligence has achieved superhuman proficiency in specific tasks (e.g., pattern recognition, strategic gaming), their ability in handling complex tasks still falls short. Especially the ability to discover, define and solve new problems in a scientific context. My wish is to bridge the gap between high-level AI capabilities and real-world applications to truly liberate productivity. Specifically, I am interested in:
 
-- **LLM-based Agents:** Developing agents for complex workflows and environments, stronger reasoning skills and engineering capabilities. How to integrate simple models into complex logical scheduling to achieve more complex tasks. How to apply agents to specific fields.
-- **Fundamental LLM Capabilities:** Enhancing the core reasoning efficiency and long-context memory of Large Language Models, as well as fine-tuning of large models for specific agent tasks or calling interfaces.
-- **Collaborative Evolution of LLM Hardware and Software:** LLM require high-performance hardware support, while the scheduling of agents also places higher demands on serial capabilities. How to improve the throughput and latency of LLM and agent.
+- **LLM-based Agents:** Developing agents for complex workflows and environments, stronger reasoning skills and engineering capabilities. How to apply agents to for scientific scenarios.
+- **Fundamental LLM Capabilities:** Enhancing the core reasoning efficiency and long-context memory of Large Language Models, as well as training algorithms for LLM for specific agent tasks.
+- **AI for Discovery:** Encourage agents to gradually move from completing specific tasks to identifying problems, posing questions, and solving them.
 
 我是 西北工业大学 (NWPU) 计算机科学与技术专业的 23 级在读本科生。
 
-我高中于成都七中学习数学竞赛，这为我科研与竞赛奠定了坚实的思维与学习能力基础。另外我辅修了高等代数，运筹学，凸优化等数学专业课程。
+我高中于成都七中学习数学竞赛，这为我科研与竞赛奠定了坚实的思维与学习能力基础。另外我辅修了感兴趣的数学专业课程，如高等代数，常微分方程，运筹学。
 
 近年来，我逐渐开始探索感兴趣的研究方向。我有幸在 [周千里教授](https://jszy.nwpu.edu.cn/2025010088.html) 的指导下学习量子机器学习，并且完成了第一篇论文。
 
 我有幸通过 CLS-CIBR-IDG 暑期培训班，AIR冬令营等途径加入顶尖实验室实习，探索了人工智能相关领域，如脑电图解码，大模型智能体。
 
-在我的认知中，尽管人工智能在模式识别、博弈等特定任务上已超越人类表现，但其在处理复杂任务的能力仍显不足，并需将其的能力泛化至复杂的真实世界。我的愿望是将高水平的 AI 技术落地以解放生产力。具体包括：
+在我的认知中，尽管人工智能在模式识别、博弈等特定任务上已超越人类表现，但其在处理复杂任务的能力仍显不足，特别是在科学背景下发现、定义与解决新问题的能力。我的愿望是将高水平的 AI 技术落地以解放生产力。具体包括：
 
 - **大模型智能体:** 构建能适应复杂工作流程与环境的智能体，增强上下文管理与工程能力。如何将简单模型嵌入到复杂的逻辑调度中，实现更复杂的任务。如何将智能体应用到具体领域。
-- **大模型基础能力:** 提升 LLM 的核心能力，更强的推理与工程能力，针对特定的智能体任务或调用接口的大模型微调。
-- **大模型软硬件协同进化:** 大模型需要高性能硬件支持，而新兴智能体的调度也对串行能力提出了更高的要求。如何提高大模型吞吐与延时。
+- **大模型基础能力:** 提升 LLM 的核心能力，更强的推理与工程能力，针对特定的智能体任务的大模型微调。
+- **AI for Discovery:** 推动智能体从完成既定任务逐步走向发现问题、提出问题与解决问题。 
 
 <br>
 
@@ -93,7 +93,7 @@ In my view, Artificial Intelligence has achieved superhuman proficiency in speci
 # 🔬 Research Experience / 科研经历
 
 - **Institute for AI Industry Research, Tsinghua University (THU AIR)**
-  <br> *Research Intern | Jan 2026 - Present*
+  <br> *Research Intern | Jan 2026 - Feb 2026*
   <br> Focusing on the development of brain-inspired cognitive DeepResearch Agents. Exploring cutting-edge Agent architectures and benchmarks.
   <br> *<small>清华大学智能产业研究院 (THU AIR) | 冬令营科研实习；类脑认知 DeepResearch 智能体开发，熟悉 Agent 架构与相关测试基准。</small>*
 
@@ -105,7 +105,7 @@ In my view, Artificial Intelligence has achieved superhuman proficiency in speci
 - **Tsinghua Laboratory of Brain and Intelligence (THU THBI)**
   <br> *Research Intern | Jul 2025 - Feb 2026*
   <br> Worked on the LEM model development. Conducted comprehensive benchmark tests and comparative experiments against state-of-the-art models (e.g., LaBraM) for EEG-based precision psychiatry.
-  <br> *<small>清华大学脑与智能实验室 (THU THBI) | 科研实习；参与 LEM 模型开发：EEG 精神病学模型的分析及针对前沿模型的测试与对比实验。</small>*
+  <br> *<small>清华大学脑与智能实验室 (THU THBI) | 科研实习；EEG 精神病学大模型开发，及针对前沿模型的测试与实验。</small>*
 
 <br>
 
@@ -168,7 +168,7 @@ In my view, Artificial Intelligence has achieved superhuman proficiency in speci
 - **Northwestern Polytechnical University (NWPU)** | *Computer Science and Technology* | Sep 2023 - Jun 2027 
   <br> **GPA:** 3.908 / 4.1 (Rank: 7/193) | Comprehensive Evaluation 2/233 (2023-2024), 5/195 (2024-2025)
   <br> **Awards:** National Scholarship for Undergraduate Students (2023-2024, 2024-2025)
-  <br> *<small>西北工业大学 (985) | 计算机科学与技术 | GPA 3.908/4.1, Top 3% (Comprehensive)，连续两年荣获国家奖学金 </small>*
+  <br> *<small>西北工业大学 (985) | 计算机科学与技术 | GPA 3.909/4.1, Top 3.55% ，连续两年荣获国家奖学金 </small>*
 
 
 
