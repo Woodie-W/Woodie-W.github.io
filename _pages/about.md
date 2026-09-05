@@ -69,16 +69,16 @@ In my view, Artificial Intelligence has achieved superhuman proficiency in speci
 # 📝 Preprints & Publications / 论文发表
 
 
-- **Feature Entanglement-based Quantum Multimodal Fusion Neural Network** [[arXiv]](https://arxiv.org/abs/2601.07856)
-  <br> **Yu Wu**, Qianli Zhou, et al.
-  <br> *Manuscript submitted for publication in the **TPAMI** (2026).*
+- **Feature Entanglement-based Quantum Multimodal Fusion Neural Network** [[arXiv]](https://arxiv.org/abs/2608.10464)
+  <br> **Yu Wu**, Qianli Zhou, Xinyang Deng, Wen Jiang, Kang Hao Cheong, Witold Pedrycz.
+  <br> *Manuscript submitted for the **TPAMI**.*
   <br> *<small>We propose a quantum PCA-based prototype classifier, effectively broadening quantum circuit classification capabilities, along with an incremental learning framework based on it.</small>*
   <br> *<small>我们提出基于量子PCA的原型分类器，有效拓宽量子电路分类能力，并提出基于此的增量学习框架。</small>*
 
 
 - **Feature Entanglement-based Quantum Multimodal Fusion Neural Network** [[arXiv]](https://arxiv.org/abs/2601.07856)
-  <br> **Yu Wu**, Qianli Zhou, et al.
-  <br> *Manuscript submitted for publication in the **Pattern Recognition** (2026).*
+  <br> **Yu Wu**, Qianli Zhou, Jie Geng, Xinyang Deng, Wen Jiang.
+  <br> *Manuscript submitted for the **Pattern Recognition**.*
   <br> *<small>We propose an interpretable quantum multimodal fusion network based on evidence theory.</small>*
   <br> *<small>我们提出了一种基于证据理论的可解释量子多模态融合网络，优势体现于参数量、可并行性及可解释性。</small>*
 
